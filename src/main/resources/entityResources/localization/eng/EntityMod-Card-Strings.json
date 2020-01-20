@@ -1,0 +1,18 @@
+{
+  "entity:Strike_Entity": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "entity:Defend_Entity": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "entity:VoidBlast": {
+    "NAME": "Void Blast",
+    "DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage to all enemies."
+  },
+  "entity:AetherForm": {
+    "NAME": "Aether Form",
+    "DESCRIPTION": "Gain !B! Block. Gain 1 Artifact."
+  }
+}

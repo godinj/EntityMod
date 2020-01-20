@@ -1,0 +1,9 @@
+{
+  "entity:PresenceOfTheVoidRelic": {
+    "NAME": "Presence of the Void",
+    "FLAVOR": "A unique privilege from the abyss.",
+    "DESCRIPTIONS": [
+      "Retain the highest cost card of your hand (Chosen at random when tied)."
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "entity:EntityCharacter": {
+    "NAMES": [
+      "The Entity",
+      "The Entity"
+    ],
+    "TEXT": [
+      "A creature of the void, yearning for vengeance. NL Uses his powers from the abyss to destroy his enemies.",
+      "NL You send the heart into the ABYSS.",
+      "Something about the end times"
+    ]
+  }
+}

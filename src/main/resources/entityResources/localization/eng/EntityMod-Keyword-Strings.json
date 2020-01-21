@@ -1,5 +1,17 @@
 [
   {
+    "NAMES": [
+      "essence"
+    ],
+    "DESCRIPTION": "At end of turn, this creature gains health equal to half of its #bEssence, rounded down. It loses 1 #bEssence each turn"
+  },
+  {
+    "NAMES": [
+      "flux"
+    ],
+    "DESCRIPTION": "At the end of your turn, deal damage equal to the total #bFlux on all enemies to each enemy. Each enemy loses 1 #bFlux each turn"
+  },
+  {
     "PROPER_NAME": "Multiword Keyword",
     "NAMES": [
       "Multiword Keyword",

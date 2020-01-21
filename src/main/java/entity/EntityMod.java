@@ -1,6 +1,5 @@
 package entity;
 
-import basemod.devcommands.ConsoleCommand;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
@@ -11,7 +10,6 @@ import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.PostPlayerUpdateSubscriber;
 import basemod.interfaces.PreMonsterTurnSubscriber;
-import basemod.patches.com.megacrit.cardcrawl.helpers.CardLibrary.CustomCardsPatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -20,7 +18,9 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -35,18 +35,27 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.interfaces.PostBattleSubscriber;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import entity.cards.AbyssalCall;
 import entity.cards.AetherForm;
 import entity.cards.Defend_Entity;
+import entity.cards.InwardAscent;
+import entity.cards.Otherworldly;
+import entity.cards.SharedFate;
 import entity.cards.Strike_Entity;
 import entity.cards.VoidBlast;
 import entity.characters.Entity;
+import entity.powers.EssencePower;
+import entity.powers.FluxBarPower;
+import entity.powers.FluxPower;
 import entity.relics.PresenceOfTheVoidRelic;
 import entity.util.IDCheckDontTouchPls;
 import entity.util.TextureLoader;
+import entity.variables.ArtifactNumber;
+import entity.variables.EssenceNumber;
+import entity.variables.FluxNumber;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -271,6 +280,9 @@ public class EntityMod implements
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         logger.info("Done loading badge Image and mod options");
+
+        BaseMod.addPower(FluxPower.class, FluxPower.POWER_ID);
+        BaseMod.addPower(EssencePower.class, EssencePower.POWER_ID);
     }
 
     // =============== / POST-INITIALIZE/ =================
@@ -295,25 +307,41 @@ public class EntityMod implements
         logger.info("Adding variables");
         //Ignore this
         pathCheck();
+        // Add the Custom Dynamic variables
+        BaseMod.addDynamicVariable(new ArtifactNumber());
+        BaseMod.addDynamicVariable(new EssenceNumber());
+        BaseMod.addDynamicVariable(new FluxNumber());
 
         logger.info("Adding cards");
         // Attacks
         BaseMod.addCard(new Strike_Entity());
+        BaseMod.addCard(new AbyssalCall());
         BaseMod.addCard(new VoidBlast());
 
-        // // Skills
+        // Skills
         BaseMod.addCard(new Defend_Entity());
         BaseMod.addCard(new AetherForm());
+        BaseMod.addCard(new InwardAscent());
+        BaseMod.addCard(new SharedFate());
+
+        // Powers
+        BaseMod.addCard(new Otherworldly());
 
         logger.info("Making sure the cards are unlocked.");
 
         // Attacks
         UnlockTracker.unlockCard(Strike_Entity.ID);
+        UnlockTracker.unlockCard(AbyssalCall.ID);
         UnlockTracker.unlockCard(VoidBlast.ID);
 
         // Skills
         UnlockTracker.unlockCard(Defend_Entity.ID);
         UnlockTracker.unlockCard(AetherForm.ID);
+        UnlockTracker.unlockCard(InwardAscent.ID);
+        UnlockTracker.unlockCard(SharedFate.ID);
+
+        // Powers
+        UnlockTracker.unlockCard(Otherworldly.ID);
 
         logger.info("Done adding cards!");
     }
@@ -376,7 +404,18 @@ public class EntityMod implements
 
     @Override
     public void receivePostPlayerUpdate() {
-
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            AbstractCreature p = AbstractDungeon.player;
+            if (!p.hasPower(FluxBarPower.POWER_ID)) {
+                p.powers.add(new FluxBarPower(p, p, 1));
+            }
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (mo != null && !mo.isDead && !mo.isDying && !mo.hasPower(FluxBarPower.POWER_ID)) {
+                    // Add directly to avoid any UI impact
+                    mo.powers.add(new FluxBarPower(mo, mo, 1));
+                }
+            }
+        }
     }
 
     @Override

@@ -1,2 +1,18 @@
 {
+  "entity:EssencePower": {
+    "NAME": "Essence",
+    "DESCRIPTIONS": ["At end of turn, this creature gains health equal to half of its essence (#b", "), rounded down. NL It loses one essence per turn."]
+  },
+  "entity:FluxPower": {
+    "NAME": "Flux",
+    "DESCRIPTIONS": ["At end of turn, deals #b", " damage (total flux on all enemies) to this creature. NL It loses one flux per turn."]
+  },
+  "entity:FluxBarPower": {
+    "NAME": "FluxBar",
+    "DESCRIPTIONS": ["."]
+  },
+  "entity:OtherworldlyPower": {
+    "NAME": "Otherworldly",
+    "DESCRIPTIONS": ["At start of turn, applies #b", " vulnerable."]
+  }
 }

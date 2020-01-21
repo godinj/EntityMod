@@ -20,35 +20,36 @@ public class VoidBlast extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(VoidBlast.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");
 
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+
     private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ALL;
+    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 15;
+    private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    private static final int MAGIC = 2;
-    private static final int UPGRADE_PLUS_MAGIC = -1;
+    // Represents Vulnerable amount applied.
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     public VoidBlast() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = MAGIC;
+        this.damage = this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = MAGIC;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, magicNumber, false), magicNumber));
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo == null || mo.isDead || mo.isDying) {
-                continue;
-            }
-            calculateCardDamage(mo);
-            AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(mo, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        AbstractDungeon.actionManager.addToBottom(
+            new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        if (this.upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(p, magicNumber, false), magicNumber));
         }
     }
 
@@ -58,6 +59,8 @@ public class VoidBlast extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

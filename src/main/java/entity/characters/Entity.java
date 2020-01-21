@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import entity.EntityMod;
 import entity.cards.AetherForm;
 import entity.cards.Defend_Entity;
+import entity.cards.SharedFate;
 import entity.cards.Strike_Entity;
 import entity.cards.VoidBlast;
 import entity.relics.PresenceOfTheVoidRelic;
@@ -130,7 +131,7 @@ public class Entity extends CustomPlayer {
             retVal.add(Strike_Entity.ID);
         }
         retVal.add(VoidBlast.ID);
-        for(int i = 0; i < 5; i = i + 1) {
+        for(int i = 0; i < 4; i = i + 1) {
             retVal.add(Defend_Entity.ID);
         }
         retVal.add(AetherForm.ID);

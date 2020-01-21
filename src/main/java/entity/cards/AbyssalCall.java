@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.characters.Entity;
 
+//AbyssalCall: 2 energy, rare, deal 30 damage to all enemies, shuffle 3 void cards into your discard.
 public class AbyssalCall extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(AbyssalCall.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");
@@ -31,6 +32,7 @@ public class AbyssalCall extends AbstractDynamicCard {
     private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_MAGIC = -1;
 
+    //this is a constructor. This initializes variables. Creates an instance of the card using the AbyssalCall above^
     public AbyssalCall() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;

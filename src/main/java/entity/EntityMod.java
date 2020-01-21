@@ -43,6 +43,8 @@ import entity.cards.Otherworldly;
 import entity.cards.SharedFate;
 import entity.cards.Strike_Entity;
 import entity.cards.VoidBlast;
+import entity.cards.VoidPulse;
+import entity.cards.VoidWeave;
 import entity.characters.Entity;
 import entity.powers.EssencePower;
 import entity.powers.FluxBarPower;
@@ -326,6 +328,8 @@ public class EntityMod implements
 
         // Powers
         BaseMod.addCard(new Otherworldly());
+        BaseMod.addCard(new VoidPulse());
+        BaseMod.addCard(new VoidWeave());
 
         logger.info("Making sure the cards are unlocked.");
 
@@ -342,6 +346,8 @@ public class EntityMod implements
 
         // Powers
         UnlockTracker.unlockCard(Otherworldly.ID);
+        UnlockTracker.unlockCard(VoidPulse.ID);
+        UnlockTracker.unlockCard(VoidWeave.ID);
 
         logger.info("Done adding cards!");
     }
@@ -393,7 +399,17 @@ public class EntityMod implements
 
     @Override
     public void receivePowersModified() {
-
+        if (AbstractDungeon.player.hasPower(FluxPower.POWER_ID)) {
+            AbstractDungeon.player.getPower(FluxPower.POWER_ID).updateDescription();
+        }
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo == null || mo.isDead || mo.isDying) {
+                continue;
+            }
+            if (mo.hasPower(FluxPower.POWER_ID)) {
+                mo.getPower(FluxPower.POWER_ID).updateDescription();
+            }
+        }
     }
 
     @Override

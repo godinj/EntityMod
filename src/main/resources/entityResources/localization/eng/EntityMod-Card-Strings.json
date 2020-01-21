@@ -34,5 +34,14 @@
   "entity:Otherworldly": {
     "NAME": "Otherworldly",
     "DESCRIPTION": "At start of turn, apply !M! Vulnerable to yourself. Gain !entity:A! Artifact."
+  },
+  "entity:VoidPulse": {
+    "NAME": "Void Pulse",
+    "DESCRIPTION": "When you draw a Void, gain !B! Block."
+  },
+  "entity:VoidWeave": {
+    "NAME": "Void Weave",
+    "DESCRIPTION": "When you draw a Void, gain [R].",
+    "UPGRADE_DESCRIPTION": "When you draw a Void, gain [R] [R]."
   }
 }

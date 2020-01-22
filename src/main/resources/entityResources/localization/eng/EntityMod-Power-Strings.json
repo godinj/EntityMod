@@ -5,7 +5,7 @@
   },
   "entity:FluxPower": {
     "NAME": "Flux",
-    "DESCRIPTIONS": ["At end of turn, deals #b", " damage (total flux on all enemies) to this creature. NL It loses one flux per turn."]
+    "DESCRIPTIONS": ["At end of turn, deals #b", " damage (total flux on all creatures) to this creature. NL It loses one flux per turn."]
   },
   "entity:FluxBarPower": {
     "NAME": "FluxBar",
@@ -13,6 +13,14 @@
   },
   "entity:OtherworldlyPower": {
     "NAME": "Otherworldly",
-    "DESCRIPTIONS": ["At start of turn, applies #b", " vulnerable."]
+    "DESCRIPTIONS": ["At start of turn, applies #b", " Vulnerable."]
+  },
+  "entity:VoidPulsePower": {
+    "NAME": "Void Pulse",
+    "DESCRIPTIONS": ["When you draw a Void, gain #b", " Block."]
+  },
+  "entity:VoidWeavePower": {
+    "NAME": "Void Weave",
+    "DESCRIPTIONS": ["When you draw a Void, gain ", ""]
   }
 }

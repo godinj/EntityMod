@@ -7,6 +7,7 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
+import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.PostPlayerUpdateSubscriber;
 import basemod.interfaces.PreMonsterTurnSubscriber;
@@ -18,6 +19,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,13 +39,18 @@ import basemod.interfaces.PostBattleSubscriber;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import entity.cards.AbyssalCall;
 import entity.cards.AetherForm;
+import entity.cards.BoundlessAether;
 import entity.cards.Defend_Entity;
 import entity.cards.InwardAscent;
 import entity.cards.Otherworldly;
+import entity.cards.Rupture;
 import entity.cards.SharedFate;
+import entity.cards.SilentCoup;
 import entity.cards.Strike_Entity;
+import entity.cards.Surge;
 import entity.cards.VoidBlast;
 import entity.cards.VoidPulse;
+import entity.cards.VoidSpace;
 import entity.cards.VoidWeave;
 import entity.characters.Entity;
 import entity.powers.EssencePower;
@@ -58,6 +65,7 @@ import entity.variables.FluxNumber;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -74,6 +82,7 @@ public class EntityMod implements
     OnStartBattleSubscriber,
     OnPowersModifiedSubscriber,
     PreMonsterTurnSubscriber,
+    PostDrawSubscriber,
     PostPlayerUpdateSubscriber,
     PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(EntityMod.class.getName());
@@ -93,7 +102,7 @@ public class EntityMod implements
 
     // Colors (RGB)
     // Character Color
-    public static final Color ENTITY_TEAL = CardHelper.getColor(255, 215, 0);
+    public static final Color ENTITY_TEAL = CardHelper.getColor(0, 255, 200);
 
     // Card backgrounds - The actual rectangular card.
     private static final String ATTACK_ENTITY_TEAL = "entityResources/images/512/bg_attack_entity_teal.png";
@@ -246,6 +255,20 @@ public class EntityMod implements
 
     // =============== /LOAD THE CHARACTER/ =================
 
+    @Override
+    public void receivePostDraw(AbstractCard abstractCard) {
+        Iterator<AbstractCard> iterator = AbstractDungeon.player.hand.group.iterator();
+        AbstractCard c;
+        while(iterator.hasNext()) {
+            c = iterator.next();
+            if (c.cardID.equals(SilentCoup.ID)) {
+                ((SilentCoup) c).calculateUniqueCostTotal();
+            }
+            else if (c.cardID.equals(VoidSpace.ID)) {
+                ((VoidSpace)c).generateAndInitializeExtendedDescription();
+            }
+        }
+    }
 
     // =============== POST-INITIALIZE =================
 
@@ -318,13 +341,18 @@ public class EntityMod implements
         // Attacks
         BaseMod.addCard(new Strike_Entity());
         BaseMod.addCard(new AbyssalCall());
+        BaseMod.addCard(new Rupture());
+        BaseMod.addCard(new SilentCoup());
+        BaseMod.addCard(new Surge());
         BaseMod.addCard(new VoidBlast());
 
         // Skills
         BaseMod.addCard(new Defend_Entity());
         BaseMod.addCard(new AetherForm());
+        BaseMod.addCard(new BoundlessAether());
         BaseMod.addCard(new InwardAscent());
         BaseMod.addCard(new SharedFate());
+        BaseMod.addCard(new VoidSpace());
 
         // Powers
         BaseMod.addCard(new Otherworldly());
@@ -336,13 +364,18 @@ public class EntityMod implements
         // Attacks
         UnlockTracker.unlockCard(Strike_Entity.ID);
         UnlockTracker.unlockCard(AbyssalCall.ID);
+        UnlockTracker.unlockCard(Rupture.ID);
+        UnlockTracker.unlockCard(SilentCoup.ID);
+        UnlockTracker.unlockCard(Surge.ID);
         UnlockTracker.unlockCard(VoidBlast.ID);
 
         // Skills
         UnlockTracker.unlockCard(Defend_Entity.ID);
         UnlockTracker.unlockCard(AetherForm.ID);
+        UnlockTracker.unlockCard(BoundlessAether.ID);
         UnlockTracker.unlockCard(InwardAscent.ID);
         UnlockTracker.unlockCard(SharedFate.ID);
+        UnlockTracker.unlockCard(VoidSpace.ID);
 
         // Powers
         UnlockTracker.unlockCard(Otherworldly.ID);

@@ -106,7 +106,11 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
             currentLivingMonsters.add(mo);
         }
         currentLivingMonsters.sort(CREATURE_SORT);
-        if (currentLivingMonsters.size() > 0 && (this.owner == currentLivingMonsters.get(0))) {
+        if (
+            currentLivingMonsters.size() > 0 &&
+            (this.owner == currentLivingMonsters.get(0)) &&
+            AbstractDungeon.player.hasPower(FluxPower.POWER_ID)
+        ) {
             AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.POISON

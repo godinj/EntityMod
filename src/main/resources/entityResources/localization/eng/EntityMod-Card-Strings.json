@@ -12,6 +12,24 @@
     "DESCRIPTION": "Deal !D! damage to all enemies. Add !M! Void cards into your discard pile.",
     "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable."
   },
+  "entity:Rupture": {
+    "NAME": "Rupture",
+    "DESCRIPTION": "Deal !D! damage. Apply !entity:F! entity:Flux."
+  },
+  "entity:SilentCoup": {
+    "NAME": "Silent Coup",
+    "DESCRIPTION": "Deal !D! damage. Draw a card for each unique cost in your hand.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Draws 1 card).",
+      " NL (Draws ",
+      " cards)."
+    ]
+  },
+  "entity:Surge": {
+    "NAME": "Surge",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain [E]."
+  },
   "entity:VoidBlast": {
     "NAME": "Void Blast",
     "DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage.",
@@ -20,7 +38,12 @@
   "entity:AetherForm": {
     "NAME": "Aether Form",
     "DESCRIPTION": "Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain !M! Artifact."
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain !entity:A! Artifact."
+  },
+  "entity:BoundlessAether": {
+    "NAME": "Boundless Aether",
+    "DESCRIPTION": "Gain !entity:A! Artifact. All enemies gain !entity:A! Artifact.",
+    "UPGRADE_DESCRIPTION": "Gain !entity:A! Artifact. Target enemy gains !entity:A! Artifact."
   },
   "entity:InwardAscent": {
     "NAME": "Inward Ascent",
@@ -30,6 +53,15 @@
   "entity:SharedFate": {
     "NAME": "Shared Fate",
     "DESCRIPTION": "Gain !entity:F! entity:Flux. Apply !entity:F! entity:Flux to all enemies."
+  },
+  "entity:VoidSpace": {
+    "NAME": "Void Space",
+    "DESCRIPTION": "Exhaust your hand. For each card exhausted, draw a card, gain [E] , gain 1 block and add a Void card to your discard pile. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Exhausts 1 card).",
+      " NL (Exhausts ",
+      " cards)."
+    ]
   },
   "entity:Otherworldly": {
     "NAME": "Otherworldly",
@@ -41,7 +73,7 @@
   },
   "entity:VoidWeave": {
     "NAME": "Void Weave",
-    "DESCRIPTION": "When you draw a Void, gain [R].",
-    "UPGRADE_DESCRIPTION": "When you draw a Void, gain [R] [R]."
+    "DESCRIPTION": "When you draw a Void, gain [E].",
+    "UPGRADE_DESCRIPTION": "When you draw a Void, gain [E] [E] ."
   }
 }

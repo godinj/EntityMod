@@ -71,7 +71,7 @@ public class VoidWeavePower extends AbstractPower implements CloneablePowerInter
         StringBuilder sb = new StringBuilder();
         sb.append(powerStrings.DESCRIPTIONS[0]);
         for (int i = 0; i < this.amount; i++) {
-            sb.append("[R] ");
+            sb.append("[E] ");
         }
         sb.append(LocalizedStrings.PERIOD);
         sb.append(powerStrings.DESCRIPTIONS[1]);

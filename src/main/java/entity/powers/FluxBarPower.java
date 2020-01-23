@@ -18,7 +18,7 @@ import entity.util.TextureLoader;
 public class FluxBarPower extends AbstractPower implements CloneablePowerInterface, InvisiblePower, HealthBarRenderPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = EntityMod.makeID("FluxBarPower");
+    public static final String POWER_ID = EntityMod.makeID(FluxBarPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -49,7 +49,7 @@ public class FluxBarPower extends AbstractPower implements CloneablePowerInterfa
     {
         int amount = 0;
         if (this.owner.hasPower(FluxPower.POWER_ID)) {
-            amount = this.owner.getPower(FluxPower.POWER_ID).amount;
+            amount = FluxPower.calculateTotalFlux();
         }
         return amount;
     }

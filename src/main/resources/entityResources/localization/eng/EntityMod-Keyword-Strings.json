@@ -1,6 +1,12 @@
 [
   {
     "NAMES": [
+      "chant"
+    ],
+    "DESCRIPTION": "The incantation of Ka, Tu or Lu, produces the effect of the respective power and then removes it"
+  },
+  {
+    "NAMES": [
       "essence"
     ],
     "DESCRIPTION": "At end of turn, this creature gains health equal to half of its #bEssence, rounded down. It loses 1 #bEssence each turn"
@@ -10,6 +16,24 @@
       "flux"
     ],
     "DESCRIPTION": "At the start of the enemy turn, deal damage equal to the total #bFlux on all creatures to each creature with #bFlux. Each creature with #bFlux loses 1 #bFlux each turn"
+  },
+  {
+    "NAMES": [
+      "ka"
+    ],
+    "DESCRIPTION": "Upon Chant, gain 4 Block and apply 3 #bFlux to a random enemy."
+  },
+  {
+    "NAMES": [
+      "lu"
+    ],
+    "DESCRIPTION": "Upon Chant, apply 3 #bFlux to a random enemy and draw 2 cards."
+  },
+  {
+    "NAMES": [
+      "tu"
+    ],
+    "DESCRIPTION": "Upon Chant, draw 2 cards and gain 4 Block."
   },
   {
     "PROPER_NAME": "Multiword Keyword",

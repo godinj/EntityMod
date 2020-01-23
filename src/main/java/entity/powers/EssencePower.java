@@ -20,7 +20,7 @@ import entity.util.TextureLoader;
 public class EssencePower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = EntityMod.makeID("EssencePower");
+    public static final String POWER_ID = EntityMod.makeID(EssencePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

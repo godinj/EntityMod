@@ -15,6 +15,14 @@ public abstract class AbstractEntityCard extends CustomCard {
     public int baseFlux;
     public boolean upgradedFlux;
     public boolean isFluxModified;
+    public int selfMagicNumber;
+    public int baseSelfMagicNumber;
+    public boolean upgradedSelfMagicNumber;
+    public boolean isSelfMagicNumberModified;
+    public int voidCard;
+    public int baseVoidCard;
+    public boolean upgradedVoidCard;
+    public boolean isVoidCardModified;
 
     public AbstractEntityCard(final String id,
                               final String name,
@@ -36,6 +44,8 @@ public abstract class AbstractEntityCard extends CustomCard {
         this.isMagicNumberModified = false;
         this.isEssenceModified = false;
         this.isFluxModified = false;
+        this.isSelfMagicNumberModified = false;
+        this.isVoidCardModified = false;
     }
 
     public void displayUpgrades() {
@@ -51,6 +61,14 @@ public abstract class AbstractEntityCard extends CustomCard {
         if (upgradedFlux) {
             flux = baseFlux;
             isFluxModified = true;
+        }
+        if (upgradedSelfMagicNumber) {
+            selfMagicNumber = baseSelfMagicNumber;
+            isSelfMagicNumberModified = true;
+        }
+        if (upgradedVoidCard) {
+            voidCard = baseVoidCard;
+            isVoidCardModified = true;
         }
     }
 
@@ -72,6 +90,18 @@ public abstract class AbstractEntityCard extends CustomCard {
         upgradedFlux = true;
     }
 
+    public void upgradeSelfMagicNumber(int amount) {
+        baseSelfMagicNumber += amount;
+        selfMagicNumber = baseSelfMagicNumber;
+        upgradedSelfMagicNumber = true;
+    }
+
+    public void upgradeVoidCard(int amount) {
+        baseVoidCard += amount;
+        voidCard = baseVoidCard;
+        upgradedVoidCard = true;
+    }
+
     @Override
     public void applyPowers()
     {
@@ -82,5 +112,9 @@ public abstract class AbstractEntityCard extends CustomCard {
         isEssenceModified = false;
         flux = baseFlux;
         isFluxModified = false;
+        selfMagicNumber = baseSelfMagicNumber;
+        isSelfMagicNumberModified = false;
+        voidCard = baseVoidCard;
+        isVoidCardModified = false;
     }
 }

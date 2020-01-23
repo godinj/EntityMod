@@ -16,6 +16,7 @@ import entity.characters.Entity;
 
 import static entity.EntityMod.makeCardPath;
 
+// TODO: Deal 6(7) damage twice. 1 Vulnerable to self. (1 Vulnerable to self, 2 Vulnerable to target)
 public class VoidBlast extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(VoidBlast.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");
@@ -31,11 +32,11 @@ public class VoidBlast extends AbstractDynamicCard {
     private static final int COST = 2;
 
     private static final int DAMAGE = 12;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     // Represents Vulnerable amount applied.
     private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 2;
 
     public VoidBlast() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -25,7 +25,7 @@ import java.util.Comparator;
 public class FluxPower extends AbstractPower implements CloneablePowerInterface {
     private AbstractCreature source;
 
-    public static final String POWER_ID = EntityMod.makeID("FluxPower");
+    public static final String POWER_ID = EntityMod.makeID(FluxPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -61,7 +61,7 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
         updateDescription();
     }
 
-    private int calculateTotalFlux() {
+    public static int calculateTotalFlux() {
         int totalFluxDamage = 0;
         if (AbstractDungeon.player.hasPower(FluxPower.POWER_ID)) {
             totalFluxDamage += AbstractDungeon.player.getPower(FluxPower.POWER_ID).amount;
@@ -112,14 +112,14 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
             AbstractDungeon.player.hasPower(FluxPower.POWER_ID)
         ) {
             AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.NORMAL),
+                new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.THORNS),
                     AbstractGameAction.AttackEffect.POISON
                 ));
         }
 
         if (this.owner != AbstractDungeon.player) {
             AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.NORMAL),
+                new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.THORNS),
                     AbstractGameAction.AttackEffect.POISON
                 ));
         }

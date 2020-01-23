@@ -1,11 +1,11 @@
 {
   "entity:EssencePower": {
     "NAME": "Essence",
-    "DESCRIPTIONS": ["At end of turn, this creature gains health equal to half of its essence (#b", "), rounded down. NL It loses one essence per turn."]
+    "DESCRIPTIONS": ["At end of turn, this creature gains health equal to half of its essence (#b", "), rounded down. NL It loses one #bEssence per turn."]
   },
   "entity:FluxPower": {
     "NAME": "Flux",
-    "DESCRIPTIONS": ["At end of turn, deals #b", " damage (total flux on all creatures) to this creature. NL It loses one flux per turn."]
+    "DESCRIPTIONS": ["At end of turn, deals #b", " damage (total #bFlux on all creatures) to this creature. NL It loses one #bFlux per turn."]
   },
   "entity:FluxBarPower": {
     "NAME": "FluxBar",
@@ -13,7 +13,19 @@
   },
   "entity:OtherworldlyPower": {
     "NAME": "Otherworldly",
-    "DESCRIPTIONS": ["At start of turn, applies #b", " Vulnerable."]
+    "DESCRIPTIONS": ["At start of turn, applies #b", " #yVulnerable."]
+  },
+  "entity:KaPower": {
+    "NAME": "Ka",
+    "DESCRIPTIONS": ["Upon Chant, gain ", " #yBlock and apply ", " #bFlux to a random enemy."]
+  },
+  "entity:LuPower": {
+    "NAME": "Lu",
+    "DESCRIPTIONS": ["Upon Chant, apply ", " #bFlux to a random enemy and draw ", " cards."]
+  },
+  "entity:TuPower": {
+    "NAME": "Tu",
+    "DESCRIPTIONS": ["Upon Chant, draw ", " cards and gain ", " #yBlock."]
   },
   "entity:VoidPulsePower": {
     "NAME": "Void Pulse",

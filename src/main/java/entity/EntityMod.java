@@ -20,6 +20,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,31 +38,22 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.interfaces.PostBattleSubscriber;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import entity.cards.AbyssalCall;
-import entity.cards.AetherForm;
-import entity.cards.BoundlessAether;
-import entity.cards.Defend_Entity;
-import entity.cards.InwardAscent;
-import entity.cards.Otherworldly;
-import entity.cards.Rupture;
-import entity.cards.SharedFate;
-import entity.cards.SilentCoup;
-import entity.cards.Strike_Entity;
-import entity.cards.Surge;
-import entity.cards.VoidBlast;
-import entity.cards.VoidPulse;
-import entity.cards.VoidSpace;
-import entity.cards.VoidWeave;
+import entity.cards.*;
 import entity.characters.Entity;
 import entity.powers.EssencePower;
 import entity.powers.FluxBarPower;
 import entity.powers.FluxPower;
+import entity.powers.KaPower;
+import entity.powers.LuPower;
+import entity.powers.TuPower;
 import entity.relics.PresenceOfTheVoidRelic;
 import entity.util.IDCheckDontTouchPls;
 import entity.util.TextureLoader;
 import entity.variables.ArtifactNumber;
 import entity.variables.EssenceNumber;
 import entity.variables.FluxNumber;
+import entity.variables.SelfMagicNumberNumber;
+import entity.variables.VoidCardNumber;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -267,6 +259,9 @@ public class EntityMod implements
             else if (c.cardID.equals(VoidSpace.ID)) {
                 ((VoidSpace)c).generateAndInitializeExtendedDescription();
             }
+            else if (c.cardID.equals(FluxCapacitor.ID)) {
+                ((FluxCapacitor) c).generateAndInitializeExtendedDescription();
+            }
         }
     }
 
@@ -308,6 +303,9 @@ public class EntityMod implements
 
         BaseMod.addPower(FluxPower.class, FluxPower.POWER_ID);
         BaseMod.addPower(EssencePower.class, EssencePower.POWER_ID);
+        BaseMod.addPower(KaPower.class, KaPower.POWER_ID);
+        BaseMod.addPower(TuPower.class, TuPower.POWER_ID);
+        BaseMod.addPower(LuPower.class, LuPower.POWER_ID);
     }
 
     // =============== / POST-INITIALIZE/ =================
@@ -336,6 +334,8 @@ public class EntityMod implements
         BaseMod.addDynamicVariable(new ArtifactNumber());
         BaseMod.addDynamicVariable(new EssenceNumber());
         BaseMod.addDynamicVariable(new FluxNumber());
+        BaseMod.addDynamicVariable(new SelfMagicNumberNumber());
+        BaseMod.addDynamicVariable(new VoidCardNumber());
 
         logger.info("Adding cards");
         // Attacks
@@ -350,8 +350,13 @@ public class EntityMod implements
         BaseMod.addCard(new Defend_Entity());
         BaseMod.addCard(new AetherForm());
         BaseMod.addCard(new BoundlessAether());
+        BaseMod.addCard(new FluxCapacitor());
         BaseMod.addCard(new InwardAscent());
+        BaseMod.addCard(new Ka());
+        BaseMod.addCard(new Lu());
+        BaseMod.addCard(new Parry());
         BaseMod.addCard(new SharedFate());
+        BaseMod.addCard(new Tu());
         BaseMod.addCard(new VoidSpace());
 
         // Powers
@@ -373,8 +378,13 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Defend_Entity.ID);
         UnlockTracker.unlockCard(AetherForm.ID);
         UnlockTracker.unlockCard(BoundlessAether.ID);
+        UnlockTracker.unlockCard(FluxCapacitor.ID);
         UnlockTracker.unlockCard(InwardAscent.ID);
+        UnlockTracker.unlockCard(Ka.ID);
+        UnlockTracker.unlockCard(Lu.ID);
+        UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(SharedFate.ID);
+        UnlockTracker.unlockCard(Tu.ID);
         UnlockTracker.unlockCard(VoidSpace.ID);
 
         // Powers
@@ -432,8 +442,22 @@ public class EntityMod implements
 
     @Override
     public void receivePowersModified() {
-        if (AbstractDungeon.player.hasPower(FluxPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(FluxPower.POWER_ID).updateDescription();
+        AbstractPlayer p = AbstractDungeon.player;
+        logger.info("BRAH -- UPDATING FLUX");
+        if (p.hasPower(FluxPower.POWER_ID)) {
+            p.getPower(FluxPower.POWER_ID).updateDescription();
+        }
+        logger.info("BRAH -- UPDATING KA");
+        if (p.hasPower(KaPower.POWER_ID)) {
+            p.getPower(KaPower.POWER_ID).updateDescription();
+        }
+        logger.info("BRAH -- UPDATING TU");
+        if (p.hasPower(TuPower.POWER_ID)) {
+            p.getPower(TuPower.POWER_ID).updateDescription();
+        }
+        logger.info("BRAH -- UPDATING LU");
+        if (p.hasPower(LuPower.POWER_ID)) {
+            p.getPower(LuPower.POWER_ID).updateDescription();
         }
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo == null || mo.isDead || mo.isDying) {
@@ -441,6 +465,14 @@ public class EntityMod implements
             }
             if (mo.hasPower(FluxPower.POWER_ID)) {
                 mo.getPower(FluxPower.POWER_ID).updateDescription();
+            }
+        }
+        Iterator<AbstractCard> iterator = AbstractDungeon.player.hand.group.iterator();
+        AbstractCard c;
+        while(iterator.hasNext()) {
+            c = iterator.next();
+            if (c.cardID.equals(FluxCapacitor.ID)) {
+                ((FluxCapacitor) c).generateAndInitializeExtendedDescription();
             }
         }
     }

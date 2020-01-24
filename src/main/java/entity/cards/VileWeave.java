@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.characters.Entity;
 import entity.powers.FluxPower;
+
 //Vile weave	common	skill	1	Block 10(13). apply 1 flux to yourself
 public class VileWeave extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(VileWeave.class.getSimpleName());

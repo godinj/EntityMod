@@ -57,7 +57,6 @@ public class FreneticFind extends AbstractDynamicCard {
             upgradeName();
             upgradeArtifact(UPGRADE_PLUS_ARTIFACT);
             this.upgradeBaseCost(UPGRADED_COST);
-
         }
     }
 }

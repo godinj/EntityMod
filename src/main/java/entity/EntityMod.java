@@ -341,9 +341,12 @@ public class EntityMod implements
         // Attacks
         BaseMod.addCard(new Strike_Entity());
         BaseMod.addCard(new AbyssalCall());
+        BaseMod.addCard(new CosmicRay());
+        BaseMod.addCard(new GraspingArms());
         BaseMod.addCard(new Rupture());
         BaseMod.addCard(new SilentCoup());
         BaseMod.addCard(new Surge());
+        BaseMod.addCard(new TentacleRage());
         BaseMod.addCard(new VoidBlast());
 
         // Skills
@@ -357,7 +360,7 @@ public class EntityMod implements
         BaseMod.addCard(new Ka());
         BaseMod.addCard(new Lu());
         BaseMod.addCard(new Parry());
-        BaseMod.addCard(new Repeat());
+        //BaseMod.addCard(new Repeat());
         BaseMod.addCard(new SharedFate());
         BaseMod.addCard(new Tu());
         BaseMod.addCard(new VileWeave());
@@ -373,9 +376,12 @@ public class EntityMod implements
         // Attacks
         UnlockTracker.unlockCard(Strike_Entity.ID);
         UnlockTracker.unlockCard(AbyssalCall.ID);
+        UnlockTracker.unlockCard(CosmicRay.ID);
+        UnlockTracker.unlockCard(GraspingArms.ID);
         UnlockTracker.unlockCard(Rupture.ID);
         UnlockTracker.unlockCard(SilentCoup.ID);
         UnlockTracker.unlockCard(Surge.ID);
+        UnlockTracker.unlockCard(TentacleRage.ID);
         UnlockTracker.unlockCard(VoidBlast.ID);
 
         // Skills
@@ -389,7 +395,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Ka.ID);
         UnlockTracker.unlockCard(Lu.ID);
         UnlockTracker.unlockCard(Parry.ID);
-        UnlockTracker.unlockCard(Repeat.ID);
+       // UnlockTracker.unlockCard(Repeat.ID);
         UnlockTracker.unlockCard(SharedFate.ID);
         UnlockTracker.unlockCard(Tu.ID);
         UnlockTracker.unlockCard(VileWeave.ID);

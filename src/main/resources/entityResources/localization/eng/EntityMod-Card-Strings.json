@@ -12,6 +12,14 @@
     "DESCRIPTION": "Deal !D! damage to all enemies. Add !M! Void cards into your discard pile.",
     "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable."
   },
+  "entity:CosmicRay": {
+    "NAME": "Cosmic ray",
+    "DESCRIPTION": "Deal !D! damage. Gain !M! void into your discard."
+  },
+  "entity:GraspingArms": {
+    "NAME": "Grasping Arms",
+    "DESCRIPTION": "Deal 2 damage to a random enemy !M! times."
+  },
   "entity:Rupture": {
     "NAME": "Rupture",
     "DESCRIPTION": "Deal !D! damage. Apply !entity:F! entity:Flux."
@@ -29,6 +37,10 @@
   "entity:Surge": {
     "NAME": "Surge",
     "DESCRIPTION": "Deal !D! damage. NL Next turn, gain [E]."
+  },
+  "entity:TentacleRage": {
+    "NAME": "Tentacle rage",
+    "DESCRIPTION": "Deal !COST! + 1 !D! damage to a random enemy !COST! times."
   },
   "entity:VoidBlast": {
     "NAME": "Void Blast",

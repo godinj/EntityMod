@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import entity.EntityMod;
 import entity.cards.AetherForm;
 import entity.cards.Defend_Entity;
-import entity.cards.SharedFate;
 import entity.cards.Strike_Entity;
 import entity.cards.VoidBlast;
 import entity.relics.PresenceOfTheVoidRelic;

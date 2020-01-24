@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -357,7 +358,7 @@ public class EntityMod implements
         BaseMod.addCard(new Ka());
         BaseMod.addCard(new Lu());
         BaseMod.addCard(new Parry());
-        BaseMod.addCard(new Repeat());
+        BaseMod.addCard(new Split());
         BaseMod.addCard(new SharedFate());
         BaseMod.addCard(new Tu());
         BaseMod.addCard(new VileWeave());
@@ -389,7 +390,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Ka.ID);
         UnlockTracker.unlockCard(Lu.ID);
         UnlockTracker.unlockCard(Parry.ID);
-        UnlockTracker.unlockCard(Repeat.ID);
+        UnlockTracker.unlockCard(Split.ID);
         UnlockTracker.unlockCard(SharedFate.ID);
         UnlockTracker.unlockCard(Tu.ID);
         UnlockTracker.unlockCard(VileWeave.ID);
@@ -423,6 +424,9 @@ public class EntityMod implements
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
             getModID() + "Resources/localization/" + subfolder + "/EntityMod-Character-Strings.json");
+
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+            getModID() + "Resources/localization/" + subfolder + "/EntityMod-UI-Strings.json");
 
         logger.info("Done editing strings");
     }

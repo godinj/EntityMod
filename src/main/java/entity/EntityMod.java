@@ -351,6 +351,7 @@ public class EntityMod implements
         BaseMod.addCard(new AetherForm());
         BaseMod.addCard(new BoundlessAether());
         BaseMod.addCard(new FluxCapacitor());
+        BaseMod.addCard(new FreneticFind());
         BaseMod.addCard(new InwardAscent());
         BaseMod.addCard(new Ka());
         BaseMod.addCard(new Lu());
@@ -380,6 +381,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(AetherForm.ID);
         UnlockTracker.unlockCard(BoundlessAether.ID);
         UnlockTracker.unlockCard(FluxCapacitor.ID);
+        UnlockTracker.unlockCard(FreneticFind.ID);
         UnlockTracker.unlockCard(InwardAscent.ID);
         UnlockTracker.unlockCard(Ka.ID);
         UnlockTracker.unlockCard(Lu.ID);

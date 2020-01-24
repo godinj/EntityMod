@@ -54,6 +54,10 @@
       " Block)."
     ]
   },
+  "entity:FreneticFind": {
+    "NAME": "Frenetic Find",
+    "DESCRIPTION":  "Gain !entity:A! Artifact. NL gain a Slimed, Void, Dazed, Burn, and Wound card into your discard pile."
+  },
   "entity:InwardAscent": {
     "NAME": "Inward Ascent",
     "DESCRIPTION": "Gain X entity:Essence. NL Exhaust",
@@ -81,7 +85,7 @@
   },
   "entity:VileWeave": {
     "NAME": "Vile Weave",
-    "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux.",
+    "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux."
   },
   "entity:VoidSpace": {
     "NAME": "Void Space",

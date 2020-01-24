@@ -30,6 +30,10 @@
     "NAME": "Surge",
     "DESCRIPTION": "Deal !D! damage. NL Next turn, gain [E]."
   },
+  "entity:UncoilingTendrils": {
+    "NAME": "Uncoiling Tendrils",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, Transform a common card in your deck. NL Exhaust."
+  },
   "entity:VoidBlast": {
     "NAME": "Void Blast",
     "DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage.",

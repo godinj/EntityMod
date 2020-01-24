@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.characters.Entity;
@@ -17,6 +19,10 @@ import static entity.EntityMod.makeCardPath;
 public class CosmicRay extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(CosmicRay.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -36,6 +42,17 @@ public class CosmicRay extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        StringBuilder sb = new StringBuilder();
+        sb.append(DESCRIPTION);
+        if (magicNumber == 1)  {
+            sb.append(EXTENDED_DESCRIPTION[0]);
+        } else {
+            sb.append(EXTENDED_DESCRIPTION[1]);
+            sb.append(magicNumber);
+            sb.append(EXTENDED_DESCRIPTION[2]);
+        }
+        this.rawDescription = sb.toString();
+        initializeDescription();
     }
 
     @Override

@@ -14,7 +14,12 @@
   },
   "entity:CosmicRay": {
     "NAME": "Cosmic Ray",
-    "DESCRIPTION": "Deal !D! damage. Add !M! Void cards into your discard pile."
+    "DESCRIPTION": "Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      " Add a Void card into your discard pile.",
+      " Add ",
+      " Void cards into your discard pile."
+    ]
   },
   "entity:Grasp": {
     "NAME": "Grasp",
@@ -40,7 +45,7 @@
   },
   "entity:TentacleRage": {
     "NAME": "Tentacle rage",
-    "DESCRIPTION": "Deal !COST! + 1 !D! damage to a random enemy !COST! times."
+    "DESCRIPTION": "Deal X damage to a random enemy !M! times."
   },
   "entity:VoidBlast": {
     "NAME": "Void Blast",
@@ -109,7 +114,7 @@
   },
   "entity:VoidSpace": {
     "NAME": "Void Space",
-    "DESCRIPTION": "Exhaust your hand. For each card exhausted, draw a card, gain [E] , gain 1 Block and add a Void card to your discard pile. Exhaust.",
+    "DESCRIPTION": "Exhaust your hand. For each card exhausted, draw a card, gain [E] , gain 1 Block and add a Void card into your discard pile. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL (Exhausts 1 card).",
       " NL (Exhausts ",
@@ -122,11 +127,11 @@
   },
   "entity:VoidPulse": {
     "NAME": "Void Pulse",
-    "DESCRIPTION": "When you draw a Void, gain !B! Block."
+    "DESCRIPTION": "When you draw a Void card, gain !B! Block."
   },
   "entity:VoidWeave": {
     "NAME": "Void Weave",
-    "DESCRIPTION": "When you draw a Void, gain [E].",
-    "UPGRADE_DESCRIPTION": "When you draw a Void, gain [E] [E] ."
+    "DESCRIPTION": "When you draw a Void card, gain [E].",
+    "UPGRADE_DESCRIPTION": "When you draw a Void card, gain [E] [E] ."
   }
 }

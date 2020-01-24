@@ -357,6 +357,7 @@ public class EntityMod implements
         BaseMod.addCard(new Parry());
         BaseMod.addCard(new SharedFate());
         BaseMod.addCard(new Tu());
+        BaseMod.addCard(new VileWeave());
         BaseMod.addCard(new VoidSpace());
 
         // Powers
@@ -385,6 +386,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(SharedFate.ID);
         UnlockTracker.unlockCard(Tu.ID);
+        UnlockTracker.unlockCard(VileWeave.ID);
         UnlockTracker.unlockCard(VoidSpace.ID);
 
         // Powers

@@ -79,6 +79,10 @@
     "NAME": "Tu",
     "DESCRIPTION": "Gain !B! Block. If you have entity:Ka, entity:Chant entity:Ka."
   },
+  "entity:VileWeave": {
+    "NAME": "Vile Weave",
+    "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux.",
+  },
   "entity:VoidSpace": {
     "NAME": "Void Space",
     "DESCRIPTION": "Exhaust your hand. For each card exhausted, draw a card, gain [E] , gain 1 Block and add a Void card to your discard pile. Exhaust.",

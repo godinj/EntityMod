@@ -91,9 +91,9 @@
     "NAME": "Parry",
     "DESCRIPTION": "Can only be played if every card in your hand is an Attack. Gain !B! Block."
   },
-  "entity:Repeat": {
-    "NAME": "Repeat",
-    "DESCRIPTION": "Discard a card and shuffle a copy into your deck. (upgrade the copy)."
+  "entity:Split": {
+    "NAME": "Split",
+    "DESCRIPTION": "Discard a card and shuffle a copy into your discard pile."
   },
   "entity:SharedFate": {
     "NAME": "Shared Fate",

@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
 import entity.util.TextureLoader;
 
+// TODO: Fix power-string
 public class EssencePower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 

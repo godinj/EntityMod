@@ -81,7 +81,7 @@
   },
   "entity:VileWeave": {
     "NAME": "Vile Weave",
-    "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux.",
+    "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux."
   },
   "entity:VoidSpace": {
     "NAME": "Void Space",

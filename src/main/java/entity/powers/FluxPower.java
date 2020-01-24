@@ -22,6 +22,7 @@ import entity.util.TextureLoader;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+// TODO: Update keyword-string and power-string descriptions to match Poison.
 public class FluxPower extends AbstractPower implements CloneablePowerInterface {
     private AbstractCreature source;
 

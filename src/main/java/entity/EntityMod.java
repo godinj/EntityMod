@@ -445,19 +445,15 @@ public class EntityMod implements
     @Override
     public void receivePowersModified() {
         AbstractPlayer p = AbstractDungeon.player;
-        logger.info("BRAH -- UPDATING FLUX");
         if (p.hasPower(FluxPower.POWER_ID)) {
             p.getPower(FluxPower.POWER_ID).updateDescription();
         }
-        logger.info("BRAH -- UPDATING KA");
         if (p.hasPower(KaPower.POWER_ID)) {
             p.getPower(KaPower.POWER_ID).updateDescription();
         }
-        logger.info("BRAH -- UPDATING TU");
         if (p.hasPower(TuPower.POWER_ID)) {
             p.getPower(TuPower.POWER_ID).updateDescription();
         }
-        logger.info("BRAH -- UPDATING LU");
         if (p.hasPower(LuPower.POWER_ID)) {
             p.getPower(LuPower.POWER_ID).updateDescription();
         }
@@ -482,6 +478,7 @@ public class EntityMod implements
     @Override
     public boolean receivePreMonsterTurn(AbstractMonster m)
     {
+        // Call flux damage on all creatures with flux.
         return true;
     }
 

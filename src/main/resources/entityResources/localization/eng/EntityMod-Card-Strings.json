@@ -79,6 +79,10 @@
     "NAME": "Parry",
     "DESCRIPTION": "Can only be played if every card in your hand is an Attack. Gain !B! Block."
   },
+  "entity:Repeat": {
+    "NAME": "Repeat",
+    "DESCRIPTION": "Discard a card and shuffle a copy into your deck. (upgrade the copy)."
+  },
   "entity:SharedFate": {
     "NAME": "Shared Fate",
     "DESCRIPTION": "Gain !entity:F! entity:Flux. Apply !entity:F! entity:Flux to all enemies."

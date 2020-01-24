@@ -45,6 +45,10 @@
     "DESCRIPTION": "Gain !entity:A! Artifact. All enemies gain !entity:A! Artifact.",
     "UPGRADE_DESCRIPTION": "Gain !entity:A! Artifact. Target enemy gains !entity:A! Artifact."
   },
+  "entity:Delirium": {
+    "NAME": "Delirium",
+    "DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies. NL Gain !entity:E! entity:Essence. NL Exhaust."
+  },
   "entity:FluxCapacitor": {
     "NAME": "Flux Capacitor",
     "DESCRIPTION": "Gain Block equal to the total entity:Flux on all creatures.",

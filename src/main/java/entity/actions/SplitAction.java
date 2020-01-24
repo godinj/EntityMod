@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.ArrayList;
 
+// TODO: Have one card go to draw pile and one go to discard.
 public class SplitAction extends AbstractGameAction {
   private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(SplitAction.class.getSimpleName());
 

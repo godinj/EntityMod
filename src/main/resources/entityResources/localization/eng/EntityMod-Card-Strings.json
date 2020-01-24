@@ -13,8 +13,8 @@
     "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable."
   },
   "entity:CosmicRay": {
-    "NAME": "Cosmic ray",
-    "DESCRIPTION": "Deal !D! damage. Gain !M! void into your discard."
+    "NAME": "Cosmic Ray",
+    "DESCRIPTION": "Deal !D! damage. Add !M! Void cards into your discard pile."
   },
   "entity:GraspingArms": {
     "NAME": "Grasping Arms",

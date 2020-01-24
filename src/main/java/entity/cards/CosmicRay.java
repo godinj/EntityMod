@@ -2,7 +2,6 @@ package entity.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -29,12 +28,10 @@ public class CosmicRay extends AbstractDynamicCard {
     private static final int DAMAGE = 18;
     private static final int UPGRADE_PLUS_DMG = 7;
 
-
     // Represents number of Void cards added.
     private static final int MAGIC = 1;
-  //  private static final int UPGRADE_PLUS_MAGIC = -1;
 
-    //this is a constructor. This initializes variables. Creates an instance of the card using the AbyssalCall above^
+    //this is a constructor. This initializes variables. Creates an instance of the card using the super constructor.
     public CosmicRay() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
@@ -53,7 +50,6 @@ public class CosmicRay extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-          //  upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeDamage(UPGRADE_PLUS_DMG);
         }
     }

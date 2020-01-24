@@ -16,9 +16,9 @@
     "NAME": "Cosmic Ray",
     "DESCRIPTION": "Deal !D! damage. Add !M! Void cards into your discard pile."
   },
-  "entity:GraspingArms": {
-    "NAME": "Grasping Arms",
-    "DESCRIPTION": "Deal 2 damage to a random enemy !M! times."
+  "entity:Grasp": {
+    "NAME": "Grasp",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times."
   },
   "entity:Rupture": {
     "NAME": "Rupture",

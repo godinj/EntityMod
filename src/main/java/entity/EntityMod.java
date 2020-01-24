@@ -343,7 +343,7 @@ public class EntityMod implements
         BaseMod.addCard(new Strike_Entity());
         BaseMod.addCard(new AbyssalCall());
         BaseMod.addCard(new CosmicRay());
-        BaseMod.addCard(new GraspingArms());
+        BaseMod.addCard(new Grasp());
         BaseMod.addCard(new Rupture());
         BaseMod.addCard(new SilentCoup());
         BaseMod.addCard(new Surge());
@@ -378,7 +378,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Strike_Entity.ID);
         UnlockTracker.unlockCard(AbyssalCall.ID);
         UnlockTracker.unlockCard(CosmicRay.ID);
-        UnlockTracker.unlockCard(GraspingArms.ID);
+        UnlockTracker.unlockCard(Grasp.ID);
         UnlockTracker.unlockCard(Rupture.ID);
         UnlockTracker.unlockCard(SilentCoup.ID);
         UnlockTracker.unlockCard(Surge.ID);

@@ -4,7 +4,9 @@ import basemod.helpers.dynamicvariables.MagicNumberVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.characters.Entity;
@@ -12,11 +14,13 @@ import entity.powers.FluxPower;
 
 import static entity.EntityMod.makeCardPath;
 
-//Shared Fate	Common	Skill	1(0)	Gain 3 Flux. Apply 3 Flux to all enemies.
 //ripple	common	Skill	0	Apply 1 flux to all enemies. (Draw a card)
 public class Ripple extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(Ripple.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL;
@@ -38,8 +42,6 @@ public class Ripple extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // TODO: Check if magicNumber is 0
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo == null || mo.isDead || mo.isDying) {
                 continue;
@@ -47,6 +49,7 @@ public class Ripple extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
                     new FluxPower(mo, p, flux), flux));
         }
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
     }
 
     @Override
@@ -54,6 +57,8 @@ public class Ripple extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

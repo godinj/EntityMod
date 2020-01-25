@@ -14,7 +14,6 @@ import entity.powers.EssencePower;
 
 import static entity.EntityMod.makeCardPath;
 
-//AbyssalCall: 2 energy, rare, deal 30 damage to all enemies, shuffle 3 void cards into your discard.
 //Sap	common	attack	2	Deal 12(15) damage to all enemies. gain 2(3) essence
 public class Sap extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(Sap.class.getSimpleName());

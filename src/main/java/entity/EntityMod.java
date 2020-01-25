@@ -345,6 +345,7 @@ public class EntityMod implements
         BaseMod.addCard(new CosmicRay());
         BaseMod.addCard(new Grasp());
         BaseMod.addCard(new Rupture());
+        BaseMod.addCard(new Sap());
         BaseMod.addCard(new SilentCoup());
         BaseMod.addCard(new Surge());
         BaseMod.addCard(new TentacleRage());
@@ -361,6 +362,7 @@ public class EntityMod implements
         BaseMod.addCard(new Ka());
         BaseMod.addCard(new Lu());
         BaseMod.addCard(new Parry());
+        BaseMod.addCard(new Ripple());
         BaseMod.addCard(new Split());
         BaseMod.addCard(new SharedFate());
         BaseMod.addCard(new Tu());
@@ -380,6 +382,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(CosmicRay.ID);
         UnlockTracker.unlockCard(Grasp.ID);
         UnlockTracker.unlockCard(Rupture.ID);
+        UnlockTracker.unlockCard(Sap.ID);
         UnlockTracker.unlockCard(SilentCoup.ID);
         UnlockTracker.unlockCard(Surge.ID);
         UnlockTracker.unlockCard(TentacleRage.ID);
@@ -396,6 +399,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Ka.ID);
         UnlockTracker.unlockCard(Lu.ID);
         UnlockTracker.unlockCard(Parry.ID);
+        UnlockTracker.unlockCard(Ripple.ID);
         UnlockTracker.unlockCard(Split.ID);
         UnlockTracker.unlockCard(SharedFate.ID);
         UnlockTracker.unlockCard(Tu.ID);

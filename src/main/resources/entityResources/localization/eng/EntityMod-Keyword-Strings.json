@@ -9,25 +9,25 @@
     "NAMES": [
       "essence"
     ],
-    "DESCRIPTION": "At end of turn, this creature gains health equal to half of its #bEssence, rounded down. It loses 1 #bEssence each turn"
+    "DESCRIPTION": "Creatures with Essence gain health equal to half of their Essence rounded down at the start of their turn. Each turn, Essence is reduced by #b1."
   },
   {
     "NAMES": [
       "flux"
     ],
-    "DESCRIPTION": "At the start of the enemy turn, deal damage equal to the total #bFlux on all creatures to each creature with #bFlux. Each creature with #bFlux loses 1 #bFlux each turn"
+    "DESCRIPTION": "Creatures with Flux take damage equal to the amount of Flux on all creatures at the start of the enemy turn. Each turn, Flux is reduced by #b1."
   },
   {
     "NAMES": [
       "ka"
     ],
-    "DESCRIPTION": "Upon Chant, gain 4 Block and apply 3 #bFlux to a random enemy."
+    "DESCRIPTION": "Upon Chant, gain 4 Block and apply 3 Flux to a random enemy."
   },
   {
     "NAMES": [
       "lu"
     ],
-    "DESCRIPTION": "Upon Chant, apply 3 #bFlux to a random enemy and draw 2 cards."
+    "DESCRIPTION": "Upon Chant, apply 3 Flux to a random enemy and draw 2 cards."
   },
   {
     "NAMES": [

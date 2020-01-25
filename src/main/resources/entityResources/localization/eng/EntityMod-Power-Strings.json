@@ -1,11 +1,18 @@
 {
   "entity:EssencePower": {
     "NAME": "Essence",
-    "DESCRIPTIONS": ["At end of turn, this creature gains health equal to half of its essence (#b", "), rounded down. NL It loses one #bEssence per turn."]
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain health equal to half of your #yEssence (#b",
+      "), rounded down, then reduce #yEssence by #b1.",
+      "At the end of its turn, gains health equal to half of its #yEssence (#b"]
   },
   "entity:FluxPower": {
     "NAME": "Flux",
-    "DESCRIPTIONS": ["At end of turn, deals #b", " damage (total #bFlux on all creatures) to this creature. NL It loses one #bFlux per turn."]
+    "DESCRIPTIONS": [
+      "At the start of the enemy turn, take #b",
+      " damage (total #yFlux on all creatures), then reduce #yFlux by #b1.",
+      "At the start of the enemy turn, takes #b"
+    ]
   },
   "entity:FluxBarPower": {
     "NAME": "FluxBar",
@@ -17,11 +24,11 @@
   },
   "entity:KaPower": {
     "NAME": "Ka",
-    "DESCRIPTIONS": ["Upon Chant, gain ", " #yBlock and apply ", " #bFlux to a random enemy."]
+    "DESCRIPTIONS": ["Upon Chant, gain ", " #yBlock and apply ", " #yFlux to a random enemy."]
   },
   "entity:LuPower": {
     "NAME": "Lu",
-    "DESCRIPTIONS": ["Upon Chant, apply ", " #bFlux to a random enemy and draw ", " cards."]
+    "DESCRIPTIONS": ["Upon Chant, apply ", " #yFlux to a random enemy and draw ", " cards."]
   },
   "entity:TuPower": {
     "NAME": "Tu",

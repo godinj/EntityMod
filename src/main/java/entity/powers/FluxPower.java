@@ -149,7 +149,11 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
     @Override
     public void updateDescription() {
         int totalFluxDamage = calculateTotalFlux();
-        description = DESCRIPTIONS[0] + totalFluxDamage + DESCRIPTIONS[1];
+        if (this.owner == null || this.owner.isPlayer) {
+            this.description = DESCRIPTIONS[0] + totalFluxDamage + DESCRIPTIONS[1];
+        } else {
+            this.description = DESCRIPTIONS[2] + totalFluxDamage + DESCRIPTIONS[1];
+        }
     }
 
     @Override

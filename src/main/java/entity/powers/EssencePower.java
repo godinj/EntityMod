@@ -80,7 +80,11 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if (this.owner == null || this.owner.isPlayer) {
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        } else {
+            this.description = DESCRIPTIONS[2] + this.amount + DESCRIPTIONS[1];
+        }
     }
 
     @Override

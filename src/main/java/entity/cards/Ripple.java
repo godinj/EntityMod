@@ -38,6 +38,7 @@ public class Ripple extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // TODO: Check if magicNumber is 0
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo == null || mo.isDead || mo.isDying) {

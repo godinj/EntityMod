@@ -11,6 +11,7 @@ import entity.EntityMod;
 import entity.characters.Entity;
 import entity.powers.OtherworldlyPower;
 
+// TODO: Rename to Warped Form
 public class Otherworldly extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(Otherworldly.class.getSimpleName());
     public static final String IMG = makeCardPath("Otherworldly.png");

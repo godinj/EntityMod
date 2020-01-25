@@ -40,7 +40,6 @@ public class Sap extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
         this.essence = this.baseEssence = ESSENCE;
-
     }
 
     @Override

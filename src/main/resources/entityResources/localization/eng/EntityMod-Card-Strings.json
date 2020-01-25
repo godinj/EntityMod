@@ -102,7 +102,7 @@
   },
   "entity:Ripple": {
     "NAME": "Ripple",
-    "DESCRIPTION": "Apply 1 flux to all enemies.",
+    "DESCRIPTION": "Apply 1 entity:Flux to all enemies.",
     "UPGRADE_DESCRIPTION": "Apply 1 entity:Flux to all enemies. NL Draw a card."
   },
   "entity:Split": {

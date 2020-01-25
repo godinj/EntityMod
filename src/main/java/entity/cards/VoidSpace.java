@@ -18,6 +18,7 @@ import entity.EntityMod;
 import entity.characters.Entity;
 import java.util.Iterator;
 
+// TODO: Rename to Void Space
 // Exhaust your hand. For each card exhausted, draw a card, gain [E], gain 1 block and add a void card to your discard pile. Exhaust.
 public class VoidSpace extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(VoidSpace.class.getSimpleName());

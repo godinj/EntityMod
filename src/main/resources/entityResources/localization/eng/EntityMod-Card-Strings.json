@@ -29,6 +29,10 @@
     "NAME": "Rupture",
     "DESCRIPTION": "Deal !D! damage. Apply !entity:F! entity:Flux."
   },
+  "entity:Sap": {
+    "NAME": "Sap",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !entity:E! entity:Essence"
+  },
   "entity:SilentCoup": {
     "NAME": "Silent Coup",
     "DESCRIPTION": "Deal !D! damage. Draw a card for each unique cost in your hand.",
@@ -92,9 +96,18 @@
     "NAME": "Lu",
     "DESCRIPTION": "Draw !M! cards. If you have entity:Tu, entity:Chant entity:Tu."
   },
+  "entity:OddsAreSlim": {
+    "NAME": "Odds Are Slim",
+    "DESCRIPTION": "Gain 2 vulnerable and 2 weak. NL Gain !entity:A! Artifact."
+  },
   "entity:Parry": {
     "NAME": "Parry",
     "DESCRIPTION": "Can only be played if every card in your hand is an Attack. Gain !B! Block."
+  },
+  "entity:Ripple": {
+    "NAME": "Ripple",
+    "DESCRIPTION": "Apply 1 entity:Flux to all enemies.",
+    "UPGRADE_DESCRIPTION": "Apply 1 entity:Flux to all enemies. NL Draw a card."
   },
   "entity:Split": {
     "NAME": "Split",
@@ -102,14 +115,15 @@
   },
   "entity:SharedFate": {
     "NAME": "Shared Fate",
-    "DESCRIPTION": "Gain !entity:F! entity:Flux. Apply !entity:F! entity:Flux to all enemies."
+    "DESCRIPTION": "Gain !entity:F! entity:Flux. Apply !entity:F! entity:Flux to all enemies.",
+    "UPGRADE_DESCRIPTION": "Apply 3 flux to all enemies."
   },
   "entity:Tu": {
     "NAME": "Tu",
     "DESCRIPTION": "Gain !B! Block. If you have entity:Ka, entity:Chant entity:Ka."
   },
-  "entity:VileWeave": {
-    "NAME": "Vile Weave",
+  "entity:Weave": {
+    "NAME": "Weave",
     "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux."
   },
   "entity:VoidSpace": {

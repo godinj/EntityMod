@@ -42,31 +42,23 @@ public class SharedFate extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         //if upgraded, targets only enemies, otherwise targets both player and enemies.
         if (!this.upgraded) {
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (mo == null || mo.isDead || mo.isDying) {
-                    continue;
-                }
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                        new FluxPower(mo, p, flux), flux));
-
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FluxPower(p, p, flux), flux));
-
-            }}   else {
-                    for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                        if (mo == null || mo.isDead || mo.isDying) {
-                            continue;
-                        }
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                                new FluxPower(mo, p, flux), flux));
-                    }
-                }
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FluxPower(p, p, flux), flux));
+        }
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo == null || mo.isDead || mo.isDying) {
+                continue;
             }
-        @Override
-        public void upgrade() {
-            if (!upgraded) {
-                upgradeName();
-                this.rawDescription = UPGRADE_DESCRIPTION;
-                initializeDescription();
-            }
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
+                new FluxPower(mo, p, flux), flux));
         }
     }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+        }
+    }
+}

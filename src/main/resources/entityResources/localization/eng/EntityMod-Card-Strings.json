@@ -29,6 +29,10 @@
     "NAME": "Rupture",
     "DESCRIPTION": "Deal !D! damage. Apply !entity:F! entity:Flux."
   },
+  "entity:Sap": {
+    "NAME": "Sap",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !entity:E! entity:Essence"
+  },
   "entity:SilentCoup": {
     "NAME": "Silent Coup",
     "DESCRIPTION": "Deal !D! damage. Draw a card for each unique cost in your hand.",
@@ -95,6 +99,11 @@
   "entity:Parry": {
     "NAME": "Parry",
     "DESCRIPTION": "Can only be played if every card in your hand is an Attack. Gain !B! Block."
+  },
+  "entity:Ripple": {
+    "NAME": "Ripple",
+    "DESCRIPTION": "Apply 1 flux to all enemies.",
+    "UPGRADE_DESCRIPTION": "Apply 1 flux to all enemies. NL Draw a card."
   },
   "entity:Split": {
     "NAME": "Split",

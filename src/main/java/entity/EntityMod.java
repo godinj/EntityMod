@@ -361,12 +361,13 @@ public class EntityMod implements
         BaseMod.addCard(new InwardAscent());
         BaseMod.addCard(new Ka());
         BaseMod.addCard(new Lu());
+        BaseMod.addCard(new OddsAreSlim());
         BaseMod.addCard(new Parry());
         BaseMod.addCard(new Ripple());
         BaseMod.addCard(new Split());
         BaseMod.addCard(new SharedFate());
         BaseMod.addCard(new Tu());
-        BaseMod.addCard(new VileWeave());
+        BaseMod.addCard(new Weave());
         BaseMod.addCard(new VoidSpace());
 
         // Powers
@@ -398,12 +399,13 @@ public class EntityMod implements
         UnlockTracker.unlockCard(InwardAscent.ID);
         UnlockTracker.unlockCard(Ka.ID);
         UnlockTracker.unlockCard(Lu.ID);
+        UnlockTracker.unlockCard(OddsAreSlim.ID);
         UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(Ripple.ID);
         UnlockTracker.unlockCard(Split.ID);
         UnlockTracker.unlockCard(SharedFate.ID);
         UnlockTracker.unlockCard(Tu.ID);
-        UnlockTracker.unlockCard(VileWeave.ID);
+        UnlockTracker.unlockCard(Weave.ID);
         UnlockTracker.unlockCard(VoidSpace.ID);
 
         // Powers

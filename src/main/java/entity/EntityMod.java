@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -341,20 +342,26 @@ public class EntityMod implements
         // Attacks
         BaseMod.addCard(new Strike_Entity());
         BaseMod.addCard(new AbyssalCall());
+        BaseMod.addCard(new CosmicRay());
+        BaseMod.addCard(new Grasp());
         BaseMod.addCard(new Rupture());
         BaseMod.addCard(new SilentCoup());
         BaseMod.addCard(new Surge());
+        BaseMod.addCard(new TentacleRage());
         BaseMod.addCard(new VoidBlast());
 
         // Skills
         BaseMod.addCard(new Defend_Entity());
         BaseMod.addCard(new AetherForm());
         BaseMod.addCard(new BoundlessAether());
+        BaseMod.addCard(new Delirium());
         BaseMod.addCard(new FluxCapacitor());
+        BaseMod.addCard(new FreneticFind());
         BaseMod.addCard(new InwardAscent());
         BaseMod.addCard(new Ka());
         BaseMod.addCard(new Lu());
         BaseMod.addCard(new Parry());
+        BaseMod.addCard(new Split());
         BaseMod.addCard(new SharedFate());
         BaseMod.addCard(new Tu());
         BaseMod.addCard(new VileWeave());
@@ -370,20 +377,26 @@ public class EntityMod implements
         // Attacks
         UnlockTracker.unlockCard(Strike_Entity.ID);
         UnlockTracker.unlockCard(AbyssalCall.ID);
+        UnlockTracker.unlockCard(CosmicRay.ID);
+        UnlockTracker.unlockCard(Grasp.ID);
         UnlockTracker.unlockCard(Rupture.ID);
         UnlockTracker.unlockCard(SilentCoup.ID);
         UnlockTracker.unlockCard(Surge.ID);
+        UnlockTracker.unlockCard(TentacleRage.ID);
         UnlockTracker.unlockCard(VoidBlast.ID);
 
         // Skills
         UnlockTracker.unlockCard(Defend_Entity.ID);
         UnlockTracker.unlockCard(AetherForm.ID);
         UnlockTracker.unlockCard(BoundlessAether.ID);
+        UnlockTracker.unlockCard(Delirium.ID);
         UnlockTracker.unlockCard(FluxCapacitor.ID);
+        UnlockTracker.unlockCard(FreneticFind.ID);
         UnlockTracker.unlockCard(InwardAscent.ID);
         UnlockTracker.unlockCard(Ka.ID);
         UnlockTracker.unlockCard(Lu.ID);
         UnlockTracker.unlockCard(Parry.ID);
+        UnlockTracker.unlockCard(Split.ID);
         UnlockTracker.unlockCard(SharedFate.ID);
         UnlockTracker.unlockCard(Tu.ID);
         UnlockTracker.unlockCard(VileWeave.ID);
@@ -417,6 +430,9 @@ public class EntityMod implements
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
             getModID() + "Resources/localization/" + subfolder + "/EntityMod-Character-Strings.json");
+
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+            getModID() + "Resources/localization/" + subfolder + "/EntityMod-UI-Strings.json");
 
         logger.info("Done editing strings");
     }

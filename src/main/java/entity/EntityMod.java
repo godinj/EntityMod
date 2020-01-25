@@ -229,7 +229,6 @@ public class EntityMod implements
     public static void initialize() {
         logger.info("========================= Initializing Entity Mod. =========================");
         EntityMod defaultMod = new EntityMod();
-        initializeSubscriptions();
         logger.info("========================= /Entity Mod Initialized. Hello World./ =========================");
     }
 
@@ -530,11 +529,13 @@ public class EntityMod implements
 
     // ================ /FLUX AND OTHER POWERS/ ===================
 
-    public static void preMonstersTurnHook(AbstractMonster m) {
-
+    public static void publishPreMonstersTurn() {
+        logger.info("publishPreMonsterTurn");
+        FluxPower.receivePreMonstersTurnHook();
     }
 
-    public static void postMonstersTurnHook(AbstractMonster m) {
+    public static void publishPostMonstersTurn() {
         logger.info("publishPostMonsterTurn");
+        FluxPower.receivePostMonstersTurnHook();
     }
 }

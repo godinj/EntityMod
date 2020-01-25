@@ -94,6 +94,7 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
     }
 
     public static void receivePreMonstersTurnHook() {
+        logger.info("receivePreMonstersTurnHook");
         int totalFluxDamage = calculateTotalFlux();
         ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<>();
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
@@ -101,16 +102,22 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
                 continue;
             }
             currentLivingMonsters.add(mo);
-            mo.getPower(FluxPower.POWER_ID).flash();
-            AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(mo, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.THORNS),
-                    AbstractGameAction.AttackEffect.POISON
-                ));
+            if (mo.hasPower(FluxPower.POWER_ID)) {
+                mo.getPower(FluxPower.POWER_ID).flash();
+                logger.info("BRUH -- monster receiving damage -- " + totalFluxDamage);
+                AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(mo, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.THORNS),
+                        AbstractGameAction.AttackEffect.POISON
+                    ));
+            }
         }
+        // We're not determining if the monsters are still alive after taking Flux damage.
+        // This means that if the monsters die from Flux, the player will still take damage from Flux.
         currentLivingMonsters.sort(CREATURE_SORT);
         AbstractPlayer p = AbstractDungeon.player;
         if (currentLivingMonsters.size() > 0 && p.hasPower(FluxPower.POWER_ID)) {
             p.getPower(FluxPower.POWER_ID).flash();
+            logger.info("BRUH -- player receiving damage -- " + totalFluxDamage);
             AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(p, new DamageInfo(p, totalFluxDamage, DamageType.THORNS),
                     AbstractGameAction.AttackEffect.POISON
@@ -118,58 +125,24 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
         }
     }
 
-    @Override
-    public void atStartOfTurn() {
-        if(this.amount <= 0) {
-            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-            return;
-        }
-
-        this.flash();
-
-        int totalFluxDamage = calculateTotalFlux();
+    public static void receivePostMonstersTurnHook() {
+        logger.info("receivePostMonstersTurnHook");
         ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<>();
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo == null || mo.isDead || mo.isDying) {
                 continue;
             }
             currentLivingMonsters.add(mo);
+            if (mo.hasPower(FluxPower.POWER_ID)) {
+                logger.info("BRUH -- monster flux reduction -- " + FLUX_REDUCTION);
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(mo, mo, POWER_ID, FLUX_REDUCTION));
+            }
         }
         currentLivingMonsters.sort(CREATURE_SORT);
-        if (
-            currentLivingMonsters.size() > 0 &&
-            (this.owner == currentLivingMonsters.get(0)) &&
-            AbstractDungeon.player.hasPower(FluxPower.POWER_ID)
-        ) {
-            AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.THORNS),
-                    AbstractGameAction.AttackEffect.POISON
-                ));
-        }
-
-        if (this.owner != AbstractDungeon.player) {
-            AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(this.owner, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.THORNS),
-                    AbstractGameAction.AttackEffect.POISON
-                ));
-        }
-    }
-
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (!isPlayer) {
-            ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<AbstractMonster>();
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (mo == null || mo.isDead || mo.isDying) {
-                    continue;
-                }
-                currentLivingMonsters.add(mo);
-            }
-            currentLivingMonsters.sort(CREATURE_SORT);
-            if (currentLivingMonsters.size() > 0 && (this.owner == currentLivingMonsters.get(0))) {
-                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(AbstractDungeon.player, this.owner, POWER_ID, FLUX_REDUCTION));
-            }
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, FLUX_REDUCTION));
+        AbstractPlayer p = AbstractDungeon.player;
+        if (currentLivingMonsters.size() > 0 && p.hasPower(FluxPower.POWER_ID)) {
+            logger.info("BRUH -- monster flux reduction -- " + FLUX_REDUCTION);
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, POWER_ID, FLUX_REDUCTION));
         }
     }
 

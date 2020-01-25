@@ -1,8 +1,8 @@
 package entity.patches;
 
-import basemod.interfaces.PreMonsterTurnSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import entity.EntityMod;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -18,26 +18,13 @@ public class PostMonsterTurnHook {
             @Override
             public void edit(MethodCall m) throws CannotCompileException
             {
-                if (m.getMethodName().equals("onEvoke")) {
+                if (m.getClassName().equals(AbstractMonster.class.getName()) && m.getMethodName().equals("takeTurn")) {
                     m.replace("{" +
-                        "$_ = $proceed($$);" +
-                        Inner.class.getName() + ".();" +
+                        "$_ = $proceed();" +
+                        EntityMod.class.getName() + ".receivePostMonsterTurn(m);" +
                         "}");
                 }
             }
         };
-    }
-
-    public static class Inner {
-        public static boolean publishPostMonsterTurn(AbstractMonster m) {
-            for (PreMonsterTurnSubscriber sub : preMonsterTurnSubscribers) {
-                if (!sub.receivePreMonsterTurn(m)) {
-                    takeTurn = false;
-                }
-            }
-            unsubscribeLaterHelper(PreMonsterTurnSubscriber.class);
-
-            return takeTurn;
-        }
     }
 }

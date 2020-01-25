@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.EnergizedBluePower;
 import entity.EntityMod;
 import entity.characters.Entity;
 
+// TODO: Complete rework, see Google sheet (Rare).
 public class Surge extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(Surge.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");

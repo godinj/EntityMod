@@ -58,6 +58,8 @@ import entity.variables.VoidCardNumber;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
@@ -74,7 +76,6 @@ public class EntityMod implements
     PostBattleSubscriber,
     OnStartBattleSubscriber,
     OnPowersModifiedSubscriber,
-    PreMonsterTurnSubscriber,
     PostDrawSubscriber,
     PostPlayerUpdateSubscriber,
     PostInitializeSubscriber {
@@ -228,6 +229,7 @@ public class EntityMod implements
     public static void initialize() {
         logger.info("========================= Initializing Entity Mod. =========================");
         EntityMod defaultMod = new EntityMod();
+        initializeSubscriptions();
         logger.info("========================= /Entity Mod Initialized. Hello World./ =========================");
     }
 
@@ -492,13 +494,6 @@ public class EntityMod implements
     }
 
     @Override
-    public boolean receivePreMonsterTurn(AbstractMonster m)
-    {
-        // Call flux damage on all creatures with flux.
-        return true;
-    }
-
-    @Override
     public void receivePostPlayerUpdate() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             AbstractCreature p = AbstractDungeon.player;
@@ -525,5 +520,15 @@ public class EntityMod implements
     // in order to avoid conflicts if any other mod uses the same ID.
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+
+    // ================ /FLUX AND OTHER POWERS/ ===================
+
+    public static void preMonstersTurnHook(AbstractMonster m) {
+
+    }
+
+    public static void postMonstersTurnHook(AbstractMonster m) {
+        logger.info("publishPostMonsterTurn");
     }
 }

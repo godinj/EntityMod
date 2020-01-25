@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,9 +22,12 @@ import entity.EntityMod;
 import entity.util.TextureLoader;
 import java.util.ArrayList;
 import java.util.Comparator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 // TODO: Update keyword-string and power-string descriptions to match Poison.
 public class FluxPower extends AbstractPower implements CloneablePowerInterface {
+    public static final Logger logger = LogManager.getLogger(EntityMod.class.getName());
     private AbstractCreature source;
 
     public static final String POWER_ID = EntityMod.makeID(FluxPower.class.getSimpleName());
@@ -89,6 +93,31 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
         updateDescription();
     }
 
+    public static void receivePreMonstersTurnHook() {
+        int totalFluxDamage = calculateTotalFlux();
+        ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<>();
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo == null || mo.isDead || mo.isDying) {
+                continue;
+            }
+            currentLivingMonsters.add(mo);
+            mo.getPower(FluxPower.POWER_ID).flash();
+            AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(mo, new DamageInfo(AbstractDungeon.player, totalFluxDamage, DamageType.THORNS),
+                    AbstractGameAction.AttackEffect.POISON
+                ));
+        }
+        currentLivingMonsters.sort(CREATURE_SORT);
+        AbstractPlayer p = AbstractDungeon.player;
+        if (currentLivingMonsters.size() > 0 && p.hasPower(FluxPower.POWER_ID)) {
+            p.getPower(FluxPower.POWER_ID).flash();
+            AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(p, new DamageInfo(p, totalFluxDamage, DamageType.THORNS),
+                    AbstractGameAction.AttackEffect.POISON
+                ));
+        }
+    }
+
     @Override
     public void atStartOfTurn() {
         if(this.amount <= 0) {
@@ -99,7 +128,7 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
         this.flash();
 
         int totalFluxDamage = calculateTotalFlux();
-        ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<AbstractMonster>();
+        ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<>();
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo == null || mo.isDead || mo.isDying) {
                 continue;

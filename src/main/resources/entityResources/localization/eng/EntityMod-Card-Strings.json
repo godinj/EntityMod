@@ -98,7 +98,7 @@
   },
   "entity:OddsAreSlim": {
     "NAME": "Odds Are Slim",
-    "DESCRIPTION": "Gain 2 vulnerable and 2 weak. NL Gain !entity:A! Artifact."
+    "DESCRIPTION": "Gain !entity:S! Vulnerable and !entity:S! Weak. NL Gain !entity:A! Artifact."
   },
   "entity:Parry": {
     "NAME": "Parry",
@@ -116,7 +116,7 @@
   "entity:SharedFate": {
     "NAME": "Shared Fate",
     "DESCRIPTION": "Gain !entity:F! entity:Flux. Apply !entity:F! entity:Flux to all enemies.",
-    "UPGRADE_DESCRIPTION": "Apply 3 flux to all enemies."
+    "UPGRADE_DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies."
   },
   "entity:Tu": {
     "NAME": "Tu",

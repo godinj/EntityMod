@@ -21,9 +21,6 @@ public class OddsAreSlim extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(OddsAreSlim.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");
 
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
@@ -33,21 +30,24 @@ public class OddsAreSlim extends AbstractDynamicCard {
 
     private static final int ARTIFACT = 2;
     private static final int UPGRADE_PLUS_ARTIFACT = 1; //this plus ARTIFACT is the total.
+    // Represents both the Vulnerability and Weakness applied to self.
+    private static final int SELF_MAGIC = 2;
 
     public OddsAreSlim() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.artifact = this.baseArtifact = ARTIFACT;
+        this.selfMagicNumber = this.baseSelfMagicNumber = SELF_MAGIC;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         //adds 2 vulnerable to player
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new VulnerablePower(p, 2, false), 2));
+                new VulnerablePower(p, selfMagicNumber, false), selfMagicNumber));
 
         //adds 2 Weak to player
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new WeakPower(p, 2, false), 2));
+                new WeakPower(p, selfMagicNumber, false), selfMagicNumber));
 
         //adds Artifacts
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,

@@ -14,7 +14,7 @@ public class CrystalChamberRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("CrystalChamber.png"));
 
     public CrystalChamberRelic() {
-        super(ID, IMG, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     public boolean canSpawn() {

@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
+import entity.relics.CrystalChamberRelic;
 import entity.util.TextureLoader;
 
 public class EssencePower extends AbstractPower implements CloneablePowerInterface {
@@ -25,8 +26,8 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("fervor_big.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("fervor_small.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("essence_big.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("essence_small.png"));
 
     private static final int ESSENCE_REDUCTION = 1;
     private static final float ESSENCE_HEALTH_NUMERATOR = 1;
@@ -77,7 +78,9 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
 
         int healthGained = calculateHealthGained();
         AbstractDungeon.actionManager.addToBottom(new HealAction(this.owner, this.owner, healthGained));
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, ESSENCE_REDUCTION));
+        if (!this.owner.equals(AbstractDungeon.player) || !AbstractDungeon.player.hasRelic(CrystalChamberRelic.ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, ESSENCE_REDUCTION));
+        }
     }
 
 

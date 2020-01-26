@@ -40,7 +40,7 @@ public class JoinAsOne extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //if upgraded, targets only enemies, otherwise targets both player and enemies.
+        // if upgraded, targets only enemies, otherwise targets both player and enemies.
         if (!this.upgraded) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FluxPower(p, p, selfMagicNumber), selfMagicNumber));
         }

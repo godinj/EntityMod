@@ -27,8 +27,8 @@ public class Strengthen extends AbstractDynamicCard {
     private static final int BLOCK = 7;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
-    private static final int ESSENCE = 2;
-    private static final int UPGRADED_PLUS_ESSENCE = 2;
+    private static final int ESSENCE = 1;
+    private static final int UPGRADED_PLUS_ESSENCE = 1;
 
     public Strengthen() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

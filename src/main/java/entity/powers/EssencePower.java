@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
 import entity.relics.CrystalChamberRelic;
+import entity.relics.HatefulExpanseRelic;
 import entity.util.TextureLoader;
 
 public class EssencePower extends AbstractPower implements CloneablePowerInterface {
@@ -78,7 +79,9 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
 
         int healthGained = calculateHealthGained();
         AbstractDungeon.actionManager.addToBottom(new HealAction(this.owner, this.owner, healthGained));
-        if (!this.owner.equals(AbstractDungeon.player) || !AbstractDungeon.player.hasRelic(CrystalChamberRelic.ID)) {
+        if (AbstractDungeon.player.hasRelic(CrystalChamberRelic.ID)) {
+            AbstractDungeon.player.getRelic(CrystalChamberRelic.ID).flash();
+        } else {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, ESSENCE_REDUCTION));
         }
     }

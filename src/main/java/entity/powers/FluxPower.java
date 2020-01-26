@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
+import entity.relics.HatefulExpanseRelic;
 import entity.util.TextureLoader;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -126,6 +127,7 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
 
     public static void receivePostMonstersTurnHook() {
         logger.info("receivePostMonstersTurnHook");
+        AbstractPlayer p = AbstractDungeon.player;
         ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<>();
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo == null || mo.isDead || mo.isDying) {
@@ -133,14 +135,17 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
             }
             currentLivingMonsters.add(mo);
             if (mo.hasPower(FluxPower.POWER_ID)) {
-                logger.info("BRUH -- monster flux reduction -- " + FLUX_REDUCTION);
-                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(mo, mo, POWER_ID, FLUX_REDUCTION));
+                if (p.hasRelic(HatefulExpanseRelic.ID)) {
+                    p.getRelic(HatefulExpanseRelic.ID).flash();
+                } else{
+                    logger.info("BRUH -- monster flux reduction -- " + FLUX_REDUCTION);
+                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(mo, mo, POWER_ID, FLUX_REDUCTION));
+                }
             }
         }
         currentLivingMonsters.sort(CREATURE_SORT);
-        AbstractPlayer p = AbstractDungeon.player;
         if (currentLivingMonsters.size() > 0 && p.hasPower(FluxPower.POWER_ID)) {
-            logger.info("BRUH -- monster flux reduction -- " + FLUX_REDUCTION);
+            logger.info("BRUH -- player flux reduction -- " + FLUX_REDUCTION);
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, POWER_ID, FLUX_REDUCTION));
         }
     }

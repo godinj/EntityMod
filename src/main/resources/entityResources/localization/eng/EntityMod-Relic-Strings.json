@@ -1,4 +1,11 @@
 {
+  "entity:CrystalChamberRelic": {
+    "NAME": "Crystal Chamber",
+    "FLAVOR": "A unique privilege from the abyss.",
+    "DESCRIPTIONS": [
+      "Essence does not reduce at start of turn."
+    ]
+  },
   "entity:DarkCrystalRelic": {
     "NAME": "Dark Crystal",
     "FLAVOR": "A unique privilege from the abyss.",
@@ -7,11 +14,11 @@
       " #yEssence."
     ]
   },
-  "entity:CrystalChamberRelic": {
-    "NAME": "Crystal Chamber",
+  "entity:HatefulExpanseRelic": {
+    "NAME": "Hateful Expanse",
     "FLAVOR": "A unique privilege from the abyss.",
     "DESCRIPTIONS": [
-      "Essence does not reduce at start of turn."
+      "Flux does not reduce on enemies at the end of their turn."
     ]
   }
 }

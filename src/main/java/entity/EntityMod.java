@@ -51,6 +51,7 @@ import entity.powers.LuPower;
 import entity.powers.TuPower;
 import entity.relics.CrystalChamberRelic;
 import entity.relics.DarkCrystalRelic;
+import entity.relics.HatefulExpanseRelic;
 import entity.util.IDCheckDontTouchPls;
 import entity.util.TextureLoader;
 import entity.variables.ArtifactNumber;
@@ -322,8 +323,9 @@ public class EntityMod implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
-        BaseMod.addRelicToCustomPool(new DarkCrystalRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new CrystalChamberRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new DarkCrystalRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new HatefulExpanseRelic(), Entity.Enums.COLOR_TEAL);
         logger.info("Done adding relics!");
     }
 
@@ -541,15 +543,9 @@ public class EntityMod implements
 
     @Override
     public void receiveRelicGet(AbstractRelic abstractRelic) {
-        AbstractRelic darkCrystal = null;
-        for (AbstractRelic r: AbstractDungeon.player.relics) {
-            if (r.relicId.equals(DarkCrystalRelic.ID)) {
-                darkCrystal = r;
-                break;
-            }
-        }
-        if (abstractRelic.relicId.equals(CrystalChamberRelic.ID) && null != darkCrystal) {
-            AbstractDungeon.player.relics.remove(darkCrystal);
+        AbstractPlayer p = AbstractDungeon.player;
+        if (abstractRelic.relicId.equals(CrystalChamberRelic.ID)) {
+            p.loseRelic(DarkCrystalRelic.ID);
         }
     }
 

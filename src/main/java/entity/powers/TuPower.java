@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
@@ -81,11 +82,18 @@ public class TuPower extends AbstractPower implements CloneablePowerInterface {
     public void updateDescription() {
         int cardsDrawn = calculateCardsDrawn(false);
         int blockGained = calculateBlockGained(false);
-        this.description = DESCRIPTIONS[0]
-            + cardsDrawn
-            + DESCRIPTIONS[1]
-            + blockGained
-            + DESCRIPTIONS[2];
+        StringBuilder sb = new StringBuilder();
+        sb.append(powerStrings.DESCRIPTIONS[0]);
+        if (amount == 1) {
+            sb.append(powerStrings.DESCRIPTIONS[4]);
+        } else {
+            sb.append(powerStrings.DESCRIPTIONS[1]);
+            sb.append(cardsDrawn);
+            sb.append(powerStrings.DESCRIPTIONS[2]);
+        }
+        sb.append(blockGained);
+        sb.append(powerStrings.DESCRIPTIONS[3]);
+        this.description = sb.toString();
     }
 
     @Override

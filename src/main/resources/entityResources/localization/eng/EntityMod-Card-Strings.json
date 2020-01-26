@@ -139,12 +139,12 @@
   },
   "entity:VoidPulse": {
     "NAME": "Void Pulse",
-    "DESCRIPTION": "When you draw a Void card, gain !B! Block."
+    "DESCRIPTION": "Whenever a status is drawn, gain [E] and draw a card.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever a status is drawn, gain [E] and draw a card."
   },
   "entity:VoidWeave": {
     "NAME": "Void Weave",
-    "DESCRIPTION": "When you draw a Void card, gain [E].",
-    "UPGRADE_DESCRIPTION": "When you draw a Void card, gain [E] [E] ."
+    "DESCRIPTION": "When you draw a Void card, gain !B! Block."
   },
   "entity:WarpedForm": {
     "NAME": "Warped Form",

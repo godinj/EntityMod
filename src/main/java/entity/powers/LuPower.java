@@ -84,12 +84,20 @@ public class LuPower extends AbstractPower implements CloneablePowerInterface {
     public void updateDescription() {
         int fluxApplied = calculateFluxApplied(false);
         int cardsDrawn = calculateCardsDrawn(false);
-        this.description = DESCRIPTIONS[0]
-            + fluxApplied
-            + DESCRIPTIONS[1]
-            + cardsDrawn
-            + DESCRIPTIONS[2];
+        StringBuilder sb = new StringBuilder();
+        sb.append(powerStrings.DESCRIPTIONS[0]);
+        sb.append(fluxApplied);
+        sb.append(powerStrings.DESCRIPTIONS[1]);
+        if (amount == 1) {
+            sb.append(powerStrings.DESCRIPTIONS[4]);
+        } else {
+            sb.append(powerStrings.DESCRIPTIONS[2]);
+            sb.append(cardsDrawn);
+            sb.append(powerStrings.DESCRIPTIONS[3]);
+        }
+        this.description = sb.toString();
     }
+
 
     @Override
     public AbstractPower makeCopy() {

@@ -5,13 +5,16 @@ import static entity.EntityMod.makePowerPath;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
@@ -25,8 +28,8 @@ public class VoidPulsePower extends AbstractPower implements CloneablePowerInter
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("community_big.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("community_small.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("refuge_big.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("refuge_small.png"));
 
     public VoidPulsePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
@@ -59,15 +62,32 @@ public class VoidPulsePower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public void onCardDraw(AbstractCard card) {
-        if (card.cardID.equals(VoidCard.ID)) {
+        if (card.type.equals(CardType.STATUS)) {
             flash();
-            AbstractDungeon.actionManager.addToTop(new GainBlockAction(this.owner, this.owner, amount));
+            AbstractDungeon.actionManager.addToTop(new GainEnergyAction(amount));
+            for (int i = 0; i < amount; i++) {
+                AbstractDungeon.actionManager.addToTop(new DrawCardAction(1));
+            }
         }
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        StringBuilder sb = new StringBuilder();
+        sb.append(powerStrings.DESCRIPTIONS[0]);
+        for (int i = 0; i < this.amount; i++) {
+            sb.append("[E] ");
+        }
+        sb.append(LocalizedStrings.PERIOD);
+        sb.append(powerStrings.DESCRIPTIONS[1]);
+        if (amount == 1) {
+            sb.append(powerStrings.DESCRIPTIONS[4]);
+        } else {
+            sb.append(powerStrings.DESCRIPTIONS[2]);
+            sb.append(amount);
+            sb.append(powerStrings.DESCRIPTIONS[3]);
+        }
+        this.description = sb.toString();
     }
 
     @Override

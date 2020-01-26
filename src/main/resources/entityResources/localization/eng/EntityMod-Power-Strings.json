@@ -20,23 +20,23 @@
   },
   "entity:KaPower": {
     "NAME": "Ka",
-    "DESCRIPTIONS": ["Upon Chant, gain ", " #yBlock and apply ", " #yFlux to a random enemy."]
+    "DESCRIPTIONS": ["Upon Chant, gain #b", " #yBlock and apply #b", " #yFlux to a random enemy."]
   },
   "entity:LuPower": {
     "NAME": "Lu",
-    "DESCRIPTIONS": ["Upon Chant, apply ", " #yFlux to a random enemy and draw ", " cards."]
+    "DESCRIPTIONS": ["Upon Chant, apply #b", " #yFlux to a random enemy and draw ", "#b", " cards.", "a card."]
   },
   "entity:TuPower": {
     "NAME": "Tu",
-    "DESCRIPTIONS": ["Upon Chant, draw ", " cards and gain ", " #yBlock."]
+    "DESCRIPTIONS": ["Upon Chant, draw ", "#b", " cards and gain #b", " #yBlock.", "a card and gain #b"]
   },
   "entity:VoidPulsePower": {
     "NAME": "Void Pulse",
-    "DESCRIPTIONS": ["When you draw a Void, gain #b", " Block."]
+    "DESCRIPTIONS": ["When you draw a #yStatus card, gain ", " and draw ", "#b", " cards.", "a card."]
   },
   "entity:VoidWeavePower": {
     "NAME": "Void Weave",
-    "DESCRIPTIONS": ["When you draw a Void, gain ", ""]
+    "DESCRIPTIONS": ["When you draw a Void, gain #b", " Block."]
   },
   "entity:WarpedFormPower": {
     "NAME": "Warped Form",

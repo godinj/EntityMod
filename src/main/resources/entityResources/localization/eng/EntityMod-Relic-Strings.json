@@ -6,5 +6,12 @@
       "Start each combat with #b",
       " #yEssence."
     ]
+  },
+  "entity:CrystalChamberRelic": {
+    "NAME": "Crystal Chamber",
+    "FLAVOR": "A unique privilege from the abyss.",
+    "DESCRIPTIONS": [
+      "Essence does not reduce at start of turn."
+    ]
   }
 }

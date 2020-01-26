@@ -34,8 +34,8 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("piety_big.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("piety_small.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("flux_big.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("flux_small.png"));
 
     private static final int FLUX_REDUCTION = 1;
     public static final Comparator<AbstractCreature> CREATURE_SORT = new Comparator<AbstractCreature>() {

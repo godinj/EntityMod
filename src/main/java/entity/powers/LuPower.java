@@ -30,7 +30,7 @@ public class LuPower extends AbstractPower implements CloneablePowerInterface {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("refuge_small.png"));
 
     public static final int FLUX_MULTIPLIER = 3;
-    public static final int DRAW_MULTIPLIER = 2;
+    public static final int DRAW_MULTIPLIER = 1;
 
     public LuPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
@@ -88,7 +88,7 @@ public class LuPower extends AbstractPower implements CloneablePowerInterface {
         sb.append(powerStrings.DESCRIPTIONS[0]);
         sb.append(fluxApplied);
         sb.append(powerStrings.DESCRIPTIONS[1]);
-        if (amount == 1) {
+        if (cardsDrawn == 1) {
             sb.append(powerStrings.DESCRIPTIONS[4]);
         } else {
             sb.append(powerStrings.DESCRIPTIONS[2]);

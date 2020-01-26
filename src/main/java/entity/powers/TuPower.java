@@ -29,7 +29,7 @@ public class TuPower extends AbstractPower implements CloneablePowerInterface {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("tu_big.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("tu_small.png"));
 
-    public static final int DRAW_MULTIPLIER = 2;
+    public static final int DRAW_MULTIPLIER = 1;
     public static final int BLOCK_MULTIPLIER = 4;
 
     public TuPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
@@ -84,7 +84,7 @@ public class TuPower extends AbstractPower implements CloneablePowerInterface {
         int blockGained = calculateBlockGained(false);
         StringBuilder sb = new StringBuilder();
         sb.append(powerStrings.DESCRIPTIONS[0]);
-        if (amount == 1) {
+        if (cardsDrawn == 1) {
             sb.append(powerStrings.DESCRIPTIONS[4]);
         } else {
             sb.append(powerStrings.DESCRIPTIONS[1]);

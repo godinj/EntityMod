@@ -26,7 +26,7 @@ public class Lu extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 0;
 
     // Represents cards drawn.
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 1;
     private static final int LU_STACKS = 1;
 
     public Lu() {

@@ -9,11 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import entity.EntityMod;
 import entity.characters.Entity;
-import entity.powers.OtherworldlyPower;
+import entity.powers.WarpedFormPower;
 
-// TODO: Rename to Warped Form
-public class Otherworldly extends AbstractDynamicCard {
-    public static final String ID = EntityMod.makeID(Otherworldly.class.getSimpleName());
+public class WarpedForm extends AbstractDynamicCard {
+    public static final String ID = EntityMod.makeID(WarpedForm.class.getSimpleName());
     public static final String IMG = makeCardPath("Otherworldly.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
@@ -29,7 +28,7 @@ public class Otherworldly extends AbstractDynamicCard {
     // Represents Vulnerable amount applied each turn.
     private static final int MAGIC = 1;
 
-    public Otherworldly() {
+    public WarpedForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.artifact = this.baseArtifact = ARTIFACT;
         this.magicNumber = this.baseMagicNumber = MAGIC;
@@ -38,7 +37,7 @@ public class Otherworldly extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-            new OtherworldlyPower(p, p, magicNumber), magicNumber));
+            new WarpedFormPower(p, p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
             new ArtifactPower(p, artifact), artifact));
     }

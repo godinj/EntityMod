@@ -15,6 +15,10 @@ public abstract class AbstractEntityCard extends CustomCard {
     public int baseFlux;
     public boolean upgradedFlux;
     public boolean isFluxModified;
+    public int multiplier;
+    public int baseMultiplier;
+    public boolean upgradedMultiplier;
+    public boolean isMultiplierModified;
     public int selfMagicNumber;
     public int baseSelfMagicNumber;
     public boolean upgradedSelfMagicNumber;
@@ -44,6 +48,7 @@ public abstract class AbstractEntityCard extends CustomCard {
         this.isMagicNumberModified = false;
         this.isEssenceModified = false;
         this.isFluxModified = false;
+        this.isMultiplierModified = false;
         this.isSelfMagicNumberModified = false;
         this.isVoidCardModified = false;
     }
@@ -61,6 +66,10 @@ public abstract class AbstractEntityCard extends CustomCard {
         if (upgradedFlux) {
             flux = baseFlux;
             isFluxModified = true;
+        }
+        if (upgradedMultiplier) {
+            multiplier = baseMultiplier;
+            isMultiplierModified = true;
         }
         if (upgradedSelfMagicNumber) {
             selfMagicNumber = baseSelfMagicNumber;
@@ -90,6 +99,12 @@ public abstract class AbstractEntityCard extends CustomCard {
         upgradedFlux = true;
     }
 
+    public void upgradeMultiplier(int amount) {
+        baseMultiplier += amount;
+        multiplier = baseMultiplier;
+        upgradedMultiplier = true;
+    }
+
     public void upgradeSelfMagicNumber(int amount) {
         baseSelfMagicNumber += amount;
         selfMagicNumber = baseSelfMagicNumber;
@@ -112,6 +127,8 @@ public abstract class AbstractEntityCard extends CustomCard {
         isEssenceModified = false;
         flux = baseFlux;
         isFluxModified = false;
+        multiplier = baseMultiplier;
+        isMultiplierModified = false;
         selfMagicNumber = baseSelfMagicNumber;
         isSelfMagicNumberModified = false;
         voidCard = baseVoidCard;

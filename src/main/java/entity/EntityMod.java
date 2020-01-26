@@ -10,7 +10,6 @@ import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.PostPlayerUpdateSubscriber;
-import basemod.interfaces.PreMonsterTurnSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -53,13 +52,12 @@ import entity.util.TextureLoader;
 import entity.variables.ArtifactNumber;
 import entity.variables.EssenceNumber;
 import entity.variables.FluxNumber;
+import entity.variables.MultiplierNumber;
 import entity.variables.SelfMagicNumberNumber;
 import entity.variables.VoidCardNumber;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
@@ -258,8 +256,8 @@ public class EntityMod implements
             if (c.cardID.equals(SilentCoup.ID)) {
                 ((SilentCoup) c).calculateUniqueCostTotal();
             }
-            else if (c.cardID.equals(VoidSpace.ID)) {
-                ((VoidSpace)c).generateAndInitializeExtendedDescription();
+            else if (c.cardID.equals(RipplingGrace.ID)) {
+                ((RipplingGrace)c).generateAndInitializeExtendedDescription();
             }
             else if (c.cardID.equals(FluxCapacitor.ID)) {
                 ((FluxCapacitor) c).generateAndInitializeExtendedDescription();
@@ -336,6 +334,7 @@ public class EntityMod implements
         BaseMod.addDynamicVariable(new ArtifactNumber());
         BaseMod.addDynamicVariable(new EssenceNumber());
         BaseMod.addDynamicVariable(new FluxNumber());
+        BaseMod.addDynamicVariable(new MultiplierNumber());
         BaseMod.addDynamicVariable(new SelfMagicNumberNumber());
         BaseMod.addDynamicVariable(new VoidCardNumber());
 
@@ -366,13 +365,13 @@ public class EntityMod implements
         BaseMod.addCard(new Parry());
         BaseMod.addCard(new Ripple());
         BaseMod.addCard(new Split());
-        BaseMod.addCard(new SharedFate());
+        BaseMod.addCard(new JoinAsOne());
         BaseMod.addCard(new Tu());
         BaseMod.addCard(new Weave());
-        BaseMod.addCard(new VoidSpace());
+        BaseMod.addCard(new RipplingGrace());
 
         // Powers
-        BaseMod.addCard(new Otherworldly());
+        BaseMod.addCard(new WarpedForm());
         BaseMod.addCard(new VoidPulse());
         BaseMod.addCard(new VoidWeave());
 
@@ -404,13 +403,13 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(Ripple.ID);
         UnlockTracker.unlockCard(Split.ID);
-        UnlockTracker.unlockCard(SharedFate.ID);
+        UnlockTracker.unlockCard(JoinAsOne.ID);
         UnlockTracker.unlockCard(Tu.ID);
         UnlockTracker.unlockCard(Weave.ID);
-        UnlockTracker.unlockCard(VoidSpace.ID);
+        UnlockTracker.unlockCard(RipplingGrace.ID);
 
         // Powers
-        UnlockTracker.unlockCard(Otherworldly.ID);
+        UnlockTracker.unlockCard(WarpedForm.ID);
         UnlockTracker.unlockCard(VoidPulse.ID);
         UnlockTracker.unlockCard(VoidWeave.ID);
 

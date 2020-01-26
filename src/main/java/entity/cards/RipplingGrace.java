@@ -18,10 +18,9 @@ import entity.EntityMod;
 import entity.characters.Entity;
 import java.util.Iterator;
 
-// TODO: Rename to Void Space
 // Exhaust your hand. For each card exhausted, draw a card, gain [E], gain 1 block and add a void card to your discard pile. Exhaust.
-public class VoidSpace extends AbstractDynamicCard {
-    public static final String ID = EntityMod.makeID(VoidSpace.class.getSimpleName());
+public class RipplingGrace extends AbstractDynamicCard {
+    public static final String ID = EntityMod.makeID(RipplingGrace.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -36,7 +35,7 @@ public class VoidSpace extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int UPGRADED_COST = 0;
 
-    public VoidSpace() {
+    public RipplingGrace() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 0;
         this.exhaust = true;

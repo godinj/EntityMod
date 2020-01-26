@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import entity.EntityMod;
 import entity.characters.Entity;
-import entity.powers.OtherworldlyPower;
 
 import static entity.EntityMod.makeCardPath;
 
@@ -56,7 +55,7 @@ public class FreneticFind extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeArtifact(UPGRADE_PLUS_ARTIFACT);
-            this.upgradeBaseCost(UPGRADED_COST);
+            upgradeBaseCost(UPGRADED_COST);
         }
     }
 }

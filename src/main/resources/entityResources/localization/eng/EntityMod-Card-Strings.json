@@ -31,7 +31,7 @@
   },
   "entity:Sap": {
     "NAME": "Sap",
-    "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !entity:E! entity:Essence"
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !entity:E! entity:Essence. NL Exhaust."
   },
   "entity:SilentCoup": {
     "NAME": "Silent Coup",
@@ -43,23 +43,17 @@
       " cards)."
     ]
   },
-  "entity:Surge": {
-    "NAME": "Surge",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain [E]."
-  },
   "entity:TentacleRage": {
     "NAME": "Tentacle rage",
     "DESCRIPTION": "Deal X damage to a random enemy !M! times."
   },
   "entity:VoidBlast": {
     "NAME": "Void Blast",
-    "DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable."
+    "DESCRIPTION": "Apply !entity:S! Vulnerable to yourself. Deal !D! damage !entity:M! times. Apply !M! Vulnerable to that target."
   },
   "entity:AetherForm": {
     "NAME": "Aether Form",
-    "DESCRIPTION": "Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain !entity:A! Artifact."
+    "DESCRIPTION": "Gain !B! Block. Gain !entity:A! Artifact."
   },
   "entity:BoundlessAether": {
     "NAME": "Boundless Aether",
@@ -88,6 +82,11 @@
     "DESCRIPTION": "Gain X entity:Essence. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Gain X entity:Essence."
   },
+  "entity:JoinAsOne": {
+    "NAME": "Join As One",
+    "DESCRIPTION": "Gain !entity:S! entity:Flux. Apply !entity:F! entity:Flux to all enemies.",
+    "UPGRADE_DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies."
+  },
   "entity:Ka": {
     "NAME": "Ka",
     "DESCRIPTION": "Apply !entity:F!. If you have entity:Lu, entity:Chant entity:Lu."
@@ -109,14 +108,22 @@
     "DESCRIPTION": "Apply 1 entity:Flux to all enemies.",
     "UPGRADE_DESCRIPTION": "Apply 1 entity:Flux to all enemies. NL Draw a card."
   },
+  "entity:RipplingGrace": {
+    "NAME": "Rippling Grace",
+    "DESCRIPTION": "Exhaust your hand. For each card exhausted, draw a card, gain [E] , gain 1 Block and add a Void card into your discard pile. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Exhausts 1 card).",
+      " NL (Exhausts ",
+      " cards)."
+    ]
+  },
   "entity:Split": {
     "NAME": "Split",
-    "DESCRIPTION": "Discard a card and shuffle a copy into your discard pile."
+    "DESCRIPTION": "Discard a card and shuffle a copy into your draw pile."
   },
-  "entity:SharedFate": {
-    "NAME": "Shared Fate",
-    "DESCRIPTION": "Gain !entity:F! entity:Flux. Apply !entity:F! entity:Flux to all enemies.",
-    "UPGRADE_DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies."
+  "entity:Surge": {
+    "NAME": "Surge",
+    "DESCRIPTION": "For each card played this turn, play and Exhaust the top card of your library. NL Exhaust."
   },
   "entity:Tu": {
     "NAME": "Tu",
@@ -126,19 +133,6 @@
     "NAME": "Weave",
     "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux."
   },
-  "entity:VoidSpace": {
-    "NAME": "Void Space",
-    "DESCRIPTION": "Exhaust your hand. For each card exhausted, draw a card, gain [E] , gain 1 Block and add a Void card into your discard pile. Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Exhausts 1 card).",
-      " NL (Exhausts ",
-      " cards)."
-    ]
-  },
-  "entity:Otherworldly": {
-    "NAME": "Otherworldly",
-    "DESCRIPTION": "At start of turn, apply !M! Vulnerable to yourself. Gain !entity:A! Artifact."
-  },
   "entity:VoidPulse": {
     "NAME": "Void Pulse",
     "DESCRIPTION": "When you draw a Void card, gain !B! Block."
@@ -147,5 +141,9 @@
     "NAME": "Void Weave",
     "DESCRIPTION": "When you draw a Void card, gain [E].",
     "UPGRADE_DESCRIPTION": "When you draw a Void card, gain [E] [E] ."
+  },
+  "entity:WarpedForm": {
+    "NAME": "Warped Form",
+    "DESCRIPTION": "Gain !entity:A! Artifact. At start of turn, apply !M! Vulnerable to yourself."
   }
 }

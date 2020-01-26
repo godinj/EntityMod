@@ -16,13 +16,10 @@ import entity.characters.Entity;
 
 import static entity.EntityMod.makeCardPath;
 
-// TODO: Deal 6(7) damage twice. 1 Vulnerable to self. (1 Vulnerable to self, 2 Vulnerable to target)
+// Void Blast -- Basic -- Attack -- 2 -- Apply 1 vulnerable to yourself, deal 2x6(8) damage single target. Apply 2 vulnerable to that target.
 public class VoidBlast extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(VoidBlast.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
@@ -31,37 +28,38 @@ public class VoidBlast extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 12;
-    private static final int UPGRADE_PLUS_DMG = 2;
-
-    // Represents Vulnerable amount applied.
-    private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_MAGIC = 2;
+    private static final int DAMAGE = 2;
+    // Represents Vulnerable amount applied to enemy.
+    private static final int MAGIC = 2;
+    // Represents number of attacks.
+    private static final int MULTIPLIER = 6;
+    private static final int UPGRADE_PLUS_MULTIPLIER = 2;
+    // Represents Vulnerable amount applied to self.
+    private static final int SELF_MAGIC = 1;
 
     public VoidBlast() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.multiplier = this.baseMultiplier = MULTIPLIER;
+        this.selfMagicNumber = this.baseSelfMagicNumber = SELF_MAGIC;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, magicNumber, false), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(
-            new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
-        if (this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(p, magicNumber, false), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, selfMagicNumber, false), selfMagicNumber));
+        for (int i = 0; i < multiplier; i++) {
+            AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(p, magicNumber, false), magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeMultiplier(UPGRADE_PLUS_MULTIPLIER);
         }
     }
 }

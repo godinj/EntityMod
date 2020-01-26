@@ -13,25 +13,21 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import entity.EntityMod;
 import entity.characters.Entity;
 
+// Aether Form -- Basic -- Skill -- 2 -- Gain 7(11) block. Gain an artifact.
 public class AetherForm extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(AetherForm.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 2;
 
     private static final int BLOCK = 7;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
-    private static final int ARTIFACT = 0;
-    private static final int UPGRADE_PLUS_ARTIFACT = 1;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
+    private static final int ARTIFACT = 1;
 
     public AetherForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -42,9 +38,7 @@ public class AetherForm extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        if (this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, artifact), this.artifact));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, artifact), this.artifact));
     }
 
     @Override
@@ -52,10 +46,6 @@ public class AetherForm extends AbstractDynamicCard {
         if (!upgraded) {
             this.upgradeName();
             this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.upgradeArtifact(UPGRADE_PLUS_ARTIFACT);
-            this.upgradeBaseCost(UPGRADED_COST);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
         }
     }
 }

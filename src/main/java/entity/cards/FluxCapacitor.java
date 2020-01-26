@@ -13,7 +13,6 @@ import entity.EntityMod;
 import entity.characters.Entity;
 import entity.powers.FluxPower;
 
-// TODO: cost 1 constant, (apply 3 flux to an enemy) Gain block equal to the amount of flux on all enemies
 public class FluxCapacitor extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(FluxCapacitor.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");

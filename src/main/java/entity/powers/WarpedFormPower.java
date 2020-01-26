@@ -16,10 +16,10 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import entity.EntityMod;
 import entity.util.TextureLoader;
 
-public class OtherworldlyPower extends AbstractPower implements CloneablePowerInterface {
+public class WarpedFormPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = EntityMod.makeID(OtherworldlyPower.class.getSimpleName());
+    public static final String POWER_ID = EntityMod.makeID(WarpedFormPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -27,7 +27,7 @@ public class OtherworldlyPower extends AbstractPower implements CloneablePowerIn
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("otherworldly_big.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("otherworldly_small.png"));
 
-    public OtherworldlyPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public WarpedFormPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
 
@@ -71,6 +71,6 @@ public class OtherworldlyPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public AbstractPower makeCopy() {
-        return new OtherworldlyPower(this.owner, this.source, this.amount);
+        return new WarpedFormPower(this.owner, this.source, this.amount);
     }
 }

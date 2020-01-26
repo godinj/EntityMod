@@ -18,10 +18,6 @@
     "NAME": "FluxBar",
     "DESCRIPTIONS": ["."]
   },
-  "entity:OtherworldlyPower": {
-    "NAME": "Otherworldly",
-    "DESCRIPTIONS": ["At start of turn, applies #b", " #yVulnerable."]
-  },
   "entity:KaPower": {
     "NAME": "Ka",
     "DESCRIPTIONS": ["Upon Chant, gain ", " #yBlock and apply ", " #yFlux to a random enemy."]
@@ -41,5 +37,9 @@
   "entity:VoidWeavePower": {
     "NAME": "Void Weave",
     "DESCRIPTIONS": ["When you draw a Void, gain ", ""]
+  },
+  "entity:WarpedFormPower": {
+    "NAME": "Warped Form",
+    "DESCRIPTIONS": ["At start of turn, applies #b", " #yVulnerable."]
   }
 }

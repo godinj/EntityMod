@@ -25,7 +25,6 @@ import java.util.Comparator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-// TODO: Update keyword-string and power-string descriptions to match Poison.
 public class FluxPower extends AbstractPower implements CloneablePowerInterface {
     public static final Logger logger = LogManager.getLogger(EntityMod.class.getName());
     private AbstractCreature source;

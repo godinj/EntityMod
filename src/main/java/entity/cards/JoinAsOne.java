@@ -13,8 +13,8 @@ import entity.characters.Entity;
 import entity.powers.FluxPower;
 
 //Shared Fate	Common	Skill	1	Gain 3 Flux(remove gain 3 flux). Apply 3 Flux to all enemies.
-public class SharedFate extends AbstractDynamicCard {
-    public static final String ID = EntityMod.makeID(SharedFate.class.getSimpleName());
+public class JoinAsOne extends AbstractDynamicCard {
+    public static final String ID = EntityMod.makeID(JoinAsOne.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -28,17 +28,21 @@ public class SharedFate extends AbstractDynamicCard {
     private static final int COST = 1;
 
     private static final int FLUX = 3;
+    private static final int UPGRADE_PLUS_FLUX = 1;
+    // Represents the amount of Flux applied to self.
+    private static final int SELF_MAGIC = 1;
 
-    public SharedFate() {
+    public JoinAsOne() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        flux = baseFlux = FLUX;
+        this.flux = this.baseFlux = FLUX;
+        this.selfMagicNumber = this.baseSelfMagicNumber = SELF_MAGIC;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         //if upgraded, targets only enemies, otherwise targets both player and enemies.
         if (!this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FluxPower(p, p, flux), flux));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FluxPower(p, p, selfMagicNumber), selfMagicNumber));
         }
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (mo == null || mo.isDead || mo.isDying) {
@@ -53,6 +57,7 @@ public class SharedFate extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeFlux(UPGRADE_PLUS_FLUX);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

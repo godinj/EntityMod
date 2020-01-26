@@ -10,10 +10,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.characters.Entity;
 import entity.powers.FluxPower;
-//this was vile weave before.
-//Weave	common	skill	1	Block 10(13). apply 1 flux to yourself
-public class Weave extends AbstractDynamicCard {
-    public static final String ID = EntityMod.makeID(Weave.class.getSimpleName());
+
+// Rotting Cage -- common -- skill -- 1 -- Block 10(13). apply 1 flux to yourself
+public class RottingCage extends AbstractDynamicCard {
+    public static final String ID = EntityMod.makeID(RottingCage.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -28,7 +28,7 @@ public class Weave extends AbstractDynamicCard {
 
     private static final int SELF_MAGIC_NUMBER = 1;
 
-    public Weave() {
+    public RottingCage() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = BLOCK;
         this.selfMagicNumber = this.baseSelfMagicNumber = SELF_MAGIC_NUMBER;

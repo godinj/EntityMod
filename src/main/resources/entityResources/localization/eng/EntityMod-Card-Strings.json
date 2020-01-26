@@ -121,6 +121,10 @@
       " cards)."
     ]
   },
+  "entity:RottingCage": {
+    "NAME": "Rotting Cage",
+    "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux."
+  },
   "entity:Split": {
     "NAME": "Split",
     "DESCRIPTION": "Discard a card and shuffle a copy into your draw pile."
@@ -133,10 +137,6 @@
     "NAME": "Tu",
     "DESCRIPTION": "Gain !B! Block. If you have entity:Ka, entity:Chant entity:Ka."
   },
-  "entity:Weave": {
-    "NAME": "Weave",
-    "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux."
-  },
   "entity:VoidPulse": {
     "NAME": "Void Pulse",
     "DESCRIPTION": "Whenever a status is drawn, gain [E] and draw a card.",
@@ -144,7 +144,7 @@
   },
   "entity:VoidWeave": {
     "NAME": "Void Weave",
-    "DESCRIPTION": "When you draw a Void card, gain !B! Block."
+    "DESCRIPTION": "Whenever you draw a Void card, gain !B! Block."
   },
   "entity:WarpedForm": {
     "NAME": "Warped Form",

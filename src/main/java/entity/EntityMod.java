@@ -368,7 +368,7 @@ public class EntityMod implements
         BaseMod.addCard(new Split());
         BaseMod.addCard(new JoinAsOne());
         BaseMod.addCard(new Tu());
-        BaseMod.addCard(new Weave());
+        BaseMod.addCard(new RottingCage());
         BaseMod.addCard(new RipplingGrace());
 
         // Powers
@@ -407,7 +407,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Split.ID);
         UnlockTracker.unlockCard(JoinAsOne.ID);
         UnlockTracker.unlockCard(Tu.ID);
-        UnlockTracker.unlockCard(Weave.ID);
+        UnlockTracker.unlockCard(RottingCage.ID);
         UnlockTracker.unlockCard(RipplingGrace.ID);
 
         // Powers

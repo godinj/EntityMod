@@ -46,7 +46,7 @@ import entity.powers.FluxPower;
 import entity.powers.KaPower;
 import entity.powers.LuPower;
 import entity.powers.TuPower;
-import entity.relics.PresenceOfTheVoidRelic;
+import entity.relics.DarkCrystalRelic;
 import entity.util.IDCheckDontTouchPls;
 import entity.util.TextureLoader;
 import entity.variables.ArtifactNumber;
@@ -316,7 +316,7 @@ public class EntityMod implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
-        BaseMod.addRelicToCustomPool(new PresenceOfTheVoidRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new DarkCrystalRelic(), Entity.Enums.COLOR_TEAL);
         logger.info("Done adding relics!");
     }
 

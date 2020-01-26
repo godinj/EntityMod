@@ -13,7 +13,7 @@ import entity.cards.AetherForm;
 import entity.cards.Defend_Entity;
 import entity.cards.Strike_Entity;
 import entity.cards.VoidBlast;
-import entity.relics.PresenceOfTheVoidRelic;
+import entity.relics.DarkCrystalRelic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -143,8 +143,8 @@ public class Entity extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(PresenceOfTheVoidRelic.ID);
-        UnlockTracker.markRelicAsSeen(PresenceOfTheVoidRelic.ID);
+        retVal.add(DarkCrystalRelic.ID);
+        UnlockTracker.markRelicAsSeen(DarkCrystalRelic.ID);
 
         return retVal;
     }

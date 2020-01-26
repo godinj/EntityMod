@@ -5,6 +5,7 @@ import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
@@ -75,6 +76,7 @@ public class EntityMod implements
     EditKeywordsSubscriber,
     EditCharactersSubscriber,
     PostBattleSubscriber,
+    OnCardUseSubscriber,
     OnStartBattleSubscriber,
     OnPowersModifiedSubscriber,
     PostDrawSubscriber,
@@ -549,6 +551,11 @@ public class EntityMod implements
         if (abstractRelic.relicId.equals(CrystalChamberRelic.ID) && null != darkCrystal) {
             AbstractDungeon.player.relics.remove(darkCrystal);
         }
+    }
+
+    @Override
+    public void receiveCardUsed(AbstractCard abstractCard) {
+        logger.info("using card: " + abstractCard.cardID);
     }
 
     // ================ /LOAD THE KEYWORDS/ ===================

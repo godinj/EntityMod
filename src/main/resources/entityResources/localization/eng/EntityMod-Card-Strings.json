@@ -21,9 +21,22 @@
       " Void cards into your discard pile."
     ]
   },
+  "entity:ForceThrough": {
+    "NAME": "Force Through",
+    "DESCRIPTION": "Deal !D! damage and gain !entity:A! Artifact."
+  },
   "entity:Grasp": {
     "NAME": "Grasp",
     "DESCRIPTION": "Deal !D! damage to a random enemy !M! times."
+  },
+  "entity:Lash": {
+    "NAME": "Lash",
+    "DESCRIPTION": "Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      " Add a Void card into your discard pile.",
+      " Add ",
+      " Void cards into your discard pile."
+    ]
   },
   "entity:Rupture": {
     "NAME": "Rupture",
@@ -59,14 +72,27 @@
     "NAME": "Aether Form",
     "DESCRIPTION": "Gain !B! Block. Gain !entity:A! Artifact."
   },
+  "entity:Avoid": {
+    "NAME": "Avoid",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! void card into your discard pile."
+  },
   "entity:BoundlessAether": {
     "NAME": "Boundless Aether",
     "DESCRIPTION": "Gain !entity:A! Artifact. All enemies gain !entity:A! Artifact.",
     "UPGRADE_DESCRIPTION": "Gain !entity:A! Artifact. Target enemy gains !entity:A! Artifact."
   },
+  "entity:Coalesce": {
+    "NAME": "Coalesce",
+    "DESCRIPTION": "Gain !entity:E! entity:Essence. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Gain !entity:E! entity:Essence. NL Draw !M! cards."
+  },
   "entity:Delirium": {
     "NAME": "Delirium",
     "DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies. NL Gain !entity:E! entity:Essence. NL Exhaust."
+  },
+  "entity:Disturb": {
+    "NAME": "Disturb",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !entity:S! to yourself. Apply !M! to target enemy."
   },
   "entity:FluxCapacitor": {
     "NAME": "Flux Capacitor",
@@ -109,8 +135,8 @@
   },
   "entity:Ripple": {
     "NAME": "Ripple",
-    "DESCRIPTION": "Apply 1 entity:Flux to all enemies.",
-    "UPGRADE_DESCRIPTION": "Apply 1 entity:Flux to all enemies. NL Draw a card."
+    "DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies.",
+    "UPGRADE_DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies. NL Draw a card."
   },
   "entity:RipplingGrace": {
     "NAME": "Rippling Grace",
@@ -128,6 +154,10 @@
   "entity:Split": {
     "NAME": "Split",
     "DESCRIPTION": "Discard a card and shuffle a copy into your draw pile."
+  },
+  "entity:Strengthen": {
+    "NAME": "Strengthen",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !entity:E! entity:Essence."
   },
   "entity:Surge": {
     "NAME": "Surge",

@@ -343,7 +343,9 @@ public class EntityMod implements
         BaseMod.addCard(new Strike_Entity());
         BaseMod.addCard(new AbyssalCall());
         BaseMod.addCard(new CosmicRay());
+        BaseMod.addCard(new ForceThrough());
         BaseMod.addCard(new Grasp());
+        BaseMod.addCard(new Lash());
         BaseMod.addCard(new Rupture());
         BaseMod.addCard(new Sap());
         BaseMod.addCard(new SilentCoup());
@@ -355,8 +357,11 @@ public class EntityMod implements
         // Skills
         BaseMod.addCard(new Defend_Entity());
         BaseMod.addCard(new AetherForm());
+        BaseMod.addCard(new Avoid());
         BaseMod.addCard(new BoundlessAether());
+        BaseMod.addCard(new Coalesce());
         BaseMod.addCard(new Delirium());
+        BaseMod.addCard(new Disturb());
         BaseMod.addCard(new FluxCapacitor());
         BaseMod.addCard(new FreneticFind());
         BaseMod.addCard(new InwardAscent());
@@ -366,6 +371,7 @@ public class EntityMod implements
         BaseMod.addCard(new Parry());
         BaseMod.addCard(new Ripple());
         BaseMod.addCard(new Split());
+        BaseMod.addCard(new Strengthen());
         BaseMod.addCard(new JoinAsOne());
         BaseMod.addCard(new Tu());
         BaseMod.addCard(new RottingCage());
@@ -382,7 +388,9 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Strike_Entity.ID);
         UnlockTracker.unlockCard(AbyssalCall.ID);
         UnlockTracker.unlockCard(CosmicRay.ID);
+        UnlockTracker.unlockCard(ForceThrough.ID);
         UnlockTracker.unlockCard(Grasp.ID);
+        UnlockTracker.unlockCard(Lash.ID);
         UnlockTracker.unlockCard(Rupture.ID);
         UnlockTracker.unlockCard(Sap.ID);
         UnlockTracker.unlockCard(SilentCoup.ID);
@@ -394,8 +402,11 @@ public class EntityMod implements
         // Skills
         UnlockTracker.unlockCard(Defend_Entity.ID);
         UnlockTracker.unlockCard(AetherForm.ID);
+        UnlockTracker.unlockCard(Avoid.ID);
         UnlockTracker.unlockCard(BoundlessAether.ID);
+        UnlockTracker.unlockCard(Coalesce.ID);
         UnlockTracker.unlockCard(Delirium.ID);
+        UnlockTracker.unlockCard(Disturb.ID);
         UnlockTracker.unlockCard(FluxCapacitor.ID);
         UnlockTracker.unlockCard(FreneticFind.ID);
         UnlockTracker.unlockCard(InwardAscent.ID);
@@ -405,6 +416,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(Ripple.ID);
         UnlockTracker.unlockCard(Split.ID);
+        UnlockTracker.unlockCard(Strengthen.ID);
         UnlockTracker.unlockCard(JoinAsOne.ID);
         UnlockTracker.unlockCard(Tu.ID);
         UnlockTracker.unlockCard(RottingCage.ID);

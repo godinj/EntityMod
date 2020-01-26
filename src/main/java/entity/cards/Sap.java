@@ -26,7 +26,7 @@ public class Sap extends AbstractDynamicCard {
 
     // Represents number of essence added.
     private static final int ESSENCE = 2;
-    private static final int UPGRADED_PLUS_ESSENCE = 4;
+    private static final int UPGRADED_PLUS_ESSENCE = 2;
 
     private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
@@ -43,14 +43,13 @@ public class Sap extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SMASH));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EssencePower(p, p, essence), essence));
-
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_DAMAGE);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             upgradeEssence(UPGRADED_PLUS_ESSENCE);
         }
     }

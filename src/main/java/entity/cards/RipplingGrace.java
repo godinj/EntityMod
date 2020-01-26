@@ -33,7 +33,7 @@ public class RipplingGrace extends AbstractDynamicCard {
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 0;
+    private static final int UPGRADED_COST = 1;
 
     public RipplingGrace() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -15,7 +15,7 @@ import static entity.EntityMod.makeCardPath;
 //Frenetic Find	rare	skill	1(0)	Gain 2(3) artifact, gain a slimed, void, dazed, burn, and wound card into your discard
 public class FreneticFind extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(FreneticFind.class.getSimpleName());
-    public static final String IMG = makeCardPath("Otherworldly.png");
+    public static final String IMG = makeCardPath("AetherForm.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;

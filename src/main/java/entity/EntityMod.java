@@ -349,6 +349,7 @@ public class EntityMod implements
         BaseMod.addCard(new SilentCoup());
         BaseMod.addCard(new Surge());
         BaseMod.addCard(new TentacleRage());
+        BaseMod.addCard(new UncoilingTendrils());
         BaseMod.addCard(new VoidBlast());
 
         // Skills
@@ -387,6 +388,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(SilentCoup.ID);
         UnlockTracker.unlockCard(Surge.ID);
         UnlockTracker.unlockCard(TentacleRage.ID);
+        UnlockTracker.unlockCard(UncoilingTendrils.ID);
         UnlockTracker.unlockCard(VoidBlast.ID);
 
         // Skills

@@ -10,6 +10,8 @@ import entity.EntityMod;
 import entity.characters.Entity;
 import entity.powers.VoidPulsePower;
 
+// TODO: Rework
+// Void Pulse -- rare -- power -- 1 --  whenever a status is drawn, Gain 1 energy and draw a card. (innate)
 public class VoidPulse extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(VoidPulse.class.getSimpleName());
     public static final String IMG = makeCardPath("Otherworldly.png");

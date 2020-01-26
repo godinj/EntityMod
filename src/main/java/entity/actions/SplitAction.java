@@ -39,11 +39,11 @@ public class SplitAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.dupeAmount <= 0) {
-            this.isDone = true;
-            return;
-        }
         if (this.duration == Settings.ACTION_DUR_FAST) {
+            if (this.dupeAmount <= 0) {
+                this.isDone = true;
+                return;
+            }
             for (AbstractCard c : this.p.hand.group) {
                 if (!isValidToDuplicate(c))
                     this.cannotDuplicate.add(c);

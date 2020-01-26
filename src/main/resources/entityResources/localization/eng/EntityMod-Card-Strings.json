@@ -47,6 +47,10 @@
     "NAME": "Tentacle rage",
     "DESCRIPTION": "Deal X damage to a random enemy !M! times."
   },
+  "entity:UncoilingTendrils": {
+    "NAME": "Uncoiling Tendrils",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, Transform a common card in your deck. NL Exhaust."
+  },
   "entity:VoidBlast": {
     "NAME": "Void Blast",
     "DESCRIPTION": "Apply !entity:S! Vulnerable to yourself. Deal !D! damage !entity:M! times. Apply !M! Vulnerable to that target."

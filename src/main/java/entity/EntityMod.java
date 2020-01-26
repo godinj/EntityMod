@@ -10,6 +10,7 @@ import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.PostPlayerUpdateSubscriber;
+import basemod.interfaces.RelicGetSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -31,6 +32,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
@@ -46,6 +48,7 @@ import entity.powers.FluxPower;
 import entity.powers.KaPower;
 import entity.powers.LuPower;
 import entity.powers.TuPower;
+import entity.relics.CrystalChamberRelic;
 import entity.relics.DarkCrystalRelic;
 import entity.util.IDCheckDontTouchPls;
 import entity.util.TextureLoader;
@@ -76,7 +79,8 @@ public class EntityMod implements
     OnPowersModifiedSubscriber,
     PostDrawSubscriber,
     PostPlayerUpdateSubscriber,
-    PostInitializeSubscriber {
+    PostInitializeSubscriber,
+    RelicGetSubscriber {
     public static final Logger logger = LogManager.getLogger(EntityMod.class.getName());
     private static String modID;
 
@@ -317,6 +321,7 @@ public class EntityMod implements
         logger.info("Adding relics");
 
         BaseMod.addRelicToCustomPool(new DarkCrystalRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new CrystalChamberRelic(), Entity.Enums.COLOR_TEAL);
         logger.info("Done adding relics!");
     }
 
@@ -518,6 +523,20 @@ public class EntityMod implements
     @Override
     public void receivePostBattle(AbstractRoom room) {
 
+    }
+
+    @Override
+    public void receiveRelicGet(AbstractRelic abstractRelic) {
+        AbstractRelic darkCrystal = null;
+        for (AbstractRelic r: AbstractDungeon.player.relics) {
+            if (r.relicId.equals(DarkCrystalRelic.ID)) {
+                darkCrystal = r;
+                break;
+            }
+        }
+        if (abstractRelic.relicId.equals(CrystalChamberRelic.ID) && null != darkCrystal) {
+            AbstractDungeon.player.relics.remove(darkCrystal);
+        }
     }
 
     // ================ /LOAD THE KEYWORDS/ ===================

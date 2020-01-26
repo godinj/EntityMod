@@ -21,9 +21,19 @@
       " Void cards into your discard pile."
     ]
   },
+  "entity:Coup": {
+    "NAME": "Coup",
+    "DESCRIPTION": "Deal !D! damage. Draw a card for each unique cost in your hand.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Draws a card).",
+      " NL (Draws ",
+      " cards)."
+    ]
+  },
   "entity:ForceThrough": {
     "NAME": "Force Through",
-    "DESCRIPTION": "Deal !D! damage and gain !entity:A! Artifact."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !entity:A! Artifact."
   },
   "entity:Grasp": {
     "NAME": "Grasp",
@@ -46,16 +56,6 @@
     "NAME": "Sap",
     "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !entity:E! entity:Essence. NL Exhaust."
   },
-  "entity:SilentCoup": {
-    "NAME": "Silent Coup",
-    "DESCRIPTION": "Deal !D! damage. Draw a card for each unique cost in your hand.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Draws 1 card).",
-      " NL (Draws ",
-      " cards)."
-    ]
-  },
   "entity:TentacleRage": {
     "NAME": "Tentacle rage",
     "DESCRIPTION": "Deal X damage to a random enemy !M! times."
@@ -74,7 +74,7 @@
   },
   "entity:Avoid": {
     "NAME": "Avoid",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! void card into your discard pile."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !entity:S! void card into your discard pile."
   },
   "entity:BoundlessAether": {
     "NAME": "Boundless Aether",
@@ -83,8 +83,12 @@
   },
   "entity:Coalesce": {
     "NAME": "Coalesce",
-    "DESCRIPTION": "Gain !entity:E! entity:Essence. NL Draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Gain !entity:E! entity:Essence. NL Draw !M! cards."
+    "DESCRIPTION": "Gain !entity:E! entity:Essence.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Draw a card.",
+      " NL Draw ",
+      " cards"
+    ]
   },
   "entity:Delirium": {
     "NAME": "Delirium",
@@ -92,7 +96,7 @@
   },
   "entity:Disturb": {
     "NAME": "Disturb",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !entity:S! to yourself. Apply !M! to target enemy."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !entity:S! Weak to yourself. Apply !M! Weak to target enemy."
   },
   "entity:FluxCapacitor": {
     "NAME": "Flux Capacitor",

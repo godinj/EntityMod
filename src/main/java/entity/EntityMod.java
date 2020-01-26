@@ -257,8 +257,8 @@ public class EntityMod implements
         AbstractCard c;
         while(iterator.hasNext()) {
             c = iterator.next();
-            if (c.cardID.equals(SilentCoup.ID)) {
-                ((SilentCoup) c).calculateUniqueCostTotal();
+            if (c.cardID.equals(Coup.ID)) {
+                ((Coup) c).calculateUniqueCostTotal();
             }
             else if (c.cardID.equals(RipplingGrace.ID)) {
                 ((RipplingGrace)c).generateAndInitializeExtendedDescription();
@@ -353,7 +353,7 @@ public class EntityMod implements
         BaseMod.addCard(new Lash());
         BaseMod.addCard(new Rupture());
         BaseMod.addCard(new Sap());
-        BaseMod.addCard(new SilentCoup());
+        BaseMod.addCard(new Coup());
         BaseMod.addCard(new Surge());
         BaseMod.addCard(new TentacleRage());
         BaseMod.addCard(new UncoilingTendrils());
@@ -398,7 +398,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Lash.ID);
         UnlockTracker.unlockCard(Rupture.ID);
         UnlockTracker.unlockCard(Sap.ID);
-        UnlockTracker.unlockCard(SilentCoup.ID);
+        UnlockTracker.unlockCard(Coup.ID);
         UnlockTracker.unlockCard(Surge.ID);
         UnlockTracker.unlockCard(TentacleRage.ID);
         UnlockTracker.unlockCard(UncoilingTendrils.ID);

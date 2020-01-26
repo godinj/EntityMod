@@ -18,8 +18,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class SilentCoup extends AbstractDynamicCard {
-    public static final String ID = EntityMod.makeID(SilentCoup.class.getSimpleName());
+public class Coup extends AbstractDynamicCard {
+    public static final String ID = EntityMod.makeID(Coup.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -36,7 +36,7 @@ public class SilentCoup extends AbstractDynamicCard {
     private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    public SilentCoup() {
+    public Coup() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = 0;

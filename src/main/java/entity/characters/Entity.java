@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import entity.EntityMod;
 import entity.cards.AetherForm;
 import entity.cards.Defend_Entity;
+import entity.cards.Coup;
 import entity.cards.Strike_Entity;
 import entity.cards.VoidBlast;
 import entity.relics.DarkCrystalRelic;
@@ -246,5 +247,17 @@ public class Entity extends CustomPlayer {
     @Override
     public String getVampireText() {
         return TEXT[2];
+    }
+
+    public void onCardDrawOrDiscard() {
+        super.onCardDrawOrDiscard();
+        for (AbstractCard c: this.hand.group) {
+            if (c.cardID.equals(makeID(Coup.class.getSimpleName()))) {
+                ((Coup)c).calculateUniqueCostTotal();
+            }
+            else if (c.cardID.equals(makeID(Coup.class.getSimpleName()))) {
+                ((Coup)c).calculateUniqueCostTotal();
+            }
+        }
     }
 }

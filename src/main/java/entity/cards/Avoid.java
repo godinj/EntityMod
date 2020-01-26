@@ -42,7 +42,7 @@ public class Avoid extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         //make 1 void card
         AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDiscardAction(new VoidCard(), magicNumber));
+                new MakeTempCardInDiscardAction(new VoidCard(), selfMagicNumber));
     }
 
     @Override

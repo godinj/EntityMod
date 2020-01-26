@@ -3,6 +3,7 @@ package entity.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -45,6 +46,7 @@ public class Disturb extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, selfMagicNumber, false), selfMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(p, magicNumber, false), magicNumber));
     }

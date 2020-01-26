@@ -32,7 +32,7 @@ public class Surge extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardsPlayed = 0;
-        for (AbstractCard c: AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+        for (AbstractCard c: AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if (!c.equals(this)) {
                 cardsPlayed++;
             }

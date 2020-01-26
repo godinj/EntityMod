@@ -52,6 +52,10 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
         updateDescription();
     }
 
+    private int calculateHealthGained() {
+        return (int)floor(amount * (ESSENCE_HEALTH_NUMERATOR / ESSENCE_HEALTH_DENOMINATOR));
+    }
+
     @Override
     public void stackPower(int stackAmount)
     {
@@ -71,7 +75,7 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
 
         this.flash();
 
-        int healthGained = (int)floor(amount * (ESSENCE_HEALTH_NUMERATOR / ESSENCE_HEALTH_DENOMINATOR));
+        int healthGained = calculateHealthGained();
         AbstractDungeon.actionManager.addToBottom(new HealAction(this.owner, this.owner, healthGained));
         AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, ESSENCE_REDUCTION));
     }
@@ -79,10 +83,11 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void updateDescription() {
+        int healthGained = calculateHealthGained();
         if (this.owner == null || this.owner.isPlayer) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[0] + healthGained + DESCRIPTIONS[1];
         } else {
-            this.description = DESCRIPTIONS[2] + this.amount + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[2] + healthGained + DESCRIPTIONS[1];
         }
     }
 

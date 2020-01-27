@@ -1,10 +1,39 @@
 {
+  "entity:CrystalChamberRelic": {
+    "NAME": "Crystal Chamber",
+    "FLAVOR": "MMMMMmmmmmmmmmmmmm..........",
+    "DESCRIPTIONS": [
+      "Essence does not reduce at start of turn."
+    ]
+  },
   "entity:DarkCrystalRelic": {
     "NAME": "Dark Crystal",
-    "FLAVOR": "A unique privilege from the abyss.",
+    "FLAVOR": "The crystal calls... to the crystal chamber!",
     "DESCRIPTIONS": [
       "Start each combat with #b",
       " #yEssence."
+    ]
+  },
+  "entity:JazzOrganRelic": {
+    "NAME": "Jazz Organ",
+    "FLAVOR": "You hear a faint operatic call... A phantasmal melody to sooth your transition from the abyss",
+    "DESCRIPTIONS": [
+      "Whenever you trigger a #yChant, draw a card"
+    ]
+  },
+  "entity:PendantRelic": {
+    "NAME": "Pendant",
+    "FLAVOR": "It shields you from the questions... the curiosity that would drive you into the light.",
+    "DESCRIPTIONS": [
+      "Every #b",
+      " turns, gain an Artifact."
+    ]
+  },
+  "entity:TesseractRelic": {
+    "NAME": "Tesseract",
+    "FLAVOR": "A hateful expanse, a fractured fractal of unbound depth.",
+    "DESCRIPTIONS": [
+      "Flux does not reduce on enemies at the end of their turn."
     ]
   }
 }

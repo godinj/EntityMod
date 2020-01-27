@@ -42,6 +42,10 @@ public class Lash extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        updateDescription();
+    }
+
+    public void updateDescription() {
         StringBuilder sb = new StringBuilder();
         sb.append(DESCRIPTION);
         if (magicNumber == 1)  {

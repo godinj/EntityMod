@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
+import entity.relics.JazzOrganRelic;
 import entity.util.TextureLoader;
 
 // If Tu was the last card played, draw 2 and gain 4 block. Trigger Tu
@@ -78,6 +79,10 @@ public class LuPower extends AbstractPower implements CloneablePowerInterface {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.owner,
             new FluxPower(mo, this.owner, fluxApplied), fluxApplied));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, cardsDrawn));
+        if (AbstractDungeon.player.hasRelic(JazzOrganRelic.ID)) {
+            AbstractDungeon.player.getRelic(JazzOrganRelic.ID).flash();
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, JazzOrganRelic.DRAW_BONUS));
+        }
     }
 
     @Override

@@ -2,9 +2,9 @@
   "entity:EssencePower": {
     "NAME": "Essence",
     "DESCRIPTIONS": [
-      "At the end of your turn, gain health equal to half of your #yEssence (#b",
-      "), rounded down, then reduce #yEssence by #b1.",
-      "At the end of its turn, gains health equal to half of its #yEssence (#b"]
+      "At the start of your turn, gain health equal to half of your",
+      " #yEssence, rounded down, then reduce #yEssence by #b1.",
+      "At the start of its turn, gains health equal to half of its"]
   },
   "entity:FluxPower": {
     "NAME": "Flux",

@@ -20,7 +20,8 @@ public class Coalesce extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("AetherForm.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -38,6 +39,21 @@ public class Coalesce extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.essence = this.baseEssence = ESSENCE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        generateAndInitializeExtendedDescription();
+    }
+
+    public void generateAndInitializeExtendedDescription() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(DESCRIPTION);
+        if (magicNumber == 1)  {
+            sb.append(EXTENDED_DESCRIPTION[0]);
+        } else {
+            sb.append(EXTENDED_DESCRIPTION[1]);
+            sb.append(magicNumber);
+            sb.append(EXTENDED_DESCRIPTION[2]);
+        }
+        this.rawDescription = sb.toString();
+        initializeDescription();
     }
 
     @Override
@@ -51,8 +67,7 @@ public class Coalesce extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            generateAndInitializeExtendedDescription();
         }
     }
 }

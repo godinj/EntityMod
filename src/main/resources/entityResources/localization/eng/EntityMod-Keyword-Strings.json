@@ -27,13 +27,13 @@
     "NAMES": [
       "lu"
     ],
-    "DESCRIPTION": "Upon Chant, apply 3 Flux to a random enemy and draw 2 cards."
+    "DESCRIPTION": "Upon Chant, apply 3 Flux to a random enemy and draw a card."
   },
   {
     "NAMES": [
       "tu"
     ],
-    "DESCRIPTION": "Upon Chant, draw 2 cards and gain 4 Block."
+    "DESCRIPTION": "Upon Chant, draw a card and gain 4 Block."
   },
   {
     "PROPER_NAME": "Multiword Keyword",

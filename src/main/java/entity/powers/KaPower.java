@@ -6,6 +6,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -15,6 +16,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
+import entity.relics.CrystalChamberRelic;
+import entity.relics.JazzOrganRelic;
 import entity.util.TextureLoader;
 
 // If Ka was the last card played, Deal 3 flux to a random enemy and gain 4 additional block.
@@ -78,6 +81,10 @@ public class KaPower extends AbstractPower implements CloneablePowerInterface {
         AbstractMonster mo = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.owner,
             new FluxPower(mo, this.owner, fluxApplied), fluxApplied));
+        if (AbstractDungeon.player.hasRelic(JazzOrganRelic.ID)) {
+            AbstractDungeon.player.getRelic(JazzOrganRelic.ID).flash();
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, JazzOrganRelic.DRAW_BONUS));
+        }
     }
 
     @Override

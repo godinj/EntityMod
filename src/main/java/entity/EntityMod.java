@@ -5,11 +5,13 @@ import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.PostPlayerUpdateSubscriber;
+import basemod.interfaces.RelicGetSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -31,6 +33,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
@@ -46,7 +49,11 @@ import entity.powers.FluxPower;
 import entity.powers.KaPower;
 import entity.powers.LuPower;
 import entity.powers.TuPower;
+import entity.relics.CrystalChamberRelic;
 import entity.relics.DarkCrystalRelic;
+import entity.relics.JazzOrganRelic;
+import entity.relics.TesseractRelic;
+import entity.relics.PendantRelic;
 import entity.util.IDCheckDontTouchPls;
 import entity.util.TextureLoader;
 import entity.variables.ArtifactNumber;
@@ -72,11 +79,13 @@ public class EntityMod implements
     EditKeywordsSubscriber,
     EditCharactersSubscriber,
     PostBattleSubscriber,
+    OnCardUseSubscriber,
     OnStartBattleSubscriber,
     OnPowersModifiedSubscriber,
     PostDrawSubscriber,
     PostPlayerUpdateSubscriber,
-    PostInitializeSubscriber {
+    PostInitializeSubscriber,
+    RelicGetSubscriber {
     public static final Logger logger = LogManager.getLogger(EntityMod.class.getName());
     private static String modID;
 
@@ -253,8 +262,8 @@ public class EntityMod implements
         AbstractCard c;
         while(iterator.hasNext()) {
             c = iterator.next();
-            if (c.cardID.equals(SilentCoup.ID)) {
-                ((SilentCoup) c).calculateUniqueCostTotal();
+            if (c.cardID.equals(Coup.ID)) {
+                ((Coup) c).calculateUniqueCostTotal();
             }
             else if (c.cardID.equals(RipplingGrace.ID)) {
                 ((RipplingGrace)c).generateAndInitializeExtendedDescription();
@@ -316,7 +325,11 @@ public class EntityMod implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
+        BaseMod.addRelicToCustomPool(new CrystalChamberRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new DarkCrystalRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new JazzOrganRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new PendantRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new TesseractRelic(), Entity.Enums.COLOR_TEAL);
         logger.info("Done adding relics!");
     }
 
@@ -348,7 +361,7 @@ public class EntityMod implements
         BaseMod.addCard(new Lash());
         BaseMod.addCard(new Rupture());
         BaseMod.addCard(new Sap());
-        BaseMod.addCard(new SilentCoup());
+        BaseMod.addCard(new Coup());
         BaseMod.addCard(new Surge());
         BaseMod.addCard(new TentacleRage());
         BaseMod.addCard(new UncoilingTendrils());
@@ -395,7 +408,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Lash.ID);
         UnlockTracker.unlockCard(Rupture.ID);
         UnlockTracker.unlockCard(Sap.ID);
-        UnlockTracker.unlockCard(SilentCoup.ID);
+        UnlockTracker.unlockCard(Coup.ID);
         UnlockTracker.unlockCard(Surge.ID);
         UnlockTracker.unlockCard(TentacleRage.ID);
         UnlockTracker.unlockCard(UncoilingTendrils.ID);
@@ -534,6 +547,19 @@ public class EntityMod implements
     @Override
     public void receivePostBattle(AbstractRoom room) {
 
+    }
+
+    @Override
+    public void receiveRelicGet(AbstractRelic abstractRelic) {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (abstractRelic.relicId.equals(CrystalChamberRelic.ID)) {
+            p.loseRelic(DarkCrystalRelic.ID);
+        }
+    }
+
+    @Override
+    public void receiveCardUsed(AbstractCard abstractCard) {
+        logger.info("using card: " + abstractCard.cardID);
     }
 
     // ================ /LOAD THE KEYWORDS/ ===================

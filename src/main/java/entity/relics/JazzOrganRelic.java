@@ -15,7 +15,7 @@ public class JazzOrganRelic extends CustomRelic {
     public static final int DRAW_BONUS = 1;
 
     public JazzOrganRelic() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     // Description

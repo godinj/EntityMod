@@ -20,5 +20,13 @@
     "DESCRIPTIONS": [
       "Flux does not reduce on enemies at the end of their turn."
     ]
+  },
+  "entity:PendantRelic": {
+    "NAME": "Pendant",
+    "FLAVOR": "A unique privilege from the abyss.",
+    "DESCRIPTIONS": [
+      "Every #b",
+      " turns, gain an Artifact."
+    ]
   }
 }

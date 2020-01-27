@@ -4,7 +4,6 @@ import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import entity.EntityMod;
 import entity.util.TextureLoader;
 

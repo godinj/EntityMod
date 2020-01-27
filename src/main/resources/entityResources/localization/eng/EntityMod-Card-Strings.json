@@ -151,6 +151,14 @@
     "NAME": "Rotting Cage",
     "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux."
   },
+  "entity:RushOfRejuvenation": {
+    "NAME": "RushOfRejuvenation",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !entity:E! entity:Essence. NL Exhaust."
+  },
+  "entity:SlipThroughCracks": {
+    "NAME": "Slip Through Cracks",
+    "DESCRIPTION": "Exhaust your hand. Gain !M! intangible. NL Exhaust.",
+  },
   "entity:Split": {
     "NAME": "Split",
     "DESCRIPTION": "Discard a card and shuffle a copy into your draw pile."

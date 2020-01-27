@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
 import entity.relics.CrystalChamberRelic;
-import entity.relics.HatefulExpanseRelic;
 import entity.util.TextureLoader;
 
 public class EssencePower extends AbstractPower implements CloneablePowerInterface {

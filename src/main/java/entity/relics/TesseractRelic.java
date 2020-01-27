@@ -7,12 +7,12 @@ import com.badlogic.gdx.graphics.Texture;
 import entity.EntityMod;
 import entity.util.TextureLoader;
 
-public class HatefulExpanseRelic extends CustomRelic {
+public class TesseractRelic extends CustomRelic {
     // ID, images, text.
-    public static final String ID = EntityMod.makeID(HatefulExpanseRelic.class.getSimpleName());
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("HatefulExpanse.png"));
+    public static final String ID = EntityMod.makeID(TesseractRelic.class.getSimpleName());
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Tesseract.png"));
 
-    public HatefulExpanseRelic() {
+    public TesseractRelic() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
     }
 

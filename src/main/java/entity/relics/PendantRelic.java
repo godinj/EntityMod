@@ -20,7 +20,7 @@ public class PendantRelic extends CustomRelic {
     private static final int TURN_ACTIVATION = 3;
 
     public PendantRelic() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
     public void atBattleStart() {

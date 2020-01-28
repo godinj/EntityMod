@@ -51,8 +51,10 @@ import entity.powers.LuPower;
 import entity.powers.TuPower;
 import entity.relics.CrystalChamberRelic;
 import entity.relics.DarkCrystalRelic;
+import entity.relics.DarkInnardsRelic;
 import entity.relics.FaerieInABottleRelic;
 import entity.relics.JazzOrganRelic;
+import entity.relics.SchoolGirlRelic;
 import entity.relics.ShroudRelic;
 import entity.relics.TesseractRelic;
 import entity.relics.PendantRelic;
@@ -329,9 +331,11 @@ public class EntityMod implements
 
         BaseMod.addRelicToCustomPool(new CrystalChamberRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new DarkCrystalRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new DarkInnardsRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new FaerieInABottleRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new JazzOrganRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new PendantRelic(), Entity.Enums.COLOR_TEAL);
+        BaseMod.addRelicToCustomPool(new SchoolGirlRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new ShroudRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new TesseractRelic(), Entity.Enums.COLOR_TEAL);
         logger.info("Done adding relics!");

@@ -13,7 +13,7 @@ public class FaerieInABottleRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("FaerieInABottle.png"));
 
     public FaerieInABottleRelic() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     // Description

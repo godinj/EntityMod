@@ -14,18 +14,26 @@
       " #yEssence."
     ]
   },
+  "entity:DarkInnardsRelic": {
+    "NAME": "Dark Innards",
+    "FLAVOR": "Reading the signs is difficult amongst the gore.",
+    "DESCRIPTIONS": [
+      "Whenever a #rCurse is drawn, gain #b",
+      " #yArtifact."
+    ]
+  },
   "entity:FaerieInABottleRelic": {
     "NAME": "Faerie In A Bottle",
     "FLAVOR": "Hey... Listen!",
     "DESCRIPTIONS": [
-      "Whenever you gain #yEssence, multiply #yFlux on enemies by #yEssence gained"
+      "Whenever you gain #yEssence, multiply #yFlux on enemies by #yEssence gained."
     ]
   },
   "entity:JazzOrganRelic": {
     "NAME": "Jazz Organ",
     "FLAVOR": "You hear a faint operatic call... A phantasmal melody to sooth your transition from the abyss",
     "DESCRIPTIONS": [
-      "Whenever you trigger a #yChant, draw a card"
+      "Whenever you trigger a #yChant, draw a card."
     ]
   },
   "entity:PendantRelic": {
@@ -36,11 +44,18 @@
       " turns, gain an Artifact."
     ]
   },
+  "entity:SchoolGirlRelic": {
+    "NAME": "School Girl",
+    "FLAVOR": "Senpai! Nooooooooo.",
+    "DESCRIPTIONS": [
+      "Whenever you #yExhaust a card, draw a card."
+    ]
+  },
   "entity:ShroudRelic": {
     "NAME": "Shroud",
     "FLAVOR": "Hidden beneath the folds, you are safe...",
     "DESCRIPTIONS": [
-      "Whenever you apply #yFlux, gain 4 #yBlock"
+      "Whenever you apply #yFlux, gain 4 #yBlock."
     ]
   },
   "entity:TesseractRelic": {

@@ -1,25 +1,14 @@
 package entity.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import static entity.EntityMod.makeCardPath;
+
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.actions.MergeAction;
-import entity.actions.SplitAction;
 import entity.characters.Entity;
-import entity.powers.EssencePower;
-
-import java.util.Iterator;
-
-import static entity.EntityMod.makeCardPath;
 
 //Merge	uncommon	skill	1(0)	Draw 4 cards. Exhaust 2 cards from your hand.
 public class Merge extends AbstractDynamicCard {
@@ -34,21 +23,20 @@ public class Merge extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int MAGIC = 2;
-
-    private static final int DRAW = 4;
+    private static final int MAGIC = 4;
+    private static final int SELF_MAGIC = 2;
 
     public Merge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.draw = this.baseDraw = DRAW;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.selfMagicNumber = this.baseSelfMagicNumber = SELF_MAGIC;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // Exhaust 2 cards from hand.
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, draw));
-        AbstractDungeon.actionManager.addToBottom(new MergeAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new MergeAction(p, this.selfMagicNumber));
     }
 
     @Override

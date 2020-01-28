@@ -1,4 +1,9 @@
 {
+  "MergeAction": {
+    "TEXT": [
+      "Exhaust"
+    ]
+  },
   "SplitAction": {
     "TEXT": [
       "Duplicate"

@@ -131,7 +131,7 @@
   },
   "entity:Merge": {
     "NAME": "Merge",
-    "DESCRIPTION": "Draw 4 cards. Exhaust !M! cards."
+    "DESCRIPTION": "Draw !M! cards. Exhaust !entity:S! cards."
   },
   "entity:OddsAreSlim": {
     "NAME": "Odds Are Slim",

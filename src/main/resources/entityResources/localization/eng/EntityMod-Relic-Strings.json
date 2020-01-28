@@ -7,6 +7,15 @@
       " #yStrength until end the of turn."
     ]
   },
+  "entity:ChaliceRelic": {
+    "NAME": "Chalice",
+    "FLAVOR": "Filled to the brim with ichor.",
+    "DESCRIPTIONS": [
+      "Every time you play #b",
+      " #yAttacks in a single turn, gain #b",
+      " #yArtifact."
+    ]
+  },
   "entity:CrystalChamberRelic": {
     "NAME": "Crystal Chamber",
     "FLAVOR": "MMMMMmmmmmmmmmmmmm..........",

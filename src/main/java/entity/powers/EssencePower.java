@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
-import entity.characters.Entity;
 import entity.relics.CrystalChamberRelic;
 import entity.relics.FaerieInABottleRelic;
 import entity.util.TextureLoader;

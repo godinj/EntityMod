@@ -36,6 +36,13 @@
       " turns, gain an Artifact."
     ]
   },
+  "entity:ShroudRelic": {
+    "NAME": "Shroud",
+    "FLAVOR": "Hidden beneath the folds, you are safe...",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yFlux, gain 4 #yBlock"
+    ]
+  },
   "entity:TesseractRelic": {
     "NAME": "Tesseract",
     "FLAVOR": "A hateful expanse, a fractured fractal of unbound depth.",

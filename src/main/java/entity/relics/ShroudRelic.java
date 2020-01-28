@@ -7,12 +7,12 @@ import com.badlogic.gdx.graphics.Texture;
 import entity.EntityMod;
 import entity.util.TextureLoader;
 
-public class FaerieInABottleRelic extends CustomRelic {
+public class ShroudRelic extends CustomRelic {
     // ID, images, text.
-    public static final String ID = EntityMod.makeID(FaerieInABottleRelic.class.getSimpleName());
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("FaerieInABottle.png"));
+    public static final String ID = EntityMod.makeID(ShroudRelic.class.getSimpleName());
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Shroud.png"));
 
-    public FaerieInABottleRelic() {
+    public ShroudRelic() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
     }
 

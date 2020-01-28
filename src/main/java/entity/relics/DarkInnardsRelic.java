@@ -22,5 +22,4 @@ public class DarkInnardsRelic extends CustomRelic {
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0] + ARTIFACT_AMT + this.DESCRIPTIONS[1];
     }
-
 }

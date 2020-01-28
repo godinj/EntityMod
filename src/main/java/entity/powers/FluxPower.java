@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
+import entity.relics.ShroudRelic;
 import entity.relics.TesseractRelic;
 import entity.util.TextureLoader;
 import java.util.ArrayList;
@@ -64,6 +66,18 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
         this.description = DESCRIPTIONS[0];
 
         updateDescription();
+        logger.info("BRUH -- check Shroud from constructor");
+        if (!this.owner.hasPower(FluxPower.POWER_ID) && this.amount > 0) {
+            checkShroudRelic();
+        }
+    }
+
+    private void checkShroudRelic() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (this.amount > 0 && p.hasRelic(ShroudRelic.ID)) {
+            p.getRelic(ShroudRelic.ID).flash();
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, ShroudRelic.BLOCK_GAINED));
+        }
     }
 
     public static int calculateTotalFlux() {
@@ -87,6 +101,8 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
     {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
+        logger.info("BRUH -- check Shroud from stackPower");
+        checkShroudRelic();
         if (this.amount == 0) {
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }

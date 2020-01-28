@@ -55,7 +55,8 @@
     "NAME": "Shroud",
     "FLAVOR": "Hidden beneath the folds, you are safe...",
     "DESCRIPTIONS": [
-      "Whenever you apply #yFlux, gain 4 #yBlock."
+      "Whenever you apply #yFlux, gain #b",
+      " #yBlock."
     ]
   },
   "entity:TesseractRelic": {

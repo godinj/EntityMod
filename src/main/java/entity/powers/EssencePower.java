@@ -18,11 +18,15 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
+import entity.characters.Entity;
 import entity.relics.CrystalChamberRelic;
 import entity.relics.FaerieInABottleRelic;
 import entity.util.TextureLoader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class EssencePower extends AbstractPower implements CloneablePowerInterface {
+    public static final Logger logger = LogManager.getLogger(EntityMod.class.getName());
     public AbstractCreature source;
 
     public static final String POWER_ID = EntityMod.makeID(EssencePower.class.getSimpleName());
@@ -55,10 +59,23 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
         this.description = DESCRIPTIONS[0];
 
         updateDescription();
+        logger.info("constructor -- this.amount: " + this.amount);
+        if (!this.owner.hasPower(EssencePower.POWER_ID) && this.amount > 0) {
+            checkFaerieInABottleRelic(this.amount);
+        }
     }
 
     private int calculateHealthGained() {
         return (int)floor(amount * (ESSENCE_HEALTH_NUMERATOR / ESSENCE_HEALTH_DENOMINATOR));
+    }
+
+    private void checkFaerieInABottleRelic(int stackAmount) {
+        logger.info("checkFaerieInABottleRelic");
+        AbstractPlayer p = AbstractDungeon.player;
+        if (stackAmount > 0 && this.owner.equals(p) && p.hasRelic(FaerieInABottleRelic.ID)) {
+            p.getRelic(FaerieInABottleRelic.ID).flash();
+            multiplyFluxDamageOnEnemies(stackAmount);
+        }
     }
 
     // Iterate through all enemies and multiply their Flux.
@@ -82,15 +99,25 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
     @Override
     public void stackPower(int stackAmount)
     {
+        if (!this.owner.hasPower(EssencePower.POWER_ID)) {
+            logger.info("stackPower -- no power check: " + stackAmount);
+            return;
+        }
+        logger.info("stackPower -- stackAmount: " + stackAmount);
         this.fontScale = 8.0F;
         this.amount += stackAmount;
-        AbstractPlayer p = AbstractDungeon.player;
-        if (this.amount > 0 && this.owner.equals(p) && p.hasRelic(FaerieInABottleRelic.ID)) {
-            p.getRelic(FaerieInABottleRelic.ID).flash();
-            multiplyFluxDamageOnEnemies(stackAmount);
-        } else if (this.amount == 0) {
+        checkFaerieInABottleRelic(stackAmount);
+        if (this.amount == 0) {
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
+        updateDescription();
+    }
+
+    @Override
+    public void reducePower(int reduceAmount)
+    {
+        logger.info("reducePower");
+        super.reducePower(reduceAmount);
     }
 
     @Override

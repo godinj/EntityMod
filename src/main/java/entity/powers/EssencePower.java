@@ -90,7 +90,7 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
             if (mo.hasPower(FluxPower.POWER_ID)) {
                 int multipliedFlux = mo.getPower(FluxPower.POWER_ID).amount * (multiplier - 1);
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                    new FluxPower(mo, p, multipliedFlux), multipliedFlux));
+                    new FluxPower(mo, p, multipliedFlux)));
             }
         }
     }

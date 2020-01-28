@@ -49,6 +49,7 @@ import entity.powers.FluxPower;
 import entity.powers.KaPower;
 import entity.powers.LuPower;
 import entity.powers.TuPower;
+import entity.relics.AltarRelic;
 import entity.relics.CrystalChamberRelic;
 import entity.relics.DarkCrystalRelic;
 import entity.relics.DarkInnardsRelic;
@@ -329,6 +330,7 @@ public class EntityMod implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
+        BaseMod.addRelicToCustomPool(new AltarRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new CrystalChamberRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new DarkCrystalRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new DarkInnardsRelic(), Entity.Enums.COLOR_TEAL);

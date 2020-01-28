@@ -1,4 +1,12 @@
 {
+  "entity:AltarRelic": {
+    "NAME": "Altar",
+    "FLAVOR": "Each spell strengthens your being. Each sacrifice brings you closer to your true form.",
+    "DESCRIPTIONS": [
+      "Whenever you play a skill, gain #b",
+      " #yStrength until end the of turn."
+    ]
+  },
   "entity:CrystalChamberRelic": {
     "NAME": "Crystal Chamber",
     "FLAVOR": "MMMMMmmmmmmmmmmmmm..........",

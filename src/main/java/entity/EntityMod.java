@@ -380,6 +380,7 @@ public class EntityMod implements
         BaseMod.addCard(new InwardAscent());
         BaseMod.addCard(new Ka());
         BaseMod.addCard(new Lu());
+        BaseMod.addCard(new Merge());
         BaseMod.addCard(new OddsAreSlim());
         BaseMod.addCard(new Parry());
         BaseMod.addCard(new Ripple());
@@ -427,6 +428,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(InwardAscent.ID);
         UnlockTracker.unlockCard(Ka.ID);
         UnlockTracker.unlockCard(Lu.ID);
+        UnlockTracker.unlockCard(Merge.ID);
         UnlockTracker.unlockCard(OddsAreSlim.ID);
         UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(Ripple.ID);

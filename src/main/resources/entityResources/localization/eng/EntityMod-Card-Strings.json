@@ -129,6 +129,10 @@
     "NAME": "Lu",
     "DESCRIPTION": "Draw !M! cards. If you have entity:Tu, entity:Chant entity:Tu."
   },
+  "entity:Merge": {
+    "NAME": "Merge",
+    "DESCRIPTION": "Draw 4 cards. Exhaust !M! cards."
+  },
   "entity:OddsAreSlim": {
     "NAME": "Odds Are Slim",
     "DESCRIPTION": "Gain !entity:S! Vulnerable and !entity:S! Weak. NL Gain !entity:A! Artifact."
@@ -161,7 +165,7 @@
   },
   "entity:SlipThroughCracks": {
     "NAME": "Slip Through Cracks",
-    "DESCRIPTION": "Exhaust your hand. Gain !M! intangible. NL Exhaust.",
+    "DESCRIPTION": "Exhaust your hand. Gain !M! intangible. NL Exhaust."
   },
   "entity:Split": {
     "NAME": "Split",

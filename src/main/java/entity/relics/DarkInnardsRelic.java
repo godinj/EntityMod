@@ -15,7 +15,7 @@ public class DarkInnardsRelic extends CustomRelic {
     private static final int ARTIFACT_AMT = 1;
 
     public DarkInnardsRelic() {
-        super(ID, IMG, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     // Description

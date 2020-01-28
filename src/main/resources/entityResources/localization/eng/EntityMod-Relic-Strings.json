@@ -23,7 +23,7 @@
     ]
   },
   "entity:FaerieInABottleRelic": {
-    "NAME": "Faerie In A Bottle",
+    "NAME": "Faerie in a Bottle",
     "FLAVOR": "Hey... Listen!",
     "DESCRIPTIONS": [
       "Whenever you gain #yEssence, multiply #yFlux on enemies by #yEssence gained."

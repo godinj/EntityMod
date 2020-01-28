@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.characters.Entity;
 import entity.powers.EssencePower;
-import entity.powers.FluxPower;
 
 import static entity.EntityMod.makeCardPath;
 
 //Rush of Rejuvenation	Uncommon	Skill	2	Gain 15(20) Block and 3(4) essence. Exhaust.
-public class RushOfRejuvenation extends AbstractDynamicCard {
-    public static final String ID = EntityMod.makeID(RushOfRejuvenation.class.getSimpleName());
+public class Rejuvenation extends AbstractDynamicCard {
+    public static final String ID = EntityMod.makeID(Rejuvenation.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -30,7 +29,7 @@ public class RushOfRejuvenation extends AbstractDynamicCard {
     private static final int ESSENCE = 3;
     private static final int UPGRADED_PLUS_ESSENCE = 1;
 
-    public RushOfRejuvenation() {
+    public Rejuvenation() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = BLOCK;
         this.essence = this.baseEssence = ESSENCE;

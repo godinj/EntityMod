@@ -57,7 +57,7 @@
     "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !entity:E! entity:Essence. NL Exhaust."
   },
   "entity:TentacleRage": {
-    "NAME": "Tentacle rage",
+    "NAME": "Tentacle Rage",
     "DESCRIPTION": "Deal X damage to a random enemy !M! times."
   },
   "entity:UncoilingTendrils": {
@@ -159,8 +159,8 @@
     "NAME": "Rotting Cage",
     "DESCRIPTION": "Gain !B! Block. Gain !entity:S! entity:Flux."
   },
-  "entity:RushOfRejuvenation": {
-    "NAME": "RushOfRejuvenation",
+  "entity:Rejuvenation": {
+    "NAME": "Rejuvenation",
     "DESCRIPTION": "Gain !B! Block. NL Gain !entity:E! entity:Essence. NL Exhaust."
   },
   "entity:SlipThroughCracks": {

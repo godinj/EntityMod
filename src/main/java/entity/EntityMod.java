@@ -392,7 +392,7 @@ public class EntityMod implements
         BaseMod.addCard(new OddsAreSlim());
         BaseMod.addCard(new Parry());
         BaseMod.addCard(new Ripple());
-        BaseMod.addCard(new RushOfRejuvenation());
+        BaseMod.addCard(new Rejuvenation());
         BaseMod.addCard(new SlipThroughCracks());
         BaseMod.addCard(new Split());
         BaseMod.addCard(new Strengthen());
@@ -440,7 +440,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(OddsAreSlim.ID);
         UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(Ripple.ID);
-        UnlockTracker.unlockCard(RushOfRejuvenation.ID);
+        UnlockTracker.unlockCard(Rejuvenation.ID);
         UnlockTracker.unlockCard(SlipThroughCracks.ID);
         UnlockTracker.unlockCard(Split.ID);
         UnlockTracker.unlockCard(Strengthen.ID);

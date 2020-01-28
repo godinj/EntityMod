@@ -14,6 +14,13 @@
       " #yEssence."
     ]
   },
+  "entity:FaerieInABottleRelic": {
+    "NAME": "Faerie In A Bottle",
+    "FLAVOR": "Hey... Listen!",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yEssence, multiply #yFlux on enemies by #yEssence gained"
+    ]
+  },
   "entity:JazzOrganRelic": {
     "NAME": "Jazz Organ",
     "FLAVOR": "You hear a faint operatic call... A phantasmal melody to sooth your transition from the abyss",
@@ -27,6 +34,13 @@
     "DESCRIPTIONS": [
       "Every #b",
       " turns, gain an Artifact."
+    ]
+  },
+  "entity:ShroudRelic": {
+    "NAME": "Shroud",
+    "FLAVOR": "Hidden beneath the folds, you are safe...",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yFlux, gain 4 #yBlock"
     ]
   },
   "entity:TesseractRelic": {

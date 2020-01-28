@@ -17,7 +17,7 @@ public class Ka extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(Ka.class.getSimpleName());
     public static final String IMG = makeCardPath("AetherForm.png");
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;

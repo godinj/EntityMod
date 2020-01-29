@@ -44,6 +44,10 @@ public class MergeAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
+                c.current_x = Settings.WIDTH / 2.0f;
+                c.current_y = Settings.HEIGHT / 2.0f;
+                c.target_x = Settings.WIDTH / 2.0f;
+                c.target_y = Settings.HEIGHT / 2.0f;
                 this.p.hand.moveToExhaustPile(c);
             }
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

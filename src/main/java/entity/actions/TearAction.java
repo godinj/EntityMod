@@ -46,6 +46,10 @@ public class TearAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                c.current_x = Settings.WIDTH / 2.0f;
+                c.current_y = Settings.HEIGHT / 2.0f;
+                c.target_x = Settings.WIDTH / 2.0f;
+                c.target_y = Settings.HEIGHT / 2.0f;
                 this.p.discardPile.moveToExhaustPile(c);
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

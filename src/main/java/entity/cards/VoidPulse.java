@@ -27,9 +27,12 @@ public class VoidPulse extends AbstractDynamicCard {
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
     private static final int COST = 1;
+    // Represents the amount of energy gained.
+    private static final int MAGIC = 1;
 
     public VoidPulse() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.magicNumber = this.baseMagicNumber = MAGIC;
     }
 
     @Override

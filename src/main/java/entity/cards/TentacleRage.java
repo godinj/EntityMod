@@ -13,7 +13,7 @@ import static entity.EntityMod.makeCardPath;
 //tentacle rage -- uncommon -- attack -- X -- X damage 7(10) times randomly.
 public class TentacleRage extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(TentacleRage.class.getSimpleName());
-    public static final String IMG = makeCardPath("AetherForm.png");
+    public static final String IMG = makeCardPath("VoidBlast.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

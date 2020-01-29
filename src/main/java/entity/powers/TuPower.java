@@ -30,7 +30,7 @@ public class TuPower extends AbstractPower implements CloneablePowerInterface {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("tu_big.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("tu_small.png"));
 
-    public static final int DRAW_MULTIPLIER = 1;
+    public static final int DRAW_MULTIPLIER = 2;
     public static final int BLOCK_MULTIPLIER = 4;
 
     public TuPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {

@@ -31,7 +31,7 @@ public class LuPower extends AbstractPower implements CloneablePowerInterface {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("refuge_small.png"));
 
     public static final int FLUX_MULTIPLIER = 3;
-    public static final int DRAW_MULTIPLIER = 1;
+    public static final int DRAW_MULTIPLIER = 2;
 
     public LuPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;

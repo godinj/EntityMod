@@ -31,12 +31,7 @@ public class Surge extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int cardsPlayed = 0;
-        for (AbstractCard c: AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (!c.equals(this)) {
-                cardsPlayed++;
-            }
-        }
+        int cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
         for (int i = 0; i < min(cardsPlayed, p.drawPile.size()); i++) {
             AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(
                 AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), true));

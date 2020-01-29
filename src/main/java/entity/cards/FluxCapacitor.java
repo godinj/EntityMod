@@ -2,6 +2,7 @@ package entity.cards;
 
 import static entity.EntityMod.makeCardPath;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.characters.Entity;
+import entity.powers.FluxCapacitorPower;
 import entity.powers.FluxPower;
 
 public class FluxCapacitor extends AbstractDynamicCard {
@@ -20,7 +22,7 @@ public class FluxCapacitor extends AbstractDynamicCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
@@ -34,18 +36,13 @@ public class FluxCapacitor extends AbstractDynamicCard {
     }
 
     public void generateAndInitializeExtendedDescription() {
-        this.block = FluxPower.calculateTotalFlux();
-        this.rawDescription = DESCRIPTION +
-            EXTENDED_DESCRIPTION[1] +
-            block +
-            EXTENDED_DESCRIPTION[2];
+        this.rawDescription = DESCRIPTION;
         initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.block = FluxPower.calculateTotalFlux();
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FluxCapacitorPower(p, p, 1)));
         this.rawDescription = DESCRIPTION;
         initializeDescription();
     }

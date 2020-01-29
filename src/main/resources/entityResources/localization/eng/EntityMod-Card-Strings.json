@@ -113,12 +113,7 @@
   },
   "entity:FluxCapacitor": {
     "NAME": "Flux Capacitor",
-    "DESCRIPTION": "Gain Block equal to the total entity:Flux on all creatures.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Gains 1 block).",
-      " NL (Gains ",
-      " Block)."
-    ]
+    "DESCRIPTION": "At the start of your turn, gain Block equal to the total entity:Flux on all creatures."
   },
   "entity:FreneticFind": {
     "NAME": "Frenetic Find",
@@ -136,7 +131,7 @@
   },
   "entity:Ka": {
     "NAME": "Ka",
-    "DESCRIPTION": "Apply !entity:F!. If you have entity:Lu, entity:Chant entity:Lu."
+    "DESCRIPTION": "Apply !entity:F! entity:Flux. If you have entity:Lu, entity:Chant entity:Lu."
   },
   "entity:Lu": {
     "NAME": "Lu",
@@ -156,8 +151,8 @@
   },
   "entity:Ripple": {
     "NAME": "Ripple",
-    "DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies.",
-    "UPGRADE_DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies. NL Draw a card."
+    "DESCRIPTION": "Apply !entity:F! entity:Flux.",
+    "UPGRADE_DESCRIPTION": "Apply !entity:F! entity:Flux. NL Draw a card."
   },
   "entity:RipplingGrace": {
     "NAME": "Rippling Grace",
@@ -190,7 +185,7 @@
   },
   "entity:Surge": {
     "NAME": "Surge",
-    "DESCRIPTION": "For each card played this turn, play and Exhaust the top card of your library. NL Exhaust."
+    "DESCRIPTION": "For each card played this turn, including this card, play and Exhaust the top card of your library. NL Exhaust."
   },
   "entity:TimeRip": {
     "NAME": "Time Rip",

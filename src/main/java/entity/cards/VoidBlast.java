@@ -27,11 +27,11 @@ public class VoidBlast extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
 
-    private static final int DAMAGE = 2;
+    private static final int DAMAGE = 5;
     // Represents Vulnerable amount applied to enemy.
     private static final int MAGIC = 2;
     // Represents number of attacks.
-    private static final int MULTIPLIER = 5;
+    private static final int MULTIPLIER = 2;
     // Represents Vulnerable amount applied to self.
     private static final int SELF_MAGIC = 1;
 
@@ -50,7 +50,7 @@ public class VoidBlast extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(p, magicNumber, false), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
     }
 
     @Override

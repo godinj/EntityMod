@@ -18,6 +18,10 @@
     "NAME": "FluxBar",
     "DESCRIPTIONS": ["."]
   },
+  "entity:FluxCapacitorPower": {
+    "NAME": "Flux Capacitor",
+    "DESCRIPTIONS": ["Gain Block equal to the total #yFlux on all creatures."]
+  },
   "entity:KaPower": {
     "NAME": "Ka",
     "DESCRIPTIONS": ["Upon Chant, gain #b", " #yBlock and apply #b", " #yFlux to a random enemy."]

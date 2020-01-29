@@ -27,7 +27,7 @@ public class ForceThrough extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     //number of artifacts added
     private static final int ARTIFACT = 1;

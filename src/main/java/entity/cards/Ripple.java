@@ -22,7 +22,7 @@ public class Ripple extends AbstractDynamicCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ALL;
+    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
@@ -35,7 +35,7 @@ public class Ripple extends AbstractDynamicCard {
 
     public Ripple() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        flux = baseFlux = FLUX;
+        this.flux = this.baseFlux = FLUX;
         this.magicNumber = this.baseMagicNumber = MAGIC;
     }
 

@@ -24,7 +24,7 @@ public class Defend_Entity extends AbstractDynamicCard {
 
     public Defend_Entity() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseBlock = 5;
+        this.block = this.baseBlock = 5;
         this.tags.add(BaseModCardTags.BASIC_DEFEND);
     }
 

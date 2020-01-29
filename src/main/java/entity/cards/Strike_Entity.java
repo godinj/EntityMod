@@ -29,7 +29,7 @@ public class Strike_Entity extends AbstractDynamicCard {
 
     public Strike_Entity() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.damage = this.baseDamage = DAMAGE;
         tags.add(CardTags.STRIKE);
         this.tags.add(BaseModCardTags.BASIC_STRIKE);
     }

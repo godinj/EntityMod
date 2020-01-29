@@ -45,8 +45,12 @@ public class GreatOldOne extends AbstractDynamicCard {
         AbstractCard card;
         while(iterator.hasNext()) {
             card = iterator.next();
+            if (card.cardID.equals(GreatOldOne.ID)) {
+                continue;
+            }
             AbstractMonster mo = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.monsterRng);
-            AbstractDungeon.actionManager.addToBottom(new UseCardAction(card, mo));
+            AbstractCard tmp = card.makeStatEquivalentCopy();
+            tmp.use(p, mo);
         }
     }
 

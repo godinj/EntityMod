@@ -119,6 +119,10 @@
     "NAME": "Frenetic Find",
     "DESCRIPTION":  "Gain !entity:A! Artifact. NL gain a Slimed, Void, Dazed, Burn, and Wound card into your discard pile."
   },
+  "entity:GreatOldOne": {
+    "NAME": "Great Old One",
+    "DESCRIPTION":  "Play all cards in your Exhaust pile. NL Exhaust."
+  },
   "entity:InwardAscent": {
     "NAME": "Inward Ascent",
     "DESCRIPTION": "Gain X entity:Essence. NL Exhaust",

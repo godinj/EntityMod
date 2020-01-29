@@ -56,6 +56,15 @@
     "NAME": "Sap",
     "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !entity:E! entity:Essence. NL Exhaust."
   },
+  "entity:Tear": {
+    "NAME": "Tear",
+    "DESCRIPTION": "Deal !D! damage !entity:M! times.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Exhaust a card in your discard pile.",
+      " NL Exhaust ",
+      " cards in your discard pile."
+    ]
+  },
   "entity:TentacleRage": {
     "NAME": "Tentacle Rage",
     "DESCRIPTION": "Deal X damage to a random enemy !M! times."
@@ -63,6 +72,10 @@
   "entity:UncoilingTendrils": {
     "NAME": "Uncoiling Tendrils",
     "DESCRIPTION": "Deal !D! damage. NL If Fatal, Transform a common card in your deck. NL Exhaust."
+  },
+  "entity:Untouchable": {
+    "NAME": "Untouchable",
+    "DESCRIPTION": "Gain !entity:A! Artifact. NL Exhaust"
   },
   "entity:VoidBlast": {
     "NAME": "Void Blast",
@@ -102,7 +115,7 @@
     "NAME": "Flux Capacitor",
     "DESCRIPTION": "Gain Block equal to the total entity:Flux on all creatures.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Draws 1 card).",
+      " NL (Gains 1 block).",
       " NL (Gains ",
       " Block)."
     ]
@@ -178,6 +191,15 @@
   "entity:Surge": {
     "NAME": "Surge",
     "DESCRIPTION": "For each card played this turn, play and Exhaust the top card of your library. NL Exhaust."
+  },
+  "entity:TimeRip": {
+    "NAME": "Time Rip",
+    "DESCRIPTION": "Gain !B! block, ",
+    "EXTENDED_DESCRIPTION": [
+      " , and add ",
+      " a Void card to your discard pile.",
+      " Void cards to your discard pile."
+    ]
   },
   "entity:Tu": {
     "NAME": "Tu",

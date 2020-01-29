@@ -8,5 +8,12 @@
     "TEXT": [
       "Duplicate"
     ]
+  },
+  "TearAction": {
+    "TEXT": [
+      "Choose a Card to Exhaust.",
+      "Choose ",
+      " Cards to Exhaust."
+    ]
   }
 }

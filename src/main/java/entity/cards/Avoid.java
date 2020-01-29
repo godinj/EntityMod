@@ -25,9 +25,9 @@ public class Avoid extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int BLOCK = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 8;
-
+    private static final int BLOCK = 7;
+    private static final int UPGRADE_PLUS_BLOCK = 10;
+    // Represents number of void cards added to discard pile.
     private static final int SELF_MAGIC_NUMBER = 1;
 
     public Avoid() {

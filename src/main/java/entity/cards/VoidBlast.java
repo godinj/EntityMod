@@ -5,9 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -27,13 +25,13 @@ public class VoidBlast extends AbstractDynamicCard {
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
     private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 2;
     // Represents Vulnerable amount applied to enemy.
     private static final int MAGIC = 2;
     // Represents number of attacks.
-    private static final int MULTIPLIER = 6;
-    private static final int UPGRADE_PLUS_MULTIPLIER = 2;
+    private static final int MULTIPLIER = 5;
     // Represents Vulnerable amount applied to self.
     private static final int SELF_MAGIC = 1;
 
@@ -59,7 +57,7 @@ public class VoidBlast extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMultiplier(UPGRADE_PLUS_MULTIPLIER);
+            upgradeBaseCost(UPGRADED_COST);
         }
     }
 }

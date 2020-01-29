@@ -37,8 +37,8 @@ public class SlipThroughCracks extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
-    private static final int COST = 2;
-
+    private static final int COST = 1;
+    // Represents amount of Intangible gained.
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
@@ -77,9 +77,8 @@ public class SlipThroughCracks extends AbstractDynamicCard {
                 new ExhaustSpecificCardAction(card, p.hand));
             cardsExhausted++;
         }
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction
-                    (p,p, new IntangiblePower(p, magicNumber), magicNumber));
-
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction
+            (p,p, new IntangiblePower(p, magicNumber), magicNumber));
     }
 
     @Override

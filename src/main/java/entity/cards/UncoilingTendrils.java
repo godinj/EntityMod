@@ -21,10 +21,10 @@ public class UncoilingTendrils extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public UncoilingTendrils() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -24,9 +24,9 @@ public class AetherForm extends AbstractDynamicCard {
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
     private static final int COST = 2;
+    private static final int UPGRADED_COST = 2;
 
     private static final int BLOCK = 7;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
     private static final int ARTIFACT = 1;
 
     public AetherForm() {
@@ -45,7 +45,7 @@ public class AetherForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
+            this.upgradeBaseCost(UPGRADED_COST);
         }
     }
 }

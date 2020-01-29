@@ -23,8 +23,8 @@ public class Parry extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int BLOCK = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int BLOCK = 11;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
     public Parry() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

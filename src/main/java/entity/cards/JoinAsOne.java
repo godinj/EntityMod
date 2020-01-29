@@ -28,7 +28,7 @@ public class JoinAsOne extends AbstractDynamicCard {
     private static final int COST = 1;
 
     private static final int FLUX = 3;
-    private static final int UPGRADE_PLUS_FLUX = 1;
+    private static final int UPGRADE_PLUS_FLUX = 2;
     // Represents the amount of Flux applied to self.
     private static final int SELF_MAGIC = 1;
 

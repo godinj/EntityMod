@@ -20,7 +20,7 @@ public class WarpedForm extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Entity.Enums.COLOR_TEAL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int ARTIFACT = 3;
     private static final int UPGRADE_PLUS_ARTIFACT = 2;

@@ -1,6 +1,5 @@
 package entity.cards;
 
-import basemod.helpers.dynamicvariables.MagicNumberVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -29,7 +28,7 @@ public class Ripple extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int FLUX = 1;
+    private static final int FLUX = 3;
 
     private static final int MAGIC = 0;
     private static final int UPGRADE_PLUS_MAGIC = 1;
@@ -42,13 +41,8 @@ public class Ripple extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo == null || mo.isDead || mo.isDying) {
-                continue;
-            }
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                    new FluxPower(mo, p, flux), flux));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
+            new FluxPower(m, p, flux), flux));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
     }
 

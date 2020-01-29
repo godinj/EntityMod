@@ -23,8 +23,8 @@ public class TentacleRage extends AbstractDynamicCard {
     private static final int COST = -1; // X cost
 
     // Represents the number of attacks.
-    private static final int MAGIC = 7;
-    private static final int UPGRADE_PLUS_MAGIC = 3;
+    private static final int MAGIC = 9;
+    private static final int UPGRADE_PLUS_MAGIC = 4;
 
     public TentacleRage() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

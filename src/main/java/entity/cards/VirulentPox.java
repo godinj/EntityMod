@@ -17,7 +17,7 @@ import entity.powers.VoidPulsePower;
 // Void Pulse -- rare -- power -- 1 --  whenever a status is drawn, Gain 1 energy and draw a card. (innate)
 public class VirulentPox extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(VirulentPox.class.getSimpleName());
-    public static final String IMG = makeCardPath("Otherworldly.png");
+    public static final String IMG = makeCardPath("VirulentPox.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;

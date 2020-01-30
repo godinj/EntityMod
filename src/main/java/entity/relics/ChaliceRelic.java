@@ -25,7 +25,7 @@ public class ChaliceRelic extends CustomRelic {
     private static final int NUM_CARDS = 3;
 
     public ChaliceRelic() {
-        super(ID, IMG, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.MAGICAL);
     }
 
     @Override

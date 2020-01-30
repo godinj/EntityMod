@@ -342,6 +342,17 @@ public class EntityMod implements
         BaseMod.addRelicToCustomPool(new SchoolGirlRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new ShroudRelic(), Entity.Enums.COLOR_TEAL);
         BaseMod.addRelicToCustomPool(new TesseractRelic(), Entity.Enums.COLOR_TEAL);
+
+        UnlockTracker.markRelicAsSeen(AltarRelic.ID);
+        UnlockTracker.markRelicAsSeen(ChaliceRelic.ID);
+        UnlockTracker.markRelicAsSeen(CrystalChamberRelic.ID);
+        UnlockTracker.markRelicAsSeen(DarkCrystalRelic.ID);
+        UnlockTracker.markRelicAsSeen(FaerieInABottleRelic.ID);
+        UnlockTracker.markRelicAsSeen(JazzOrganRelic.ID);
+        UnlockTracker.markRelicAsSeen(PendantRelic.ID);
+        UnlockTracker.markRelicAsSeen(SchoolGirlRelic.ID);
+        UnlockTracker.markRelicAsSeen(ShroudRelic.ID);
+        UnlockTracker.markRelicAsSeen(TesseractRelic.ID);
         logger.info("Done adding relics!");
     }
 

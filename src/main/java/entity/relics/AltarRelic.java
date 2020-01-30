@@ -26,7 +26,7 @@ public class AltarRelic extends CustomRelic {
     private int totalStrengthGain;
 
     public AltarRelic() {
-        super(ID, IMG, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.MAGICAL);
         isStrengthGainedThisTurn = false;
         totalStrengthGain = 0;
     }

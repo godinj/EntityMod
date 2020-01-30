@@ -34,6 +34,10 @@
     "NAME": "Tu",
     "DESCRIPTIONS": ["Upon Chant, draw ", "#b", " cards and gain #b", " #yBlock.", "a card and gain #b"]
   },
+  "entity:VirulentPoxPower": {
+    "NAME": "Virulent Pox",
+    "DESCRIPTIONS": ["Whenever an enemy dies, apply all #yFlux on that enemy to a random enemy ", "#b", " times.", "once."]
+  },
   "entity:VoidPulsePower": {
     "NAME": "Void Pulse",
     "DESCRIPTIONS": ["When you draw a #yStatus card, gain ", " and draw ", "#b", " cards.", "a card."]

@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
+import entity.cards.VirulentPox;
 import entity.relics.ShroudRelic;
 import entity.relics.TesseractRelic;
 import entity.util.TextureLoader;
@@ -163,6 +164,14 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
         if (currentLivingMonsters.size() > 0 && p.hasPower(FluxPower.POWER_ID)) {
             logger.info("BRUH -- player flux reduction -- " + FLUX_REDUCTION);
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, POWER_ID, FLUX_REDUCTION));
+        }
+    }
+
+    @Override
+    public void onDeath() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (!this.owner.equals(p) && p.hasPower(VirulentPox.ID)) {
+
         }
     }
 

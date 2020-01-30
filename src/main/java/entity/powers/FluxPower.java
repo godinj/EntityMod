@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import entity.EntityMod;
+import entity.actions.VirulentPoxAction;
 import entity.cards.VirulentPox;
 import entity.relics.ShroudRelic;
 import entity.relics.TesseractRelic;
@@ -170,8 +171,11 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
     @Override
     public void onDeath() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (!this.owner.equals(p) && p.hasPower(VirulentPox.ID)) {
-
+        EntityMod.logger.info("BRUH -- on death");
+        EntityMod.logger.info("BRUH -- !this.owner.equals(p): " + !this.owner.equals(p));
+        EntityMod.logger.info("BRUH -- p.hasPower(VirulentPoxPower.POWER_ID): " + p.hasPower(VirulentPoxPower.POWER_ID));
+        if (!this.owner.equals(p) && p.hasPower(VirulentPoxPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new VirulentPoxAction(p.getPower(VirulentPoxPower.POWER_ID), this.amount));
         }
     }
 

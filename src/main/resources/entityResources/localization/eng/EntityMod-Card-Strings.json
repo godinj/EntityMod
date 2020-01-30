@@ -204,6 +204,10 @@
     "NAME": "Tu",
     "DESCRIPTION": "Gain !B! Block. If you have entity:Ka, entity:Chant entity:Ka."
   },
+  "entity:VirulentPox": {
+    "NAME": "Virulent Pox",
+    "DESCRIPTION": "Whenever an enemy dies, apply all entity:Flux on that enemy to a random enemy."
+  },
   "entity:VoidPulse": {
     "NAME": "Void Pulse",
     "DESCRIPTION": "Whenever a status is drawn, gain [E] and draw a card.",

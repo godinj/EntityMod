@@ -53,8 +53,6 @@ public class VirulentPoxPower extends AbstractPower implements CloneablePowerInt
         }
     }
 
-
-
     @Override
     public void updateDescription() {
         StringBuilder sb = new StringBuilder();

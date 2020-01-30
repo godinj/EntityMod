@@ -27,8 +27,11 @@ public class VirulentPox extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
 
+    private static final int MAGIC = 1;
+
     public VirulentPox() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.magicNumber = this.baseMagicNumber = MAGIC;
     }
 
     @Override

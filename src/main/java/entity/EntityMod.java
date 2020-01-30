@@ -422,6 +422,7 @@ public class EntityMod implements
 
         // Powers
         BaseMod.addCard(new WarpedForm());
+        BaseMod.addCard(new VirulentPox());
         BaseMod.addCard(new VoidPulse());
         BaseMod.addCard(new VoidWeave());
 
@@ -474,6 +475,7 @@ public class EntityMod implements
 
         // Powers
         UnlockTracker.unlockCard(WarpedForm.ID);
+        UnlockTracker.unlockCard(VirulentPox.ID);
         UnlockTracker.unlockCard(VoidPulse.ID);
         UnlockTracker.unlockCard(VoidWeave.ID);
 

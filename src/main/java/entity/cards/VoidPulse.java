@@ -38,7 +38,7 @@ public class VoidPulse extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-            new VoidPulsePower(p, p, block), block));
+            new VoidPulsePower(p, p, magicNumber), magicNumber));
     }
 
     @Override

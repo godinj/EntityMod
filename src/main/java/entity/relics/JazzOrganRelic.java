@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
@@ -11,11 +12,12 @@ public class JazzOrganRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(JazzOrganRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("JazzOrgan.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("JazzOrgan.png"));
 
     public static final int DRAW_BONUS = 1;
 
     public JazzOrganRelic() {
-        super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     // Description

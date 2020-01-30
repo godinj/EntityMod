@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
@@ -20,12 +21,13 @@ public class ChaliceRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(ChaliceRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Chalice.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Chalice.png"));
 
     private static final int ARTIFACT_GAIN_AMT = 1;
     private static final int NUM_CARDS = 3;
 
     public ChaliceRelic() {
-        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
     }
 
     @Override

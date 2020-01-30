@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
@@ -11,11 +12,12 @@ public class ShroudRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(ShroudRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Shroud.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Shroud.png"));
 
     public static final int BLOCK_GAINED = 4;
 
     public ShroudRelic() {
-        super(ID, IMG, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     // Description

@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
@@ -15,12 +16,13 @@ public class PendantRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(PendantRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Pendant.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Pendant.png"));
 
     private static final int ARTIFACT = 1;
     private static final int TURN_ACTIVATION = 3;
 
     public PendantRelic() {
-        super(ID, IMG, RelicTier.COMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
     public void atBattleStart() {

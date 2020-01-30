@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
@@ -11,9 +12,10 @@ public class FaerieInABottleRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(FaerieInABottleRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("FaerieInABottle.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("FaerieInABottle.png"));
 
     public FaerieInABottleRelic() {
-        super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     // Description

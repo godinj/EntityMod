@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
@@ -17,11 +18,12 @@ public class DarkInnardsRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(DarkInnardsRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("DarkInnards.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("DarkInnards.png"));
 
     private static final int ARTIFACT_AMT = 1;
 
     public DarkInnardsRelic() {
-        super(ID, IMG, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     @Override

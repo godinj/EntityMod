@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
@@ -12,9 +13,10 @@ public class CrystalChamberRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(CrystalChamberRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("CrystalChamber.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("CrystalChamber.png"));
 
     public CrystalChamberRelic() {
-        super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     public boolean canSpawn() {

@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import basemod.abstracts.CustomRelic;
@@ -14,11 +15,12 @@ public class SchoolGirlRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(SchoolGirlRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("SchoolGirl.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("SchoolGirl.png"));
 
     private static final int DRAW_AMT = 1;
 
     public SchoolGirlRelic() {
-        super(ID, IMG, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     @Override

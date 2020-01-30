@@ -1,5 +1,6 @@
 package entity.relics;
 
+import static entity.EntityMod.makeRelicOutlinePath;
 import static entity.EntityMod.makeRelicPath;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -17,11 +18,12 @@ public class DarkCrystalRelic extends CustomRelic {
     // ID, images, text.
     public static final String ID = EntityMod.makeID(DarkCrystalRelic.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("DarkCrystal.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("DarkCrystal.png"));
 
     private static final int ESSENCE_AMT = 3;
 
     public DarkCrystalRelic() {
-        super(ID, IMG, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 
     public void atBattleStart() {

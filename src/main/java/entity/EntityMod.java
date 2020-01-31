@@ -402,6 +402,7 @@ public class EntityMod implements
         BaseMod.addCard(new FluxCapacitor());
         BaseMod.addCard(new FreneticFind());
         BaseMod.addCard(new GreatOldOne());
+        BaseMod.addCard(new Insanity());
         BaseMod.addCard(new InwardAscent());
         BaseMod.addCard(new Ka());
         BaseMod.addCard(new Lu());
@@ -455,6 +456,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(FluxCapacitor.ID);
         UnlockTracker.unlockCard(FreneticFind.ID);
         UnlockTracker.unlockCard(GreatOldOne.ID);
+        UnlockTracker.unlockCard(Insanity.ID);
         UnlockTracker.unlockCard(InwardAscent.ID);
         UnlockTracker.unlockCard(Ka.ID);
         UnlockTracker.unlockCard(Lu.ID);

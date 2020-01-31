@@ -9,16 +9,16 @@
   },
   "entity:AbyssalCall": {
     "NAME": "Abyssal Call",
-    "DESCRIPTION": "Deal !D! damage to all enemies. Add !M! Void cards into your discard pile.",
+    "DESCRIPTION": "Deal !D! damage to all enemies. Add !M! *Void into your discard pile.",
     "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable."
   },
   "entity:CosmicRay": {
     "NAME": "Cosmic Ray",
     "DESCRIPTION": "Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      " Add a Void card into your discard pile.",
+      " Add a *Void into your discard pile.",
       " Add ",
-      " Void cards into your discard pile."
+      " *Void into your discard pile."
     ]
   },
   "entity:Coup": {
@@ -43,9 +43,9 @@
     "NAME": "Lash",
     "DESCRIPTION": "Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      " Add a Void card into your discard pile.",
+      " Add a *Void into your discard pile.",
       " Add ",
-      " Void cards into your discard pile."
+      " *Void into your discard pile."
     ]
   },
   "entity:Rupture": {
@@ -123,6 +123,15 @@
     "NAME": "Great Old One",
     "DESCRIPTION":  "Play all cards in your Exhaust pile. NL Exhaust."
   },
+  "entity:Insanity": {
+    "NAME": "Insanity",
+    "DESCRIPTION": "Draw ",
+    "EXTENDED_DESCRIPTION": [
+      "a card, gain ",
+      " cards, gain ",
+      " , and add a Curse to your discard pile."
+    ]
+  },
   "entity:InwardAscent": {
     "NAME": "Inward Ascent",
     "DESCRIPTION": "Gain X entity:Essence. NL Exhaust",
@@ -160,7 +169,7 @@
   },
   "entity:RipplingGrace": {
     "NAME": "Rippling Grace",
-    "DESCRIPTION": "Exhaust your hand. For each card exhausted, draw a card, gain [E] , gain 1 Block and add a Void card into your discard pile. Exhaust.",
+    "DESCRIPTION": "Exhaust your hand. For each card exhausted, draw a card, gain [E] , gain 1 Block and add a *Void into your discard pile. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL (Exhausts 1 card).",
       " NL (Exhausts ",
@@ -193,11 +202,11 @@
   },
   "entity:TimeRip": {
     "NAME": "Time Rip",
-    "DESCRIPTION": "Gain !B! block, ",
+    "DESCRIPTION": "Gain !B! block, gain ",
     "EXTENDED_DESCRIPTION": [
       " , and add ",
-      " a Void card to your discard pile.",
-      " Void cards to your discard pile."
+      " a *Void to your discard pile.",
+      " *Void to your discard pile."
     ]
   },
   "entity:Tu": {
@@ -215,7 +224,7 @@
   },
   "entity:VoidWeave": {
     "NAME": "Void Weave",
-    "DESCRIPTION": "Whenever you draw a Void card, gain !B! Block."
+    "DESCRIPTION": "Whenever you draw a *Void, gain !B! Block."
   },
   "entity:WarpedForm": {
     "NAME": "Warped Form",

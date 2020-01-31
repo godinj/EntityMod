@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
-import entity.actions.MergeAction;
+import entity.actions.ExhaustCardsInHandAction;
 import entity.characters.Entity;
 
 //Merge	uncommon	skill	1(0)	Draw 4 cards. Exhaust 2 cards from your hand.
@@ -36,7 +36,7 @@ public class Merge extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         // Exhaust 2 cards from hand.
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new MergeAction(p, this.selfMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustCardsInHandAction(p, this.selfMagicNumber));
     }
 
     @Override

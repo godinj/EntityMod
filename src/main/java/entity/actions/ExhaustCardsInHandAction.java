@@ -8,19 +8,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import entity.EntityMod;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-public class MergeAction extends AbstractGameAction {
-    public static final Logger logger = LogManager.getLogger(EntityMod.class.getName());
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(MergeAction.class.getSimpleName());
+public class ExhaustCardsInHandAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ExhaustCardsInHandAction.class.getSimpleName());
 
     public static final String[] TEXT = uiStrings.TEXT;
 
     private AbstractPlayer p;
 
-    public MergeAction(AbstractCreature source, int amount) {
+    public ExhaustCardsInHandAction(AbstractCreature source, int amount) {
         setValues(AbstractDungeon.player, source, amount);
         this.p = AbstractDungeon.player;
         this.duration = Settings.ACTION_DUR_FAST;
@@ -28,7 +24,6 @@ public class MergeAction extends AbstractGameAction {
 
     public void update() {//When hand is empty, stop
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            logger.info("Reached boi");
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;
                 return;

@@ -200,6 +200,16 @@
     "NAME": "Surge",
     "DESCRIPTION": "For each card played this turn, including this card, play and Exhaust the top card of your library. NL Exhaust."
   },
+  "entity:TaintedEyes": {
+    "NAME": "Tainted Eyes",
+    "DESCRIPTION": "Draw ",
+    "EXTENDED_DESCRIPTION": [
+      "a card,",
+      " cards,",
+      " NL Exhaust a card at random.",
+      " NL Exhaust a card."
+    ]
+  },
   "entity:TimeRip": {
     "NAME": "Time Rip",
     "DESCRIPTION": "Gain !B! block, gain ",

@@ -415,6 +415,7 @@ public class EntityMod implements
         BaseMod.addCard(new Split());
         BaseMod.addCard(new Strengthen());
         BaseMod.addCard(new JoinAsOne());
+        BaseMod.addCard(new TaintedEyes());
         BaseMod.addCard(new TimeRip());
         BaseMod.addCard(new Tu());
         BaseMod.addCard(new Untouchable());
@@ -469,6 +470,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Split.ID);
         UnlockTracker.unlockCard(Strengthen.ID);
         UnlockTracker.unlockCard(JoinAsOne.ID);
+        UnlockTracker.unlockCard(TaintedEyes.ID);
         UnlockTracker.unlockCard(TimeRip.ID);
         UnlockTracker.unlockCard(Tu.ID);
         UnlockTracker.unlockCard(Untouchable.ID);

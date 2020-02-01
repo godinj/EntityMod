@@ -103,6 +103,10 @@
       " cards"
     ]
   },
+  "entity:Crucible": {
+    "NAME": "Crucible",
+    "DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies. NL Gain a *Void for each enemy. NL Exhaust."
+  },
   "entity:Delirium": {
     "NAME": "Delirium",
     "DESCRIPTION": "Apply !entity:F! entity:Flux to all enemies. NL Gain !entity:E! entity:Essence. NL Exhaust."
@@ -117,7 +121,7 @@
   },
   "entity:FreneticFind": {
     "NAME": "Frenetic Find",
-    "DESCRIPTION":  "Gain !entity:A! Artifact. NL gain a Slimed, Void, Dazed, Burn, and Wound card into your discard pile."
+    "DESCRIPTION":  "Gain !entity:A! Artifact. NL gain a *Slimed, *Void, *Dazed, *Burn, and *Wound card into your discard pile."
   },
   "entity:GreatOldOne": {
     "NAME": "Great Old One",
@@ -127,8 +131,8 @@
     "NAME": "Insanity",
     "DESCRIPTION": "Draw ",
     "EXTENDED_DESCRIPTION": [
-      "a card, gain ",
-      " cards, gain ",
+      "a card, NL gain ",
+      " cards, NL gain ",
       " , and add a Curse to your discard pile."
     ]
   },
@@ -218,6 +222,10 @@
       " a *Void to your discard pile.",
       " *Void to your discard pile."
     ]
+  },
+  "entity:ToTheAbyss": {
+    "NAME": "To the Abyss",
+    "DESCRIPTION": "Discard any number of cards. Draw that many cards and gain that much entity:Essence. NL Exhaust."
   },
   "entity:Tu": {
     "NAME": "Tu",

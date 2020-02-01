@@ -397,6 +397,7 @@ public class EntityMod implements
         BaseMod.addCard(new Avoid());
         BaseMod.addCard(new BoundlessAether());
         BaseMod.addCard(new Coalesce());
+        BaseMod.addCard(new Crucible());
         BaseMod.addCard(new Delirium());
         BaseMod.addCard(new Disturb());
         BaseMod.addCard(new FluxCapacitor());
@@ -417,6 +418,7 @@ public class EntityMod implements
         BaseMod.addCard(new JoinAsOne());
         BaseMod.addCard(new TaintedEyes());
         BaseMod.addCard(new TimeRip());
+        BaseMod.addCard(new ToTheAbyss());
         BaseMod.addCard(new Tu());
         BaseMod.addCard(new Untouchable());
         BaseMod.addCard(new RottingCage());
@@ -452,6 +454,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(Avoid.ID);
         UnlockTracker.unlockCard(BoundlessAether.ID);
         UnlockTracker.unlockCard(Coalesce.ID);
+        UnlockTracker.unlockCard(Crucible.ID);
         UnlockTracker.unlockCard(Delirium.ID);
         UnlockTracker.unlockCard(Disturb.ID);
         UnlockTracker.unlockCard(FluxCapacitor.ID);
@@ -472,6 +475,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(JoinAsOne.ID);
         UnlockTracker.unlockCard(TaintedEyes.ID);
         UnlockTracker.unlockCard(TimeRip.ID);
+        UnlockTracker.unlockCard(ToTheAbyss.ID);
         UnlockTracker.unlockCard(Tu.ID);
         UnlockTracker.unlockCard(Untouchable.ID);
         UnlockTracker.unlockCard(RottingCage.ID);

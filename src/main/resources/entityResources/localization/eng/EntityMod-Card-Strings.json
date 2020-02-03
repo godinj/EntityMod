@@ -85,6 +85,11 @@
     "NAME": "Aether Form",
     "DESCRIPTION": "Gain !B! Block. Gain !entity:A! Artifact."
   },
+  "entity:Anomaly": {
+    "NAME": "Anomaly",
+    "DESCRIPTION": "Gain 1 Dexterity and 1 Strength for each card played this turn after this. NL Lose that much Dexterity and Strength and respectively at the end of your turn.",
+    "UPGRADE_DESCRIPTION": "Gain X Dexterity and X Strength for each card played this turn after this. NL Lose that much Dexterity and Strength and respectively at the end of your turn."
+  },
   "entity:Avoid": {
     "NAME": "Avoid",
     "DESCRIPTION": "Gain !B! Block. NL Gain !entity:S! void card into your discard pile."

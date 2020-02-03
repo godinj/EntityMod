@@ -394,6 +394,7 @@ public class EntityMod implements
         // Skills
         BaseMod.addCard(new Defend_Entity());
         BaseMod.addCard(new AetherForm());
+        BaseMod.addCard(new Anomaly());
         BaseMod.addCard(new Avoid());
         BaseMod.addCard(new BoundlessAether());
         BaseMod.addCard(new Coalesce());
@@ -451,6 +452,7 @@ public class EntityMod implements
         // Skills
         UnlockTracker.unlockCard(Defend_Entity.ID);
         UnlockTracker.unlockCard(AetherForm.ID);
+        UnlockTracker.unlockCard(Anomaly.ID);
         UnlockTracker.unlockCard(Avoid.ID);
         UnlockTracker.unlockCard(BoundlessAether.ID);
         UnlockTracker.unlockCard(Coalesce.ID);

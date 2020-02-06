@@ -30,8 +30,8 @@ public class AnomalyPlusPower extends AbstractPower implements CloneablePowerInt
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("ka_big.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("ka_small.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("anomaly_plus_big.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("anomaly_plus_small.png"));
 
     private int strengthGainedThisTurn;
     private int dexterityGainedThisTurn;

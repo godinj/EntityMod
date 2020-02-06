@@ -1,11 +1,11 @@
 {
   "entity:AnomalyPower": {
     "NAME": "Anomaly",
-    "DESCRIPTIONS": ["When you play a card this turn, gain X Dexterity and Strength. Lose that much Dexterity and Strength at the end of your turn."]
+    "DESCRIPTIONS": ["When you play a card this turn, gain 1 Dexterity and Strength. Lose that much Dexterity and Strength at the end of your turn."]
   },
   "entity:AnomalyPlusPower": {
     "NAME": "Anomaly+",
-    "DESCRIPTIONS": ["When you play a card this turn, gain X Dexterity and Strength. Lose that much Dexterity and Strength at the end of your turn."]
+    "DESCRIPTIONS": ["When you play a card this turn, gain 1 Dexterity and Strength for each card played before it after Anomaly+ became active. Lose that much Dexterity and Strength at the end of your turn."]
   },
   "entity:EssencePower": {
     "NAME": "Essence",

@@ -87,8 +87,8 @@
   },
   "entity:Anomaly": {
     "NAME": "Anomaly",
-    "DESCRIPTION": "Gain 1 Dexterity and 1 Strength for each card played this turn after this. NL Lose that much Dexterity and Strength and respectively at the end of your turn.",
-    "UPGRADE_DESCRIPTION": "Gain X Dexterity and X Strength, where X is the Nth value in the Ramanujan summation and N is the number of cards played this turn after this. NL Lose that much Dexterity and Strength and respectively at the end of your turn."
+    "DESCRIPTION": "Whenever you play a card this turn, gain 1 Dexterity and 1 Strength. NL Lose that much Dexterity and Strength and respectively at the end of your turn.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a card this turn, gain X Dexterity and X Strength, where X is the number of cards played this turn after this. NL Lose that much Dexterity and Strength and respectively at the end of your turn."
   },
   "entity:Avoid": {
     "NAME": "Avoid",

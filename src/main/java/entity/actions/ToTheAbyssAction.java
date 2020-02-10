@@ -1,6 +1,7 @@
 package entity.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,9 +38,13 @@ public class ToTheAbyssAction extends AbstractGameAction {
             return;
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            int cardsDiscarded = AbstractDungeon.handCardSelectScreen.selectedCards.group.size();
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.p, cardsDiscarded));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EssencePower(p, p, cardsDiscarded)));
+            for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
+                this.p.hand.moveToDiscardPile(c);
+                c.triggerOnManualDiscard();
+                GameActionManager.incrementDiscard(false);
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.p, 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EssencePower(p, p, 1)));
+            }
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }

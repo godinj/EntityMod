@@ -28,15 +28,16 @@ public class VoidWeavePower extends AbstractPower implements CloneablePowerInter
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("community_big.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("community_small.png"));
 
-    private static final int BLOCK_MULTIPLIER = 5;
+    private int block_multiplier;
 
-    public VoidWeavePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public VoidWeavePower(final AbstractCreature owner, final AbstractCreature source, final int amount, final int block_multiplier) {
         this.name = NAME;
         this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
+        this.block_multiplier = block_multiplier;
 
         this.type = PowerType.BUFF;
         this.isTurnBased = false;
@@ -48,6 +49,10 @@ public class VoidWeavePower extends AbstractPower implements CloneablePowerInter
         this.description = DESCRIPTIONS[0];
 
         updateDescription();
+    }
+
+    public int calculateBlockGained() {
+        return this.amount * block_multiplier;
     }
 
     @Override
@@ -64,18 +69,19 @@ public class VoidWeavePower extends AbstractPower implements CloneablePowerInter
         if (card.cardID.equals(VoidCard.ID)) {
             flash();
             AbstractCreature o = this.owner;
-            int blockGain = this.amount * BLOCK_MULTIPLIER;
+            int blockGain = calculateBlockGained();
             AbstractDungeon.actionManager.addToTop(new GainBlockAction(o, o, blockGain));
         }
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0]
+            + calculateBlockGained() + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new VoidWeavePower(this.owner, this.source, this.amount);
+        return new VoidWeavePower(this.owner, this.source, this.amount, this.block_multiplier);
     }
 }

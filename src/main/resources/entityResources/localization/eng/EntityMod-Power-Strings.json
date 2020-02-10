@@ -50,6 +50,10 @@
     "NAME": "Void Pulse",
     "DESCRIPTIONS": ["When you draw a #yStatus card, gain ", " and draw ", "#b", " cards.", "a card."]
   },
+  "entity:VoidWeavePlusPower": {
+    "NAME": "Void Weave",
+    "DESCRIPTIONS": ["When you draw a Void, gain #b", " #yBlock and #b", " #yDexterity."]
+  },
   "entity:VoidWeavePower": {
     "NAME": "Void Weave",
     "DESCRIPTIONS": ["When you draw a Void, gain #b", " Block."]

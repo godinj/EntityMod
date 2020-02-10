@@ -27,19 +27,22 @@ public class VoidWeavePlusPower extends AbstractPower implements CloneablePowerI
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("community_big.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("community_small.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("community_plus_big.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("community_plus_small.png"));
 
-    private static final int BLOCK_MULTIPLIER = 5;
-    private static final int DEXTERITY_MULTIPLIER = 1;
+    private int block_multiplier;
+    private int dexterity_multiplier;
 
-    public VoidWeavePlusPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public VoidWeavePlusPower(final AbstractCreature owner, final AbstractCreature source,
+                              final int amount, final int block_multiplier, final int dexterity_multiplier) {
         this.name = NAME;
         this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
+        this.block_multiplier = block_multiplier;
+        this.dexterity_multiplier = dexterity_multiplier;
 
         this.type = PowerType.BUFF;
         this.isTurnBased = false;
@@ -51,6 +54,14 @@ public class VoidWeavePlusPower extends AbstractPower implements CloneablePowerI
         this.description = DESCRIPTIONS[0];
 
         updateDescription();
+    }
+
+    public int calculateBlockGained() {
+        return this.amount * block_multiplier;
+    }
+
+    public int calculateDexterityGained() {
+        return this.amount * dexterity_multiplier;
     }
 
     @Override
@@ -67,8 +78,8 @@ public class VoidWeavePlusPower extends AbstractPower implements CloneablePowerI
         if (card.cardID.equals(VoidCard.ID)) {
             flash();
             AbstractCreature o = this.owner;
-            int blockGain = this.amount * BLOCK_MULTIPLIER;
-            int dexterityGain = this.amount * DEXTERITY_MULTIPLIER;
+            int blockGain = calculateBlockGained();
+            int dexterityGain = calculateDexterityGained();
             AbstractDungeon.actionManager.addToTop(new GainBlockAction(o, o, blockGain));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(o, o, new DexterityPower(o, dexterityGain)));
         }
@@ -76,11 +87,13 @@ public class VoidWeavePlusPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0]
+            + calculateBlockGained()  + DESCRIPTIONS[1]
+            + calculateDexterityGained() + DESCRIPTIONS[2];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new VoidWeavePlusPower(this.owner, this.source, this.amount);
+        return new VoidWeavePlusPower(this.owner, this.source, this.amount, this.block_multiplier, this.dexterity_multiplier);
     }
 }

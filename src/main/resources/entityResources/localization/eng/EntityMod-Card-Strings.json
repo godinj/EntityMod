@@ -251,7 +251,8 @@
   },
   "entity:VoidWeave": {
     "NAME": "Void Weave",
-    "DESCRIPTION": "Whenever you draw a *Void, gain !B! Block."
+    "DESCRIPTION": "Whenever you draw a *Void, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Whenever you draw a *Void, gain !M! Block and !entity:S! Dexterity."
   },
   "entity:WarpedForm": {
     "NAME": "Warped Form",

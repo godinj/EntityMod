@@ -35,9 +35,13 @@ public class RipplingGrace extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
 
+    // Represents amount of block gained.
+    private static final int SELF_MAGIC = 5;
+
     public RipplingGrace() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 0;
+        this.selfMagicNumber = this.baseSelfMagicNumber = SELF_MAGIC;
         this.exhaust = true;
     }
 
@@ -76,7 +80,7 @@ public class RipplingGrace extends AbstractDynamicCard {
         // Gain that much energy.
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
         // Gain that much block.
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, magicNumber * selfMagicNumber));
         // Add that many Void cards to your discard.
         for (int voidsToGenerate = magicNumber; voidsToGenerate > 0; voidsToGenerate--) {
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new VoidCard(), 1));

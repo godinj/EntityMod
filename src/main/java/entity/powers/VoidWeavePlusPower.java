@@ -5,6 +5,7 @@ import static entity.EntityMod.makePowerPath;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,13 +15,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import entity.EntityMod;
 import entity.util.TextureLoader;
 
-public class VoidWeavePower extends AbstractPower implements CloneablePowerInterface {
+public class VoidWeavePlusPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = EntityMod.makeID(VoidWeavePower.class.getSimpleName());
+    public static final String POWER_ID = EntityMod.makeID(VoidWeavePlusPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -29,8 +31,9 @@ public class VoidWeavePower extends AbstractPower implements CloneablePowerInter
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("community_small.png"));
 
     private static final int BLOCK_MULTIPLIER = 5;
+    private static final int DEXTERITY_MULTIPLIER = 1;
 
-    public VoidWeavePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public VoidWeavePlusPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
 
@@ -65,7 +68,9 @@ public class VoidWeavePower extends AbstractPower implements CloneablePowerInter
             flash();
             AbstractCreature o = this.owner;
             int blockGain = this.amount * BLOCK_MULTIPLIER;
+            int dexterityGain = this.amount * DEXTERITY_MULTIPLIER;
             AbstractDungeon.actionManager.addToTop(new GainBlockAction(o, o, blockGain));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(o, o, new DexterityPower(o, dexterityGain)));
         }
     }
 
@@ -76,6 +81,6 @@ public class VoidWeavePower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public AbstractPower makeCopy() {
-        return new VoidWeavePower(this.owner, this.source, this.amount);
+        return new VoidWeavePlusPower(this.owner, this.source, this.amount);
     }
 }

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import entity.EntityMod;
 import entity.characters.Entity;
+import entity.powers.VoidWeavePlusPower;
 import entity.powers.VoidWeavePower;
 
 public class VoidWeave extends AbstractDynamicCard {
@@ -22,25 +23,26 @@ public class VoidWeave extends AbstractDynamicCard {
     private static final int COST = 1;
 
     // TODO: Change block to magic number
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public VoidWeave() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.block = this.baseBlock = BLOCK;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-            new VoidWeavePower(p, p, block), block));
+        if (this.upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new VoidWeavePlusPower(p, p, 1)));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new VoidWeavePower(p, p, 1)));
+        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
         }
     }
 }

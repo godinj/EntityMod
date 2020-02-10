@@ -10,15 +10,14 @@
   "entity:EssencePower": {
     "NAME": "Essence",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain health equal to half of your",
-      " #yEssence, rounded down, then reduce #yEssence by #b1.",
-      "At the start of its turn, gains health equal to half of its"]
+      "At the start of your turn, gain health equal to your #yEssence, then remove all #yEssence.",
+      "At the start of its turn, gains health equal to its #yEssence, then remove all #yEssence."]
   },
   "entity:FluxPower": {
     "NAME": "Flux",
     "DESCRIPTIONS": [
       "At the start of the enemy turn, take #b",
-      " damage (total #yFlux on all creatures), then reduce #yFlux by #b1.",
+      " damage (total #yFlux on all creatures multiplied by your #yEssence), then reduce #yFlux by #b1.",
       "At the start of the enemy turn, takes #b"
     ]
   },

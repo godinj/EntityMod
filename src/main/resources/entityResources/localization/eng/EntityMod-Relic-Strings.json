@@ -20,14 +20,15 @@
     "NAME": "Crystal Chamber",
     "FLAVOR": "MMMMMmmmmmmmmmmmmm..........",
     "DESCRIPTIONS": [
-      "Essence does not reduce at start of turn."
+      "Essence reduces by #b",
+      " at start of turn."
     ]
   },
   "entity:DarkCrystalRelic": {
     "NAME": "Dark Crystal",
     "FLAVOR": "The crystal calls... to the crystal chamber!",
     "DESCRIPTIONS": [
-      "Start each combat with #b",
+      "When you play the first card of each combat, gain #b",
       " #yEssence."
     ]
   },

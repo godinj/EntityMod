@@ -36,9 +36,8 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("essence_big.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("essence_small.png"));
 
-    private static final int ESSENCE_REDUCTION = 1;
     private static final float ESSENCE_HEALTH_NUMERATOR = 1;
-    private static final float ESSENCE_HEALTH_DENOMINATOR = 2;
+    private static final float ESSENCE_HEALTH_DENOMINATOR = 1;
 
     public EssencePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
@@ -132,8 +131,9 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
         AbstractDungeon.actionManager.addToBottom(new HealAction(this.owner, this.owner, healthGained));
         if (AbstractDungeon.player.hasRelic(CrystalChamberRelic.ID)) {
             AbstractDungeon.player.getRelic(CrystalChamberRelic.ID).flash();
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, CrystalChamberRelic.ESSENCE_REDUCTION));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, ESSENCE_REDUCTION));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
     }
 
@@ -142,9 +142,9 @@ public class EssencePower extends AbstractPower implements CloneablePowerInterfa
     public void updateDescription() {
         int healthGained = calculateHealthGained();
         if (this.owner == null || this.owner.isPlayer) {
-            this.description = DESCRIPTIONS[0] + healthGained + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[0];
         } else {
-            this.description = DESCRIPTIONS[2] + healthGained + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[1];
         }
     }
 

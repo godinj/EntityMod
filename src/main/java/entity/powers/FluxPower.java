@@ -95,6 +95,9 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
                 totalFluxDamage += mo.getPower(FluxPower.POWER_ID).amount;
             }
         }
+        if (AbstractDungeon.player.hasPower(EssencePower.POWER_ID)) {
+            totalFluxDamage *= AbstractDungeon.player.getPower(EssencePower.POWER_ID).amount;
+        }
         return totalFluxDamage;
     }
 

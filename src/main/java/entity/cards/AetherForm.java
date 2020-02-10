@@ -16,7 +16,7 @@ import entity.characters.Entity;
 // Aether Form -- Basic -- Skill -- 2 -- Gain 7(11) block. Gain an artifact.
 public class AetherForm extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(AetherForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Anomaly.png");
+    public static final String IMG = makeCardPath("AetherForm.png");
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;

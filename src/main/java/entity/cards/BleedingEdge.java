@@ -14,7 +14,6 @@ import entity.characters.Entity;
 
 import static entity.EntityMod.makeCardPath;
 
-// Void Blast -- Basic -- Attack -- 2 -- Apply 1 vulnerable to yourself, deal 2x6(8) damage single target. Apply 2 vulnerable to that target.
 public class BleedingEdge extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(BleedingEdge.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");

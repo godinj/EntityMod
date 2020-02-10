@@ -378,6 +378,7 @@ public class EntityMod implements
         // Attacks
         BaseMod.addCard(new Strike_Entity());
         BaseMod.addCard(new AbyssalCall());
+        BaseMod.addCard(new BleedingEdge());
         BaseMod.addCard(new CosmicRay());
         BaseMod.addCard(new ForceThrough());
         BaseMod.addCard(new Grasp());
@@ -436,6 +437,7 @@ public class EntityMod implements
         // Attacks
         UnlockTracker.unlockCard(Strike_Entity.ID);
         UnlockTracker.unlockCard(AbyssalCall.ID);
+        UnlockTracker.unlockCard(BleedingEdge.ID);
         UnlockTracker.unlockCard(CosmicRay.ID);
         UnlockTracker.unlockCard(ForceThrough.ID);
         UnlockTracker.unlockCard(Grasp.ID);

@@ -21,6 +21,7 @@ public class VoidWeave extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
+    // TODO: Change block to magic number
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 

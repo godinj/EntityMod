@@ -1,12 +1,12 @@
 {
   "ExhaustCardsInHandAction": {
     "TEXT": [
-      "Exhaust"
+      "Exhaust."
     ]
   },
   "SplitAction": {
     "TEXT": [
-      "Duplicate"
+      "Duplicate."
     ]
   },
   "TearAction": {
@@ -14,6 +14,11 @@
       "Choose a Card to Exhaust.",
       "Choose ",
       " Cards to Exhaust."
+    ]
+  },
+  "ToTheAbyssAction": {
+    "TEXT": [
+      "Discard."
     ]
   }
 }

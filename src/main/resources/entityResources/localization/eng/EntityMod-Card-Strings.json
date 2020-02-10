@@ -96,7 +96,12 @@
   },
   "entity:Avoid": {
     "NAME": "Avoid",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !entity:S! void card into your discard pile."
+    "DESCRIPTION": "Gain !B! Block.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Add a *Void card to your discard pile.",
+      " NL Add ",
+      " *Void cards to your discard pile."
+    ]
   },
   "entity:BoundlessAether": {
     "NAME": "Boundless Aether",

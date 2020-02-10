@@ -12,6 +12,10 @@
     "DESCRIPTION": "Deal !D! damage to all enemies. Add !M! *Void into your discard pile.",
     "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to yourself. Deal !D! damage. Apply !M! Vulnerable."
   },
+  "entity:BleedingEdge": {
+    "NAME": "Bleeding Edge",
+    "DESCRIPTION": "Deal !D! damage !entity:M! times. Lose !entity:S! Strength at the end of your turn."
+  },
   "entity:CosmicRay": {
     "NAME": "Cosmic Ray",
     "DESCRIPTION": "Deal !D! damage.",

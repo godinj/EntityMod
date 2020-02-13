@@ -32,7 +32,7 @@ public class Avoid extends AbstractDynamicCard {
     private static final int COST = 0;
 
     private static final int BLOCK = 7;
-    private static final int UPGRADE_PLUS_BLOCK = 10;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
     // Represents number of void cards added to discard pile.
     private static final int SELF_MAGIC_NUMBER = 1;
 
@@ -40,6 +40,7 @@ public class Avoid extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = BLOCK;
         this.selfMagicNumber = this.baseSelfMagicNumber = SELF_MAGIC_NUMBER;
+        generateAndInitializeExtendedDescription();
     }
 
     public void generateAndInitializeExtendedDescription() {
@@ -70,6 +71,7 @@ public class Avoid extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.upgradeBlock(UPGRADE_PLUS_BLOCK);
+            generateAndInitializeExtendedDescription();
         }
     }
 }

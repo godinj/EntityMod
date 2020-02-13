@@ -22,7 +22,7 @@ public class DarkCrystalRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("DarkCrystal.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("DarkCrystal.png"));
 
-    private static final int ESSENCE_AMT = 5;
+    private static final int ESSENCE_AMT = 3;
 
     public DarkCrystalRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);

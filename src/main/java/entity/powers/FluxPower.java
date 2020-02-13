@@ -114,7 +114,17 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
         updateDescription();
     }
 
-    public static void receivePreMonstersTurnHook() {
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        logger.info("BRUH -- atEndOfTurn -- isPlayer: " + isPlayer);
+        super.atEndOfTurn(isPlayer);
+        if (isPlayer) {
+            logger.info("BRUH -- before damageStep");
+            damageStep();
+        }
+    }
+
+    public static void damageStep() {
         logger.info("receivePreMonstersTurnHook");
         int totalFluxDamage = calculateTotalFlux();
         ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<>();
@@ -146,7 +156,7 @@ public class FluxPower extends AbstractPower implements CloneablePowerInterface 
         }
     }
 
-    public static void receivePostMonstersTurnHook() {
+    public static void decrementStep() {
         logger.info("receivePostMonstersTurnHook");
         AbstractPlayer p = AbstractDungeon.player;
         ArrayList<AbstractMonster> currentLivingMonsters = new ArrayList<>();

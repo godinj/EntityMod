@@ -621,11 +621,15 @@ public class EntityMod implements
 
     public static void publishPreMonstersTurn() {
         logger.info("publishPreMonsterTurn");
-        FluxPower.receivePreMonstersTurnHook();
     }
 
     public static void publishPostMonstersTurn() {
         logger.info("publishPostMonsterTurn");
-        FluxPower.receivePostMonstersTurnHook();
+        FluxPower.decrementStep();
+    }
+
+    public static void publishPostPlayerTurn() {
+        logger.info("publishPostPlayerTurn");
+        FluxPower.damageStep();
     }
 }

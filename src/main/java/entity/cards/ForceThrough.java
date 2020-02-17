@@ -17,7 +17,7 @@ import entity.characters.Entity;
 
 import static entity.EntityMod.makeCardPath;
 
-//Force through	common	attack	2	10(13) attack and gain 1 artifact
+//Force through	common	attack	0	10(13) attack and gain 1 artifact
 public class ForceThrough extends AbstractDynamicCard {
     public static final String ID = EntityMod.makeID(ForceThrough.class.getSimpleName());
     public static final String IMG = makeCardPath("VoidBlast.png");

@@ -380,6 +380,7 @@ public class EntityMod implements
         BaseMod.addCard(new AbyssalCall());
         BaseMod.addCard(new BleedingEdge());
         BaseMod.addCard(new CosmicRay());
+        BaseMod.addCard(new CursedOffering());
         BaseMod.addCard(new ForceThrough());
         BaseMod.addCard(new Grasp());
         BaseMod.addCard(new Lash());
@@ -439,6 +440,7 @@ public class EntityMod implements
         UnlockTracker.unlockCard(AbyssalCall.ID);
         UnlockTracker.unlockCard(BleedingEdge.ID);
         UnlockTracker.unlockCard(CosmicRay.ID);
+        UnlockTracker.unlockCard(CursedOffering.ID);
         UnlockTracker.unlockCard(ForceThrough.ID);
         UnlockTracker.unlockCard(Grasp.ID);
         UnlockTracker.unlockCard(Lash.ID);

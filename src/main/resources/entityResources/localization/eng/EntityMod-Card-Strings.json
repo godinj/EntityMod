@@ -35,6 +35,10 @@
       " cards)."
     ]
   },
+  "entity:CursedOffering": {
+    "NAME": "Cursed Offering",
+    "DESCRIPTION": "For each Curse in your hand, deal !D! damage !entity:M! times."
+  },
   "entity:ForceThrough": {
     "NAME": "Force Through",
     "DESCRIPTION": "Deal !D! damage. NL Gain !entity:A! Artifact."

@@ -3,6 +3,7 @@ package entity.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import entity.EntityMod;
 import entity.characters.Entity;
+import java.util.Iterator;
 
 import static entity.EntityMod.makeCardPath;
 
@@ -38,9 +40,20 @@ public class CursedOffering extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-
+        int curseCards = 0;
+        for (AbstractCard c: AbstractDungeon.player.hand.group) {
+            if (c.type.equals(CardType.CURSE)) {
+                curseCards++;
+            }
+        }
+        int totalDamage = damage * curseCards;
+//        if (totalDamage <= 0) {
+//            return;
+//        }
+        for (int i = 0; i < multiplier; i++) {
+            AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, totalDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        }
     }
 
     @Override
